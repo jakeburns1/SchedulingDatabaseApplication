@@ -1,0 +1,130 @@
+TEAM COVENANT
+
+INSTRUCTIONS:
+
+Please meet in person as a team.  It is especially important that each
+member be present for the initial meeting.  Discuss a strategy for
+working on the project.  In the first phase, you will design the
+database together.  The second phase is implementation (SQL, PHP, and
+HTML).  You will likely need to adjust your strategy as you move from
+the first phase to the second.  You may also need to modify this
+covenant due to unforeseen changes in team members' schedules.
+
+One of you should create a project for your team on our GitLab
+(code.centre.edu).  Call it csc362-labs-[YOUR-TEAM-NAME].  This
+project should be DIFFERENT from your labs.  (See instructions for
+Lab02.)  As usual, add me as a "Master".  This time also add all other
+members of the team.  You can edit this covenant on one computer and
+then commit it to git, or each of you can modify it.
+
+Decide on a regular meeting time and place--at least one regular
+meeting per week.  Come to a consensus on when and where.  Be
+realistic.  If you cannot be present, or if a location would not work
+well for you, discuss this openly as a team.  Also consider the
+schedule for the term project and how it relates to your other
+commitments (classes, sports, clubs, religious activities, etc.)  If
+there will be points during the semester when it will be difficult or
+impossible for you to contribute to the project, you should discuss
+this as a team.  For example, you may want to decide now that you will
+need to submit a particular deliverable early.
+
+If you make changes to this covenant, all team members should come to
+agreement.  Then commit the revised covenant via git. 
+
+
+
+TEAM NAME [Heart]: 
+
+
+
+TEAM MEMBERS AND CONTACT INFO:
+
+   MEMBER              MOBILE PHONE           PREFERRED EMAIL
+1.Henry Gunner        716-866-3334           gunner.gunner@centre.edu
+2.Iris Jiang          502-333-4097           jiayu.jiang@centre.edu
+3.Jake Burns	      404-550-3210	     jake.burns@centre.edu
+4.Alexander Garuba    404-316-8501	     alexander.garuba@centre.edu
+
+
+
+AGREED MEETING TIME/PLACE FOR REGULAR WEEKLY TEAM MEETINGS/WORK:
+
+Monday after 9. 
+Also Tuesday, Wednesday or Thursday after 9 as needed, as well as Sunday. 
+
+Locations: Boles, Library. 
+
+
+
+OUR PLAN FOR SUBMITTING THE DELIVERABLES:
+
+[Note: The deadlines are listed below, and it is OK to leave these
+unchanged.  However, your team may need to submit one or more
+deliverables early due to your team members' constraints and other
+commitments.  Of course, you could also choose as a team to submit a
+deliverable late--but keep in mind that this will result in a reduced
+score of 20 points (out of 100) per day or part of a day late.  The
+reason for the penalty is to help teams stay on track and have greater
+success in completing the project as a whole.]
+
+PHASE 1: DESIGN
+1. Team Contract                                         09/16
+2. Mission Statement, Objectives, Tables/Fields          09/23
+3. Analyze current DB: Modify Tables, Fields, PKs        09/30
+4. Field Specifications                                  10/03 (Alex is gone from 3rd to 7th)
+							*(still due in class 10/07)
+
+5. Team Survey #1                                        10/09
+6. Table Relationships (not E-R diagram)                 10/14
+7. Business Rules and Complete E-R diagram               10/17 (Alex traveling that weekend for soccer).  
+							(due 10/21)
+
+8. Team Survey #2                                        10/23 
+9. UI Flow Diagram, Views                                10/28
+10. Design Presentation Practice Talk and Slides         10/30
+DESIGN PRESENTATION                                      10/31*
+11. Complete Design Documentation                        11/04
+12. Team Survey #3                                       11/06
+
+PHASE 2: IMPLEMENTATION
+13. SQL Scripts and Plan for PHP Code                    11/11
+14. PHP Code (about 20%)                                 11/18
+15. More PHP Code (50%)                                  11/25
+16. Team Survey #4                                       11/25
+17. Nearly Complete Database Application (98%)           12/02
+18. Final Presentation Practice Talk and Slides          12/04
+FINAL PRESENTATION/SOFTWARE DEMO                         12/05*
+19. Final Submission (Application + Updated Design Docs) 12/06*
+20. Team Survey #5                                       12/06*
+
+
+WE ALSO AGREE:
+
+[Type anything else that as a team you decide should be included in
+your covenant.  It is OK to leave this blank.]
+
+Complete work on time. 
+Communicate (when you can work, and other commitments). 
+
+
+
+
+WE HELD OUR INITIAL TEAM MEETING ON [09/15 and 7:00pm]:
+AT Library, first floor computers:
+
+
+
+"BY TYPING OUR NAMES, EACH OF US INDICATES OUR AGREEMENT WITH THIS
+COVENANT.  WE UNDERSTAND THAT TO MODIFY THIS COVENANT, WE WILL HAVE TO
+HAVE UNANIMOUS AGREEMENT AT A MEETING WHEN ALL MEMBERS ARE PRESENT."
+
+SIGNED (Full name and date):
+Henry Gunner 09/15
+Iris Jiang 09/15
+Jake Burns 09/15
+Alex Garuba 09/15
+
+
+[Type your name to indicate agreement.  Note: Each team member should
+type his or her own name.  Please do not sign this agreement on behalf
+of someone else.]
