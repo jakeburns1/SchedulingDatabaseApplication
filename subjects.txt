@@ -1,0 +1,35 @@
+Subjects:
+Students
+Proffessors
+Proctors
+Test Centers
+Tests
+Seats
+
+Characteristics:
+studentID
+proffessorID
+proctorID
+first_name
+last_name
+email
+phone number
+subject
+course
+location
+Date
+Time
+shceduled work time
+time in
+time out
+time open
+time closed
+days open
+days closed
+total capacity
+available computers
+available seats
+Test result
+Test duration
+test file
+test type
