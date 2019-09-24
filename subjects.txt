@@ -1,12 +1,12 @@
-Subjects:
+Subjects/tables:
 Students
-Proffessors
+Professors
 Proctors
 Test Centers
 Tests
 Seats
 
-Characteristics:
+Characteristics/fields:
 studentID
 proffessorID
 proctorID
@@ -17,8 +17,8 @@ phone number
 subject
 course
 location
-Date
-Time
+date
+time
 shceduled work time
 time in
 time out
@@ -29,7 +29,7 @@ days closed
 total capacity
 available computers
 available seats
-Test result
-Test duration
+test result
+test duration
 test file
 test type
