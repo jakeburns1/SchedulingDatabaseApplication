@@ -1,17 +1,19 @@
 Subjects/tables:
-Students
-Professors
-Proctors
-Test Centers
-Tests
-Seats
+Students (PK: studentID)
+Professors (PK: professorID)
+Proctors (PK: proctorID)
+Test Centers (CPK: location (building) + university)
+Tests (PK: testID)
+Seats (CPK: Test Centers FKs + seatNum)
 
 Characteristics/fields:
 studentID
-proffessorID
+professorID
 proctorID
-first_name
-last_name
+testID
+seatNum
+first name
+last name
 email
 phone number
 subject
@@ -19,7 +21,7 @@ course
 location
 date
 time
-shceduled work time
+scheduled work time
 time in
 time out
 time open
