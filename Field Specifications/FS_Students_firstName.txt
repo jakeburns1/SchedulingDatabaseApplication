@@ -13,7 +13,7 @@ Label:                _
 Source Specification: _ 
 Shared By:            _ Professors, Proctors, Test Centers, Tests, Seats
 Aliases:              _ 
-Description:          _ The first name of a student.
+Description:          _ The first name of each student.
 
 
 PHYSICAL ELEMENTS
