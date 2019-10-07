@@ -82,9 +82,9 @@ Comparisons Allowed:
                 <    _ 
                 <=   _ 
 
-  Value Expr.:  _ X
+  Value Expr.:  _ 
                 ALL  _ 
-                =    _ X
+                =    _ 
                 >    _ 
                 >=   _ 
                 !=   _ 
