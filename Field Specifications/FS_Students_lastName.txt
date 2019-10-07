@@ -11,7 +11,7 @@ Specification Type:
 Parent Table:         _ Students
 Label:                _ 
 Source Specification: _ 
-Shared By:            _ Professors, Proctors, Test Centers, Tests, Seats
+Shared By:            _ 
 Aliases:              _ 
 Description:          _ The last name of each student.
 
