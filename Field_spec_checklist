@@ -24,10 +24,10 @@ university            :Complete
 date                  :Complete
 time                  :Complete
 scheduled work time
-time in
-time out
-time open
-time closed
+time in               :inprogr
+time out              :inprog
+time open             :inprog
+time closed           :inprog
 days open
 days closed
 total capacity
