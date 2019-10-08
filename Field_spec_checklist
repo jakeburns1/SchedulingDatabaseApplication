@@ -1,0 +1,37 @@
+Characteristics/fields: 
+studentID             :Complete
+professorID           :Complete
+proctorID             :Complete
+testID                :Complete
+seatNum
+student first name    :Complete
+student last name     :Complete
+professor first name  :Complete
+professor last name   :Complete
+proctor first name    :Complete
+proctor last name     :Complete
+student email         :Complete
+email
+student phone number  :Complete
+phone number
+subject
+course
+
+location              :Complete
+university            :Complete
+date
+time
+scheduled work time
+time in
+time out
+time open
+time closed
+days open
+days closed
+total capacity
+available computers
+available seats
+test result
+test duration
+test file
+test type
