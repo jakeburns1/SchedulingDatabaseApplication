@@ -24,8 +24,8 @@ university            :Complete
 date                  :Complete
 time                  :Complete
 scheduled work time
-time in               :inprogr
-time out              :inprog
+time in               :Complete
+time out              :Complete
 time open             :inprog
 time closed           :inprog
 days open
