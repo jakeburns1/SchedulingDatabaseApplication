@@ -11,16 +11,17 @@ professor last name   :Complete
 proctor first name    :Complete
 proctor last name     :Complete
 student email         :Complete
-email
+professor email       :in progress
 student phone number  :Complete
-phone number
+proctor phone number  :in progress
+professor phone number:in progress
 subject
 course
 
 location              :Complete
 university            :Complete
-date
-time
+date                  :in progress
+time                  :in progress
 scheduled work time
 time in
 time out
