@@ -113,5 +113,5 @@ Operations Allowed:
                 *    _ 
                 /    _ 
 
-NOTES: Assume that the length of proctorID is 6.
+NOTES: Assume that the length of proctorID is 5.
 
