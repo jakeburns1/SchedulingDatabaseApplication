@@ -11,10 +11,11 @@ professor last name   :Complete
 proctor first name    :Complete
 proctor last name     :Complete
 student email         :Complete
-professor email       :in progress
+proctor email         :Complete
+professor email       :Complete
 student phone number  :Complete
-proctor phone number  :in progress
-professor phone number:in progress
+proctor phone number  :Complete
+professor phone number:Complete
 subject
 course
 
