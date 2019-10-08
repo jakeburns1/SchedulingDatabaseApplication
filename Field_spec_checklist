@@ -26,8 +26,8 @@ time                  :Complete
 scheduled work time
 time in               :Complete
 time out              :Complete
-time open             :inprog
-time closed           :inprog
+time open             :Complete
+time closed           :Complete
 days open
 days closed
 total capacity
