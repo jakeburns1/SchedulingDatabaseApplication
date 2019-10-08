@@ -20,6 +20,7 @@ phone number
 subject
 course
 location
+university
 date
 time
 scheduled work time
