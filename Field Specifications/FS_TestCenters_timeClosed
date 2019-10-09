@@ -5,7 +5,7 @@ GENERAL ELEMENTS
 Field Name:           _ timeClosed
 
 Specification Type:
-  Unique:  _ 
+  Unique:  _ X
   Generic: _ 
   Replica: _ 
 Parent Table:         _ TestCenters
@@ -83,7 +83,7 @@ Comparisons Allowed:
                 <=   _ 
 
   Value Expr.:  _ 
-                ALL  _ 
+                ALL  _ X
                 =    _ 
                 >    _ 
                 >=   _ 
