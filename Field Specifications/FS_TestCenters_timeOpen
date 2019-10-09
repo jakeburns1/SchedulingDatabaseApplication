@@ -5,7 +5,7 @@ GENERAL ELEMENTS
 Field Name:           _ timeOpen
 
 Specification Type:
-  Unique:  _ 
+  Unique:  _ X
   Generic: _ 
   Replica: _ 
 Parent Table:         _ TestCenters
@@ -13,7 +13,7 @@ Label:                _
 Source Specification: _ 
 Shared By:            _ 
 Aliases:              _ 
-Description:          _ 
+Description:          _ The time at which the test centre opens for the day 
 
 
 PHYSICAL ELEMENTS
@@ -82,7 +82,7 @@ Comparisons Allowed:
                 <    _ 
                 <=   _ 
 
-  Value Expr.:  _ 
+  Value Expr.:  _ X
                 ALL  _ 
                 =    _ 
                 >    _ 
