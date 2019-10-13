@@ -5,8 +5,8 @@ proctorID in Students
 studentID in TestCenters
 testID in StudentsTests
 studentID in StudentsTests
-testCenterUniversity in Proctor (CFK)
-testCenterBuilding in Proctor (CFK)
+testCenterUniversity in Proctor (CFK)   -complete
+testCenterBuilding in Proctor (CFK)     -complete
 testID in Proctor
 testID in TestCenters
 studentID in StudentsCourses
