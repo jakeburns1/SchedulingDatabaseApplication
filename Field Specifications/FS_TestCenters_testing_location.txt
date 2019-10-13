@@ -2,7 +2,7 @@ FIELD SPECIFICATIONS
 
 GENERAL ELEMENTS
 
-Field Name:           _ location
+Field Name:           _ testing_location
 
 Specification Type:
   Unique:  _ X
