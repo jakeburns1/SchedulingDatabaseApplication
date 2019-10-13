@@ -1,0 +1,7 @@
+                Students    Professors  Proctors    Test Centers    Tests       Courses
+Students        X           1:N         1:1         1:1             1:N         1:N
+Professors      1:N         X                                       1:N         1:N
+Proctors        1:N                     X           1:1             1:N
+Test Centers    1:N                     1:N         X               1:N
+Tests           1:N         1:1         1:1         1:1             X           1:1
+Courses         1:N         1:N                                     1:1         X
