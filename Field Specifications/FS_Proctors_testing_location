@@ -2,12 +2,12 @@ FIELD SPECIFICATIONS
 
 GENERAL ELEMENTS
 
-Field Name:           _ test_center_location
+Field Name:           _ testing_location
 
 Specification Type:
-  Unique:  _ X
+  Unique:  _ 
   Generic: _ 
-  Replica: _ 
+  Replica: _ X
 Parent Table:         _ TestCenters
 Label:                _ 
 Source Specification: _ 
@@ -33,8 +33,8 @@ Character Support:
 LOGICAL ELEMENTS
 
 Key Type:      Non:        _ 
-               Primary:    _ X
-               Foreign:    _ 
+               Primary:    _ 
+               Foreign:    _ X
                Alternate:  _ 
 
 Key Structure: Simple:     _ 
