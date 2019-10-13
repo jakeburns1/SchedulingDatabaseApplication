@@ -1,0 +1,16 @@
+studentID in StudentsProfessors
+professorID in StudentsProfessors
+professorID in Tests
+proctorID in Students
+studentID in TestCenters
+testID in StudentsTests
+studentID in StudentsTests
+testCenterUniversity in Proctor (CFK)
+testCenterBuilding in Proctor (CFK)
+testID in Proctor
+testID in TestCenters
+studentID in StudentsCourses
+courseID in StudentsCourses
+professorID in Courses
+testID in Courses
+courseID in Tests
