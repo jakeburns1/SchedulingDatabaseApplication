@@ -5,7 +5,8 @@ Proctors (PK: proctorID)
 Test Centers (CPK: location (building) + university)
 Tests (PK: testID)
 Seats (CPK: Test Centers FKs + seatNum)
-StudentsCourses(CPK: studentID(FK) + courseID(FK))
+StudentsTests(CPK: studentID(FK) + testID(FK))
+StudentsProfessors(CPK: studentID + professorID)
 
 Characteristics/fields:
 studentID
