@@ -7,12 +7,14 @@ Tests (PK: testID)
 Seats (CPK: Test Centers FKs + seatNum)
 StudentsTests(CPK: studentID(FK) + testID(FK))
 StudentsProfessors(CPK: studentID + professorID)
+StudentsCourses(CPK: studentID + courseID)
 
 Characteristics/fields:
 studentID
 professorID
 proctorID
 testID
+courseID
 seatNum
 first name
 last name
