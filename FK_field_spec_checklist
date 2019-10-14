@@ -15,7 +15,7 @@ professorID in Courses
 testID in Courses
 courseID in Tests
 
-Guide: what to change in FK forms
+Guide: what to change for FK forms
 Specification Type: Replica
 Parent Table
 Source Specification: [FK] from the [parent] table.
