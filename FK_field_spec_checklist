@@ -1,7 +1,7 @@
-studentID in StudentsProfessors
-professorID in StudentsProfessors
-professorID in Tests
-proctorID in Students
+studentID in StudentsProfessors         -complete Iris
+professorID in StudentsProfessors                 Iris
+professorID in Tests                              Iris
+proctorID in Students                             Iris
 studentID in TestCenters
 testID in StudentsTests
 studentID in StudentsTests
@@ -14,3 +14,14 @@ courseID in StudentsCourses
 professorID in Courses
 testID in Courses
 courseID in Tests
+
+Guide: what to change in FK forms
+Specification Type: Replica
+Parent Table
+Source Specification: [FK] from the [parent] table.
+Description
+Key Type: Foreign
+Uniqueness: Non-unique
+Values Entered By: User
+Edit Rule: Enter Now, Edits Allowed
+Range of Values: Any existing [FK] in the [parent] table.
