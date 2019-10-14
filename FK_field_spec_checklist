@@ -9,10 +9,10 @@ testCenterUniversity in Proctor (CFK)   -complete   Garuba
 testCenterBuilding in Proctor (CFK)     -complete   Garuba
 testID in Proctor                       -complete   Garuba
 testID in TestCenters                   -complete   Garuba
-studentID in StudentsCourses
-courseID in StudentsCourses
-professorID in Courses
-testID in Courses
+studentID in StudentsCourses            -complete   Jake
+courseID in StudentsCourses             -complete   Jake
+professorID in Courses                  -complete   Jake
+testID in Courses                       -complete   Jake
 courseID in Tests
 
 Guide: what to change for FK forms
