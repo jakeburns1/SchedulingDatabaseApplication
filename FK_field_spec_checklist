@@ -7,8 +7,8 @@ testID in StudentsTests
 studentID in StudentsTests
 testCenterUniversity in Proctor (CFK)   -complete   Garuba
 testCenterBuilding in Proctor (CFK)     -complete   Garuba
-testID in Proctor                                   Garuba
-testID in TestCenters                               Garuba
+testID in Proctor                       -complete   Garuba
+testID in TestCenters                   -complete   Garuba
 studentID in StudentsCourses
 courseID in StudentsCourses
 professorID in Courses
