@@ -10,7 +10,7 @@ Specification Type:
   Replica: _ X
 Parent Table:         _ Proctors
 Label:                _ 
-Source Specification: _ 
+Source Specification: _ The testID from TESTS.
 Shared By:            _ 
 Aliases:              _ 
 Description:          _ A unique number that proctors use to identify each test in their test center.
