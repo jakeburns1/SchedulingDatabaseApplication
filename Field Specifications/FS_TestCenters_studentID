@@ -10,7 +10,7 @@ Specification Type:
   Replica: _ X
 Parent Table:         _ TestCenters
 Label:                _ 
-Source Specification: _ Forign key from Students.
+Source Specification: _ studentID from Students.
 Shared By:            _ 
 Aliases:              _ 
 Description:          _ Linking a student to one testing center for an exam. 
