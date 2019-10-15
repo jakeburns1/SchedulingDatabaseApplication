@@ -13,7 +13,7 @@ studentID in StudentsCourses            -complete   Jake
 courseID in StudentsCourses             -complete   Jake
 professorID in Courses                  -complete   Jake
 testID in Courses                       -complete   Jake
-courseID in Tests                                   Henry
+courseID in Tests                       -complete   Henry
 
 Guide: what to change for FK forms
 Specification Type: Replica
