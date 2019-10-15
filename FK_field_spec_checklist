@@ -4,7 +4,7 @@ professorID in Tests                    -complete   Iris
 proctorID in Students                   -complete   Iris
 studentID in TestCenters                -complete   Henry
 testID in StudentsTests                 -complete   Henry
-studentID in StudentsTests                          Henry
+studentID in StudentsTests              -complete   Henry
 testCenterUniversity in Proctor (CFK)   -complete   Garuba
 testCenterBuilding in Proctor (CFK)     -complete   Garuba
 testID in Proctor                       -complete   Garuba
