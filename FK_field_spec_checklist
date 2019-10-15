@@ -2,7 +2,7 @@ studentID in StudentsProfessors         -complete Iris
 professorID in StudentsProfessors                 Iris
 professorID in Tests                              Iris
 proctorID in Students                             Iris
-studentID in TestCenters                          Henry
+studentID in TestCenters                -complete Henry
 testID in StudentsTests                           Henry
 studentID in StudentsTests                        Henry
 testCenterUniversity in Proctor (CFK)   -complete   Garuba
