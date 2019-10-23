@@ -2,26 +2,26 @@ BUSINESS RULE SPECIFICATIONS
 
 RULE INFORMATION
 
-Statement:  A professor cannot schedule a test outside operating hours (8-12p and 1-4p on Monday, Tuesday, Wednesday, and Friday).
+Statement:  A professor cannot schedule a test outside operating hours (8-12p and 1-4p).
 
-Constraint: _ 
+Constraint: Entries for the Start Time and End Time in the TESTS table must coincide with starting no sooner than 8a/1p and ending no later than 12p/4p.
 
-Type:     Database Oriented:     _ 
+Type:     Database Oriented:     X
           Application Oriented   _ 
 
-Category: Field Specific:        _ 
+Category: Field Specific:        X
           Relationship Specific: _ 
 
-Test On:  Insert:                _ 
+Test On:  Insert:                X
           Delete:                _ 
-          Update:                _
+          Update:                X
 
 
 STRUCTURES AFFECTED
 
-Field Names: _ 
+Field Names: Start Time, End Time
 
-Table Names: _
+Table Names: TESTS
 
 
 FIELD ELEMENTS AFFECTED
@@ -39,7 +39,7 @@ Logical Elements:  Key Type:            _
                    Null Support:        _ 
                    Values Entered By:   _ 
                    Default Value:       _ 
-                   Range of Values:     _ 
+                   Range of Values:     X
                    Comparisons Allowed: _ 
                    Operations Allowed:  _ 
                    Edit Rule:           _ 
@@ -47,7 +47,8 @@ Logical Elements:  Key Type:            _
 
 ACTION TAKEN
 
-_ 
+The Range of Values of Start Time was set to "Any value greater or equal to 8:00:00, less than 11:00:00, greater than or equal to 13:00:00, and less than 15:00:00".
+The Range of Values of End Time was set to "Any value greater or equal to 9:00:00, less than 12:00:00, greater than or equal to 14:00:00, and less than 16:00:00".
 
 
 NOTES: _
