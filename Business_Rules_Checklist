@@ -1,0 +1,5 @@
+- Cannot schedule more students than seats
+- Tests can only be scheduled on open days
+- Tests can only be scheduled during working hours (8-12, 1-4)
+- If there isn't a proctor, that day is canceled
+- 
