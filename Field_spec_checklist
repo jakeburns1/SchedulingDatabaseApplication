@@ -22,7 +22,8 @@ courseNumber          :Completed
 location              :Complete
 university            :Complete
 date                  :Complete
-time                  :Complete
+start time            :Complete
+end time
 scheduled work time
 time in               :Complete
 time out              :Complete
