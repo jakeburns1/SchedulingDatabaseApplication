@@ -1,0 +1,35 @@
+VIEW SPECIFICATIONS
+
+GENERAL INFORMATION
+
+Name: _ displayProfessorsTests
+
+Desciption: _ Display all the tests that the professor has assigned to students.
+
+Type: Data:       _ X
+      Aggregate:  _
+      Validation: _ 
+
+
+BASE TABLES
+Tests, StudentsTests
+_
+
+
+CALCULATED FIELD EXPRESSIONS
+
+Field Name              Expression
+_   studentID            _ studentID
+_   testID                _ testID
+_                       _ 
+
+
+FILTERS
+
+Field Name              Condition
+_  Tests.professorID    = current logged in professorID         
+_                       _ 
+_                       _ 
+
+
+NOTES: _ 
