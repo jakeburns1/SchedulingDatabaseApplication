@@ -1,0 +1,36 @@
+VIEW SPECIFICATIONS
+
+GENERAL INFORMATION
+
+Name: _ Tests for Today
+
+Desciption: _ This view provides information on any test scheduled to be taken on the current day in the given proctoring center.
+
+Type: Data:       _ X
+      Aggregate:  _
+      Validation: _ 
+
+
+BASE TABLES
+
+_ STUDENTS, TESTS, STUDENTSTESTS, TESTCENTERS
+
+
+CALCULATED FIELD EXPRESSIONS
+
+Field Name              Expression
+_ Student Name          _ lastName & ', ' & firstName
+_                       _ 
+_                       _ 
+
+
+FILTERS
+
+Field Name              Condition
+_ date                  _ =getdate()
+_ location              _ =TestCenters(TestID).getlocation
+_ proctor               _ = current logged in proctor
+
+
+NOTES: _ 
+
