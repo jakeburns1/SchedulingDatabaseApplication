@@ -4,7 +4,7 @@ GENERAL INFORMATION
 
 Name: _ StudentsTestStatus
 
-Desciption: _ The status of each student who take the test.
+Desciption: _ The status of each student who should take the test.
 
 Type: Data:       _ X
       Aggregate:  _ 
@@ -32,4 +32,4 @@ _                       _
 _                       _ 
 
 
-NOTES: _ 
+NOTES: _ Status can be on time, late, skip, etc.
