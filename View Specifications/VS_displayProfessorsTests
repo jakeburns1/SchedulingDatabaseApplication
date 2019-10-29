@@ -2,7 +2,7 @@ VIEW SPECIFICATIONS
 
 GENERAL INFORMATION
 
-Name: _ displayProfessorsTests
+Name: _ DisplayProfessorsTests
 
 Desciption: _ Display all the tests that the professor has assigned to students.
 
@@ -19,15 +19,15 @@ _
 CALCULATED FIELD EXPRESSIONS
 
 Field Name              Expression
-_   studentID            _ studentID
-_   testID                _ testID
+_   studentID           _ studentID
+_   testID              _ testID
 _                       _ 
 
 
 FILTERS
 
 Field Name              Condition
-_  Tests.professorID    = current logged in professorID         
+_  Tests.professorID    - = current logged in professorID         
 _                       _ 
 _                       _ 
 
