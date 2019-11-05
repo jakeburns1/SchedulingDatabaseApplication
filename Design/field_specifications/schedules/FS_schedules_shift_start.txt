@@ -1,0 +1,117 @@
+FIELD SPECIFICATIONS
+
+GENERAL ELEMENTS
+
+Field Name:           _ shift_start
+
+Specification Type:
+  Unique:  _ 
+  Generic: _ X
+  Replica: _ 
+Parent Table:         _ schedules
+Label:                _ 
+Source Specification: _ 
+Shared By:            _ 
+Aliases:              _ 
+Description:          _ Holds the start time for employee's shift.
+
+
+PHYSICAL ELEMENTS
+
+Data Type:            _ DateTime
+Length:               _ 
+Decimal Places:       _ None
+Input Mask:           _ 'YYYY-MM-DD hh:mm:ss'
+Display Format:       _ 9999-12-31 23:59:59'
+Character Support:
+  Letters (A-Z):      _ 
+  Numbers (0-9):      _ X
+  Keyboard (.,/$#%):  _ X
+  Special (©®™Σπ):    _ 
+
+
+LOGICAL ELEMENTS
+
+Key Type:      Non:        _ 
+               Primary:    _ X 
+               Foreign:    _ 
+               Alternate:  _ 
+
+Key Structure: Simple:     _ 
+               Composite:  _ X
+
+Uniqueness:    Non-unique: _ X
+               Unique:     _ 
+
+Null Support:  Nulls OK:   _ 
+               No nulls:   _ X
+
+Values Entered By: User:   _ X
+                   System: _ 
+
+Required Value:    No:     _ 
+                   Yes:    _ X 
+
+Default Value:     _ 
+
+Range of Values:   _ time can be either 8:00am, or 1:00 pm. 
+                   - date can be any date between today and the next 1 year.
+
+Edit Rule:
+  Enter now, edits allowed:       _ 
+  Enter now, edits not allowed:   _ 
+  Enter later, edits allowed:     _ X
+  Enter later, edits not allowed: _ 
+  Not determined at this time:    _ 
+
+Comparisons Allowed:
+  Same Field:   _ 
+                ALL  _ X
+                =    _ 
+                >    _ 
+                >=   _ 
+                !=   _ 
+                <    _ 
+                <=   _ 
+
+  Other Fields: _
+                ALL  _ 
+                =    _ 
+                >    _ 
+                >=   _ 
+                !=   _ 
+                <    _ 
+                <=   _ 
+
+  Value Expr.:  _ 
+                ALL  _ X
+                =    _
+                >    _ 
+                >=   _ 
+                !=   _ 
+                <    _ 
+                <=   _ 
+
+Operations Allowed:
+  Same Field:   _ 
+                ALL  _ 
+                +    _ X
+                -    _ X
+                *    _ 
+                /    _ 
+
+  Other Fields: _ 
+                ALL  _ 
+                +    _ 
+                -    _ 
+                *    _ 
+                /    _ 
+
+  Value Expr.:  _ 
+                ALL  _ 
+                +    _ X
+                -    _ X
+                *    _ X
+                /    _ 
+
+NOTES:
