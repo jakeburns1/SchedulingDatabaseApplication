@@ -40,8 +40,8 @@ Key Type:      Non:        _ X
 Key Structure: Simple:     _ 
                Composite:  _ 
 
-Uniqueness:    Non-unique: _ X
-               Unique:     _ 
+Uniqueness:    Non-unique: _ 
+               Unique:     _ X
 
 Null Support:  Nulls OK:   _ 
                No nulls:   _ X
