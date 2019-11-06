@@ -40,11 +40,11 @@ Key Type:      Non:        _ X
 Key Structure: Simple:     _ 
                Composite:  _ 
 
-Uniqueness:    Non-unique: _ 
+Uniqueness:    Non-unique: _ X
                Unique:     _ 
 
 Null Support:  Nulls OK:   _ 
-               No nulls:   _ 
+               No nulls:   _ X
 
 Values Entered By: User:   _ 
                    System: _ X
