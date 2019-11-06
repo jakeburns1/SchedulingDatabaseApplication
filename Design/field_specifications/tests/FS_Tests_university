@@ -8,12 +8,12 @@ Specification Type:
   Unique:  _ 
   Generic: _ 
   Replica: _ X
-Parent Table:         _ TestCenters
+Parent Table:         _ Tests
 Label:                _ 
-Source Specification: _ 
+Source Specification: _ The university from TestCenters.
 Shared By:            _ 
 Aliases:              _ 
-Description:          _ The location of the proctoring center a given proctor needs to report to.
+Description:          _ The university of the proctoring center a given proctor needs to report to.
 
 
 PHYSICAL ELEMENTS
