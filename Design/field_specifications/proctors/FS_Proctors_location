@@ -2,7 +2,7 @@ FIELD SPECIFICATIONS
 
 GENERAL ELEMENTS
 
-Field Name:           _ testing_location
+Field Name:           _ location
 
 Specification Type:
   Unique:  _ 
@@ -10,7 +10,7 @@ Specification Type:
   Replica: _ X
 Parent Table:         _ TestCenters
 Label:                _ 
-Source Specification: _ 
+Source Specification: _ The location of the testing center from TESTCENTERS
 Shared By:            _ 
 Aliases:              _ 
 Description:          _ The location of the proctoring center a given proctor needs to report to.
