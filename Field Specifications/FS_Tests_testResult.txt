@@ -5,7 +5,7 @@ GENERAL ELEMENTS
 Field Name:           _ Test Result
 
 Specification Type:
-  Unique:  _ 
+  Unique:  _ X
   Generic: _ 
   Replica: _ 
 Parent Table:         _ Tests
@@ -40,7 +40,7 @@ Key Type:      Non:        _ X
 Key Structure: Simple:     _ 
                Composite:  _ 
 
-Uniqueness:    Non-unique: _ 
+Uniqueness:    Non-unique: _ X
                Unique:     _ 
 
 Null Support:  Nulls OK:   _ 
