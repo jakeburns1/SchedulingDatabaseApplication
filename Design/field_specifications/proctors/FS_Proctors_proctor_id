@@ -11,7 +11,7 @@ Specification Type:
 Parent Table:         _ Proctors
 Label:                _ 
 Source Specification: _ 
-Shared By:            _ Professors, Test Centers, schedules
+Shared By:            _ Schedule
 Aliases:              _ 
 Description:          _ A unique number used to identify each proctor in test centers.
 
