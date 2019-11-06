@@ -2,7 +2,7 @@ FIELD SPECIFICATIONS
 
 GENERAL ELEMENTS
 
-Field Name:           _ university
+Field Name:           _ building
 
 Specification Type:
   Unique:  _ 
@@ -10,10 +10,10 @@ Specification Type:
   Replica: _ X
 Parent Table:         _ Proctors
 Label:                _ 
-Source Specification: _ The name of the university from the TESTCENTERS table.
+Source Specification: _ The name of the testing center's building from the TESTCENTERS table.
 Shared By:            _ 
 Aliases:              _ 
-Description:          _ The name of the university that a given proctor needs to report to.
+Description:          _ The name of the building that a given proctor needs to report to.
 
 
 PHYSICAL ELEMENTS
