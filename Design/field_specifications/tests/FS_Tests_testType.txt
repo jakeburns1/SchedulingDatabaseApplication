@@ -2,7 +2,7 @@ FIELD SPECIFICATIONS
 
 GENERAL ELEMENTS
 
-Field Name:           _Test type 
+Field Name:           _test_isPaper
 
 Specification Type:
   Unique:  _ 
