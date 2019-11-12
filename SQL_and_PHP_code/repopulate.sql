@@ -33,3 +33,36 @@ VALUES  ('Thomas', 'Allen', 'thomas.allen@centre.edu','432-213-4132'),
 
 INSERT INTO testCenters (university, building, time_open, time_close, available_seats, available_computers)
 VALUES  ('Centre  College', 'Young Hall', '08:00', '16:00', 10, 8);
+
+/*** EDIT DATA ***/
+/* 
+UPDATE  students
+    SET student_first_name = 'Bobly', student_email = bobly.smith@centre.edu
+  WHERE student_id = (  SELECT student_id
+                          FROM students
+                         WHERE student_email = 'bob.smith@centre.edu'
+                    );
+  
+DELETE FROM students
+  WHERE student_id = (  SELECT student_id
+                          FROM students
+                         WHERE student_email = 'bob.smith@centre.edu'
+                    );
+                    
+UPDATE  courses
+    SET course_section = 'b'
+  WHERE course_id = (   SELECT course_id
+                          FROM courses
+                         WHERE course_program = 'CSC'
+                           AND course_code = '221'
+                           AND course_section = 'a'
+                    );
+  
+DELETE FROM courses
+  WHERE course_id = (   SELECT course_id
+                          FROM courses
+                         WHERE course_program = 'CSC'
+                           AND course_code = '221'
+                           AND course_section = 'b'
+                    );
+*/
