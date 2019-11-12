@@ -9,6 +9,11 @@ CREATE TABLE students (
                                 CHECK (student_phone SIMILAR TO '[0-9]{3}\-[0-9]{3}\-[0-9]{4}')
 );
 
+INSERT INTO students (student_first_name, student_last_name, student_email, student_phone)
+VALUES ('Bob','Smith', 'bob.smith@centre.edu', '678-999-8212'),
+       ('Jacob', 'Jones', 'jacob.jones@centre.edu', '404-924-2412'),
+       ('Maddie', 'Allen', 'maddie.allen@centre.edu', '812-849-2494');
+
 CREATE TABLE courses (
     PRIMARY KEY (course_program, course_code, course_section),
     course_program	            CHAR(3)         NOT NULL,
