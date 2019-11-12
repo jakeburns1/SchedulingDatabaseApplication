@@ -56,7 +56,15 @@ proctor page
     team member responsible for testing: TBD
     dependencies: procotor schedule and student tests
     deadline: 
- - buttons
+ 
+ edit test button for proctor page
+    filename: edit_test_button.php
+    description: this will load the current information pertaining to each test and contain code to push the updated info to the database
+    team member responsible for creating: TBD
+    team member responsible for testing: TBD
+    dependencies: student tests
+
+
 
 professor page 
  - buttons
