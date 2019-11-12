@@ -42,7 +42,7 @@ PHP Pages
 --------------
 
 log in screen
- filename: login_check.php
+    filename: login_check.php
     description: this will take the info from the log in fields and validate it from the database
     team member responsible for creating: TBD
     team member responsible for testing: TBD
@@ -50,6 +50,12 @@ log in screen
     deadline: 
 
 proctor page
+    filename: proctor_initial.php
+    description: this will load the proctors schedule and all student tests just for the current day
+    team member responsible for creating: TBD
+    team member responsible for testing: TBD
+    dependencies: procotor schedule and student tests
+    deadline: 
  - buttons
 
 professor page 
