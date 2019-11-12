@@ -1,3 +1,15 @@
+DROP TABLE IF EXISTS students_tests
+DROP TABLE IF EXISTS students_courses;
+DROP TABLE IF EXISTS schedule;
+DROP TABLE IF EXISTS proctors;
+DROP TABLE IF EXISTS tests;
+DROP TABLE IF EXISTS testCenters;
+DROP TABLE IF EXISTS professors;
+DROP TABLE IF EXISTS courses;
+DROP TABLE IF EXISTS students;
+
+--creates all tables in the database. 
+
 CREATE TABLE students (
     PRIMARY KEY (student_id),
     student_id                  SERIAL,
