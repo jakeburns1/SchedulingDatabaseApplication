@@ -12,6 +12,8 @@ proctor page
 
 professor page
     - view / edit test page 
-    - schedule test page
+        - schedule new test pop up (have a pop up on the current page rather then going to a new html page)
+        
+        
 
  
