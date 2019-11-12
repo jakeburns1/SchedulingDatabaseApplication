@@ -25,6 +25,11 @@ CREATE TABLE courses (
 
 );
 
+INSERT INTO courses (course_program, course_code, course_section, professor_id)
+VALUES ('CSC', '221', 'a', 1),
+       ('DRA', '110', 'b', 2),
+       ('REL', '130', 'a', 2);
+
 CREATE TABLE professors (
     PRIMARY KEY (professor_id),
     professor_id                SERIAL,
