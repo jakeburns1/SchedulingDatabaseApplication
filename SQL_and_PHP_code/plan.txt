@@ -11,7 +11,7 @@ login screen
     team member responsible for creating: Henry
     team member responsible for testing: Henry
     dependencies: depends on a back end for confirming log in credentials
-    deadline: 
+    deadline: two weeks
 
 proctor page 
     filename: proctor_page.html
@@ -20,7 +20,7 @@ proctor page
     team member responsible for creating: Henry
     team member responsible for testing: Henry
     dependencies:
-    deadline: 
+    deadline: two weeks
     
     - schedule page
     - test edit page
@@ -32,7 +32,7 @@ professor page
     team member responsible for creating: Iris
     team member responsible for testing: Iris
     dependencies:
-    deadline: 
+    deadline: two weeks
     
     - view / edit test page 
         - schedule new test pop up (have a pop up on the current page rather then going to a new html page)
@@ -47,7 +47,7 @@ log in screen
     team member responsible for creating: Iris
     team member responsible for testing: Iris
     dependencies: login_screen.html
-    deadline: 
+    deadline: two weeks
 
 proctor page
     filename: proctor_initial.php
@@ -55,7 +55,7 @@ proctor page
     team member responsible for creating: Garuba
     team member responsible for testing: Garuba
     dependencies: procotor schedule and student tests
-    deadline: 
+    deadline: two weeks
  
  edit test button for proctor page
     filename: edit_test_proctor_button.php
@@ -63,7 +63,7 @@ proctor page
     team member responsible for creating: Garuba
     team member responsible for testing: Garuba
     dependencies: student tests
-    deadline:
+    deadline:two weeks
 
 
 
@@ -73,7 +73,7 @@ professor page
     team member responsible for creating: Garuba
     team member responsible for testing: Garuba
     dependencies: student tests, professors
-    deadline:
+    deadline:two weeks
     
 professor edit page 
     filename: edit_test_professor_button.php
@@ -81,7 +81,7 @@ professor edit page
     team member responsible for creating: Jake
     team member responsible for testing: Jake
     dependencies: student tests
-    deadline:
+    deadline:two weeks
     
 delete professor button
     filename: delete_test_professor.php
@@ -89,7 +89,7 @@ delete professor button
     team member responsible for creating: Jake
     team member responsible for testing: Jake
     dependencies: student tests
-    deadline:
+    deadline:two weeks
     
 schedule new test
     filename: schedule_test.php
@@ -97,7 +97,7 @@ schedule new test
     team member responsible for creating: Jake
     team member responsible for testing: Jake
     dependencies: student tests
-    deadline:
+    deadline:two weeks
 
 
  
