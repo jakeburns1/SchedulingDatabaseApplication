@@ -11,6 +11,7 @@ login screen
     team member responsible for creating: TBD
     team member responsible for testing: TBD
     dependencies: depends on a back end for confirming log in credentials
+    deadline: 
 
 proctor page 
     filename: proctor_page.html
@@ -19,7 +20,7 @@ proctor page
     team member responsible for creating: TBD
     team member responsible for testing: TBD
     dependencies:
-    
+    deadline: 
     
     - schedule page
     - test edit page
@@ -31,6 +32,8 @@ professor page
     team member responsible for creating: TBD
     team member responsible for testing: TBD
     dependencies:
+    deadline: 
+    
     - view / edit test page 
         - schedule new test pop up (have a pop up on the current page rather then going to a new html page)
         
