@@ -31,7 +31,7 @@ VALUES  ('Thomas', 'Allen', 'thomas.allen@centre.edu','432-213-4132'),
         ('Michael', 'Bradshaw', 'michael.bradshaw@centre.edu', '241-421-6313'),
         ('David', 'Toth', 'david.toth@centre.edu', '123-456-6788');
 
-INSERT INTO testCenters (university, building, time_open, time_close, available_seats, available_computers)
+INSERT INTO testcenters (university, building, time_open, time_close, available_seats, available_computers)
 VALUES  ('Centre  College', 'Young Hall', '08:00', '16:00', 10, 8);
 
 /*** EDIT DATA ***/
@@ -46,7 +46,7 @@ UPDATE  students
 DELETE FROM students
   WHERE student_id = (  SELECT student_id
                           FROM students
-                         WHERE student_email = 'bob.smith@centre.edu'
+                         WHERE student_email = 'bobly.smith@centre.edu'
                     );
                     
 UPDATE  courses
@@ -65,4 +65,24 @@ DELETE FROM courses
                            AND course_code = '221'
                            AND course_section = 'b'
                     );
+                    
+UPDATE  professors
+    SET professor_first_name = 'Thomly', professor_email = 'thomly.allen@centre.edu'
+  WHERE professor_id = (SELECT professor_id
+                          FROM professors
+                         WHERE professor_email = 'thomas.allen@centre.edu'
+                    );
+  
+DELETE FROM professors
+  WHERE professor_id = (SELECT professor_id
+                          FROM professors
+                         WHERE professor_email = 'thomly.allen@centre.edu'
+                    );
+                    
+UPDATE  testcenters
+    SET university = 'university of kentucky'
+  WHERE university = 'Centre College';
+  
+DELETE FROM testcenters
+  WHERE university = 'university of kentucky';
 */
