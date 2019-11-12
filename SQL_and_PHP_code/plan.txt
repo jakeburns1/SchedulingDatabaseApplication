@@ -14,7 +14,7 @@ login screen
 
 proctor page 
 filename: proctor_page.html
-    description: this page is the  page a user sees if they login as a proctor, it allows them to see a schedule of students tests and gives them pop ups to edit tests and record info on them.
+    description: this page is the page a user sees if they login as a proctor, it allows them to see a schedule of students tests and gives them pop ups to edit tests and record info on them.
     variables: 
     team member responsible for creating: TBD
     team member responsible for testing: TBD
