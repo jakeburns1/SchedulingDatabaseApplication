@@ -38,5 +38,22 @@ professor page
         - schedule new test pop up (have a pop up on the current page rather then going to a new html page)
         
         
+PHP Pages
+--------------
+
+log in screen
+ filename: login_check.php
+    description: this will take the info from the log in fields and validate it from the database
+    team member responsible for creating: TBD
+    team member responsible for testing: TBD
+    dependencies: login_screen.html
+    deadline: 
+
+proctor page
+ - buttons
+
+professor page 
+ - buttons
+
 
  
