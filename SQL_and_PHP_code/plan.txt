@@ -58,7 +58,7 @@ proctor page
     deadline: 
  
  edit test button for proctor page
-    filename: edit_test_button.php
+    filename: edit_test_proctor_button.php
     description: this will load the current information pertaining to each test and contain code to push the updated info to the database
     team member responsible for creating: Garuba
     team member responsible for testing: Garuba
@@ -68,10 +68,36 @@ proctor page
 
 
 professor page 
- - buttons
-    - edit
-    - delete
-    - schedule new test
+    filename: professor_initial.php
+    description: this will load the current information pertaining to each student test assigned and contain code to push the updated info to the database
+    team member responsible for creating: Garuba
+    team member responsible for testing: Garuba
+    dependencies: student tests, professors
+    deadline:
+    
+professor edit page 
+    filename: edit_test_professor_button.php
+    description: his will load the current information pertaining to each test and contain code to push the updated info to the database
+    team member responsible for creating: Jake
+    team member responsible for testing: Jake
+    dependencies: student tests
+    deadline:
+    
+delete professor button
+    filename: delete_test_professor.php
+    description: this will remove the selected test from the page / database
+    team member responsible for creating: Jake
+    team member responsible for testing: Jake
+    dependencies: student tests
+    deadline:
+    
+schedule new test
+    filename: schedule_test.php
+    description: this will add the entered test info to the database from the form
+    team member responsible for creating: Jake
+    team member responsible for testing: Jake
+    dependencies: student tests
+    deadline:
 
 
  
