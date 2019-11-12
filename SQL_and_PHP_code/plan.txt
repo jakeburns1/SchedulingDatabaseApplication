@@ -11,5 +11,7 @@ proctor page
     - test edit page
 
 professor page
-    -schedule test page
-    - 
+    - view / edit test page 
+    - schedule test page
+
+ 
