@@ -56,6 +56,9 @@ CREATE TABLE testCenters (
 	available_computers		    INT             NOT NULL
 );
 
+INSERT INTO testCenters (university, building, time_open, time_close, available_seats, available_computers)
+VALUES ('Centre  College', 'Young Hall', '08:00', '16:00', 10, 8);
+
 CREATE TABLE tests (
     PRIMARY KEY (test_id),
     test_id                     SERIAL,
