@@ -41,6 +41,11 @@ CREATE TABLE professors (
 			                    CHECK (professor_phone SIMILAR TO '[0-9]{3}\-[0-9]{3}\-[0-9]{4}')
 );
 
+INSERT INTO professors (professor_first_name, professor_last_name, professor_email, professor_phone)
+VALUES ('Thomas', 'Allen', 'thomas.allen@centre.edu','432-213-4132'),
+       ('Michael', 'Bradshaw', 'michael.bradshaw@centre.edu', '241-421-6313'),
+       ('David', 'Toth', 'david.toth@centre.edu', '123-456-6788');
+
 CREATE TABLE testCenters (
 	PRIMARY KEY (university, building),
 	university			        VARCHAR(50)     NOT NULL UNIQUE,
