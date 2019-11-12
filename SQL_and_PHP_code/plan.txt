@@ -69,6 +69,9 @@ proctor page
 
 professor page 
  - buttons
+    - edit
+    - delete
+    - schedule new test
 
 
  
