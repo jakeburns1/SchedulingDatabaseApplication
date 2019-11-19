@@ -32,7 +32,7 @@ Team member who tested the page:
 	<body>
 	    <h1 align = 'center'> Professor Home Page </h1> <br>
 	    <h2 align = 'center'> Your Test Schedule </h2>
-	    <table> 
+	    <table> /* hardcode for the present */
             <tr>
                 <th>Course</th>
                 <th>Test Time</th>
