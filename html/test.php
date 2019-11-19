@@ -10,15 +10,12 @@
 	    username: <input type = 'text' name = 'username'> <br>
 	    password: <input type = 'password' name = 'password'><br>
 
-	    <button type="button">login as professor</button>
+	    <button type="button" name= "button">login as professor</button>
 	    <button type="button">login as proctor</button>
 	    </form>
 	  <?php
 	     $username = $_POST['username'];
 	     $password = $_POST['password'];
-
-
-
 	     ?>
 	</body>
 	</html>
