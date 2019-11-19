@@ -4,13 +4,12 @@
 HTML Pages
 -------------
   **************** ALL THESE HTML PAGES WILL BE COMBINED WITH PHP PAGES*********************** 11/18
-login screen
-    filename: login_screen.html
-    description: this page is the first page a user sees, it allows them to enter their login credentials and sign in as a professor or proctor.
-    variables: login_id, password, proctor_button, professor_button
-    team member responsible for creating: Henry
-    team member responsible for testing: Henry
-    dependencies: depends on a back end for confirming log in credentials
+log in screen
+    filename: login_check.php (CURRENTLY TEST.PHP)
+    description: this will take the info from the log in fields and validate it from the database
+    team member responsible for creating: Jake
+    team member responsible for testing: Jake
+    dependencies: login_screen.html
     deadline: two weeks
 
 proctor page 
@@ -41,13 +40,7 @@ professor page
 PHP Pages
 --------------
 
-log in screen
-    filename: login_check.php (CURRENTLY TEST.PHP)
-    description: this will take the info from the log in fields and validate it from the database
-    team member responsible for creating: Jake
-    team member responsible for testing: Jake
-    dependencies: login_screen.html
-    deadline: two weeks
+
 
 proctor page
     filename: proctor_initial.php
