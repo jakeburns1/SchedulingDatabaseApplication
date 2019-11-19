@@ -1,10 +1,3 @@
-/*
-Description: page a user sees if they login as a professor, can see all students they have scheduled and allows them to edit / schedule additional students <br>
-Dependency: login_check.php <br>
-Team member who created the page: Iris <br>
-Team member who tested the page: Jake <br>
-*/
-
 <!DOCTYPE html>
 <html>
 	<head>
@@ -31,6 +24,12 @@ Team member who tested the page: Jake <br>
 	
 	<body>
 	    <h1 align = 'center'> Professor Home Page </h1> <br>
+	    /*
+        Description: page a user sees if they login as a professor, can see all students they have scheduled and allows them to edit / schedule additional students <br>
+        Dependency: login_check.php <br>
+        Team member who created the page: Iris <br>
+        Team member who tested the page: Jake <br>
+        */
 	    <h2 align = 'center'> Your Test Schedule </h2>
 	    <table>
             <tr>
