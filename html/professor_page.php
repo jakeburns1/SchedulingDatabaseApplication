@@ -11,11 +11,15 @@
                 <th>Course</th>
                 <th>Test Time</th>
                 <th>Test Location</th>
+                <th>Edit</th>
+                <th>Delete</th>
             </tr>
             <tr>
                 <td>CSC410</td>
                 <td>2:20-3:50</td>
                 <td>Centre College</td>
+                <td><button type="button" name="edit_button">edit</button></td>
+                <td><button type="button" name="delete_button">delete</button></td>
             </tr>
         </table>
 	  
