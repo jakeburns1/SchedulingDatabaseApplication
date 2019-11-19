@@ -5,7 +5,8 @@
 	</head>
 	
 	<body>
-	    <h1 align = 'center'> Your Test Schedule </h1>
+	    <h1 align = 'center'> Professor Home Page </h1> <br>
+	    <h2 align = 'center'> Your Test Schedule </h2>
 	    <table style="width:100%">
             <tr>
                 <th>Course</th>
