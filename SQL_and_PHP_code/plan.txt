@@ -75,29 +75,7 @@ professor page
     dependencies: student tests, professors
     deadline:two weeks
     
-professor edit page 
-    filename: edit_test_professor_button.php
-    description: his will load the current information pertaining to each test and contain code to push the updated info to the database
-    team member responsible for creating: Jake
-    team member responsible for testing: Jake
-    dependencies: student tests
-    deadline:two weeks
     
-delete professor button
-    filename: delete_test_professor.php
-    description: this will remove the selected test from the page / database
-    team member responsible for creating: Jake
-    team member responsible for testing: Jake
-    dependencies: student tests
-    deadline:two weeks
-    
-schedule new test
-    filename: schedule_test.php
-    description: this will add the entered test info to the database from the form
-    team member responsible for creating: Jake
-    team member responsible for testing: Jake
-    dependencies: student tests
-    deadline:two weeks
 
 
  
