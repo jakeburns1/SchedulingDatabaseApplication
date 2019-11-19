@@ -11,7 +11,6 @@
 	    password: <input type = 'password' name = 'profPass'><br>
 
 	    <button type="button">login as professor</button>
-	    <a href="professor_page.php">login as professor</a>
 	    <button type="button">login as proctor</button>
 	    </form>
 	<?php ?>
