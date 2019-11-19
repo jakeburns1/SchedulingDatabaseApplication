@@ -4,15 +4,21 @@
 	<title>Achme Test Log In</title>
 	</head>
 	<body>
-	  <h1 align = 'center'> Please log in below </h1>
+	  <h1 align = 'center'> Welcome to Acme Proctoring. Please login below!</h1>
 
 	  <form align = 'center'>
-	    username: <input type = 'text' name = 'profLogin'> <br>
-	    password: <input type = 'password' name = 'profPass'><br>
+	    username: <input type = 'text' name = 'username'> <br>
+	    password: <input type = 'password' name = 'password'><br>
 
 	    <button type="button">login as professor</button>
 	    <button type="button">login as proctor</button>
 	    </form>
-	<?php ?>
+	  <?php
+	     $username = $_POST['username'];
+	     $password = $_POST['password'];
+
+
+
+	     ?>
 	</body>
 	</html>
