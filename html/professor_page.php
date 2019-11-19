@@ -2,7 +2,7 @@
 Description: page a user sees if they login as a professor, can see all students they have scheduled and allows them to edit / schedule additional students
 Dependency: login_check.php
 Team member who created the page: Iris
-Team member who tested the page:
+Team member who tested the page: Jake
 */
 
 <!DOCTYPE html>
@@ -35,12 +35,14 @@ Team member who tested the page:
 	    <table> /* hardcode for the present */
             <tr>
                 <th>Course</th>
+                <th>Students</th>
                 <th>Test Time</th>
                 <th>Test Location</th>
                 <th>Operations</th>
             </tr>
             <tr>
                 <td>CSC410</td>
+                <td>Bob Smith, Jacob Jones, Maddie Allen</td>
                 <td>2:20-3:50</td>
                 <td>Centre College</td>
                 <td><button type="button" name="edit_button">edit</button>
@@ -48,6 +50,7 @@ Team member who tested the page:
             </tr>
             <tr>
                 <td>CSC160</td>
+                <td>Bob Smith, Jacob Jones, Maddie Allen</td>
                 <td>12:40-3:40</td>
                 <td>Centre College</td>
                 <td><button type="button" name="edit_button">edit</button>
