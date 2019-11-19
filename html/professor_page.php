@@ -6,7 +6,7 @@
         table {
             font-family: arial, sans-serif;
             border-collapse: collapse;
-            width: 100%;
+            width: 80%;
         }
 
         td, th {
@@ -29,20 +29,21 @@
                 <th>Course</th>
                 <th>Test Time</th>
                 <th>Test Location</th>
+                <th>Operations</th>
             </tr>
             <tr>
                 <td>CSC410</td>
                 <td>2:20-3:50</td>
                 <td>Centre College</td>
-                <td><button type="button" name="edit_button">edit</button></td>
-                <td><button type="button" name="delete_button">delete</button></td>
+                <td><button type="button" name="edit_button">edit</button>
+                <button type="button" name="delete_button">delete</button></td>
             </tr>
             <tr>
                 <td>CSC160</td>
                 <td>12:40-3:40</td>
                 <td>Centre College</td>
-                <td><button type="button" name="edit_button">edit</button></td>
-                <td><button type="button" name="delete_button">delete</button></td>
+                <td><button type="button" name="edit_button">edit</button>
+                <button type="button" name="delete_button">delete</button></td>
             </tr>
         </table>
 	  
