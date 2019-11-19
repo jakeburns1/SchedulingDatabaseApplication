@@ -44,8 +44,8 @@ PHP Pages
 log in screen
     filename: login_check.php
     description: this will take the info from the log in fields and validate it from the database
-    team member responsible for creating: Iris
-    team member responsible for testing: Iris
+    team member responsible for creating: Jake
+    team member responsible for testing: Jake
     dependencies: login_screen.html
     deadline: two weeks
 
