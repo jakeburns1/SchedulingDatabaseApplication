@@ -7,13 +7,11 @@
 	<body>
 	    <h1 align = 'center'> Professor Home Page </h1> <br>
 	    <h2 align = 'center'> Your Test Schedule </h2>
-	    <table style="width:100%">
+	    <table>
             <tr>
                 <th>Course</th>
                 <th>Test Time</th>
                 <th>Test Location</th>
-                <th>Edit</th>
-                <th>Delete</th>
             </tr>
             <tr>
                 <td>CSC410</td>
