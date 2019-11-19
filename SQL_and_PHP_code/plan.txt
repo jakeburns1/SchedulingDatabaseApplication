@@ -3,7 +3,7 @@
 
 HTML Pages
 -------------
-
+  **************** ALL THESE HTML PAGES WILL BE COMBINED WITH PHP PAGES*********************** 11/18
 login screen
     filename: login_screen.html
     description: this page is the first page a user sees, it allows them to enter their login credentials and sign in as a professor or proctor.
@@ -14,7 +14,7 @@ login screen
     deadline: two weeks
 
 proctor page 
-    filename: proctor_page.html
+    filename: proctor_page.PHP
     description: this page is the page a user sees if they login as a proctor, it allows them to see a schedule of students tests and gives them pop ups to edit tests and record info on them.
     variables: 
     team member responsible for creating: Henry
@@ -26,7 +26,7 @@ proctor page
     - test edit page
 
 professor page
-    filename: professor_page.html
+    filename: professor_page.PHP
     description: page a user sees if they login as a professor, can see all students they have scheduled and allows them to edit / schedule additional students 
     variables:
     team member responsible for creating: Iris
@@ -42,7 +42,7 @@ PHP Pages
 --------------
 
 log in screen
-    filename: login_check.php
+    filename: login_check.php (CURRENTLY TEST.PHP)
     description: this will take the info from the log in fields and validate it from the database
     team member responsible for creating: Jake
     team member responsible for testing: Jake
