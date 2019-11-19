@@ -1,9 +1,9 @@
 --The Plan
 
 
-HTML Pages
+PHP Pages
 -------------
-  **************** ALL THESE HTML PAGES WILL BE COMBINED WITH PHP PAGES*********************** 11/18
+
 log in screen
     filename: login_check.php (CURRENTLY TEST.PHP)
     description: this will take the info from the log in fields and validate it from the database
@@ -37,36 +37,16 @@ professor page
         - schedule new test pop up (have a pop up on the current page rather then going to a new html page)
         
         
-PHP Pages
---------------
 
 
 
-proctor page
-    filename: proctor_initial.php
-    description: this will load the proctors schedule and all student tests just for the current day
-    team member responsible for creating: Garuba
-    team member responsible for testing: Garuba
-    dependencies: procotor schedule and student tests
-    deadline: two weeks
+
+
  
- edit test button for proctor page
-    filename: edit_test_proctor_button.php
-    description: this will load the current information pertaining to each test and contain code to push the updated info to the database
-    team member responsible for creating: Garuba
-    team member responsible for testing: Garuba
-    dependencies: student tests
-    deadline:two weeks
 
 
 
-professor page 
-    filename: professor_initial.php
-    description: this will load the current information pertaining to each student test assigned and contain code to push the updated info to the database
-    team member responsible for creating: Garuba
-    team member responsible for testing: Garuba
-    dependencies: student tests, professors
-    deadline:two weeks
+
     
     
 
