@@ -37,6 +37,13 @@
                 <td><button type="button" name="edit_button">edit</button></td>
                 <td><button type="button" name="delete_button">delete</button></td>
             </tr>
+            <tr>
+                <td>CSC160</td>
+                <td>12:40-3:40</td>
+                <td>Centre College</td>
+                <td><button type="button" name="edit_button">edit</button></td>
+                <td><button type="button" name="delete_button">delete</button></td>
+            </tr>
         </table>
 	  
 	<?php ?>
