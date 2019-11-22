@@ -7,7 +7,7 @@
 	  <h1 align = 'center'> Welcome to Acme Proctoring. Please login below!</h1>
 
 	  <form align = 'center'>
-	    username: <input type = 'text' name = 'username'> <br>
+	    username: <input type = 'text' name = 'username' value="testing"> <br>
 	    password: <input type = 'password' name = 'password'><br>
 
 	    <button type="button" name= "button">login as professor</button>
@@ -20,6 +20,8 @@
 	  <?php
 	     $username = $_POST['username'];
 	     $password = $_POST['password'];
+
+	     echo "$username";
 	     ?>
 	</body>
 	</html>
