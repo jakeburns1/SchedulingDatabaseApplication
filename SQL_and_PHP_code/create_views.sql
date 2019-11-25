@@ -15,12 +15,18 @@ SElECT students.student_first_name || ' ' ||students.student_last_name AS name,
        tests.test_time,
        tests.test_id,
        tests.test_isPaper,
-       tests.professor_id
+       professor_first_name || ' ' || professor_last_name As professor_name,
+       professors.professor_id 
+    /*   CASE WHEN tests.professor_id IN (SELECT professor_id, FROM professors) 
+	                            THEN professor_name
+            ELSE ''
+       END AS prof_name*/
  FROM students
       INNER JOIN students_tests ON(students.student_id = students_tests.student_id)
       NATURAL JOIN tests
+      INNER JOIN professors ON (tests.professor_id = professors.professor_id)
       NATURAL JOIN proctors
- WHERE (tests.university = proctors.university)
+ WHERE (tests.university = proctors.university AND /*current_data*/ '2019-11-25' = tests.test_date)
  ORDER BY tests.test_time,name;   
 
 SELECT * FROM tests_information;
