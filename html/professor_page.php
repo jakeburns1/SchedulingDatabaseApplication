@@ -37,11 +37,10 @@ function display_tests($pdo) {
 
 
 function main() {
-  menu();
   
   $pdo = connect_to_psql('project', $verbose=TRUE);
   
-  display_students($pdo);
+  display_tests($pdo);
 
 }
 
