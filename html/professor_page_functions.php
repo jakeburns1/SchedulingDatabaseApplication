@@ -62,6 +62,8 @@ function style() {
         table {
             /* font-family: arial, sans-serif; */
             border-collapse: collapse;
+            width: 80%;
+            margin: auto;
         }
 
         td, th {
