@@ -36,7 +36,7 @@ CREATE TABLE professors (
 
 CREATE TABLE courses (
     PRIMARY KEY (course_program, course_code, course_section),
-    course_program	            CHAR(3)         NOT NULL,
+    course_program	        CHAR(3)         NOT NULL,
     course_code                 CHAR(3)         NOT NULL,
     course_section              CHAR(1)         DEFAULT NULL,
     professor_id                INT             NOT NULL      
@@ -46,12 +46,12 @@ CREATE TABLE courses (
 
 CREATE TABLE testCenters (
 	PRIMARY KEY (university, building),
-	university			        VARCHAR(50)     NOT NULL UNIQUE,
-	building			        VARCHAR(50)     NOT NULL,
+	university		    VARCHAR(50)     NOT NULL UNIQUE,
+	building	            VARCHAR(50)     NOT NULL,
 	time_open                   TIME            NOT NULL,
-	time_close			        TIME            NOT NULL,
-	available_seats		        INT             NOT NULL,
-	available_computers		    INT             NOT NULL
+	time_close	            TIME            NOT NULL,
+	available_seats		    INT             NOT NULL,
+	available_computers         INT             NOT NULL
 );
 
 CREATE TABLE tests (
@@ -60,11 +60,11 @@ CREATE TABLE tests (
     professor_id                INT             NOT NULL
                                 REFERENCES professors (professor_id)
 								ON DELETE RESTRICT,
-    university                  VARCHAR(50)     NOT NULL UNIQUE,
+    university                  VARCHAR(50)     NOT NULL,
     building                    VARCHAR(50)     NOT NULL,
---  test_date_time              DATETIME  (may use this instead of separate date and time).
+--  test_date_time              TIMESTAMP  (may use this instead of separate date and time. Is DATETIME).
     test_date                   DATE            NOT NULL,
-	test_time                   TIME            NOT NULL,
+	test_time               TIME            NOT NULL,
     test_end_time               TIME            NOT NULL,
     test_duration               INT             NOT NULL,
     test_isPaper                BOOLEAN         NOT NULL DEFAULT TRUE,
@@ -76,12 +76,12 @@ CREATE TABLE tests (
 CREATE TABLE proctors (
     PRIMARY KEY (proctor_id, university, building),
     proctor_id                 	SERIAL,
-    university		  	        VARCHAR(50)     NOT NULL UNIQUE,
+    university		  	VARCHAR(50)     NOT NULL,
     building                    VARCHAR(50)     NOT NULL,
-    proctor_first_name		    VARCHAR(50)     NOT NULL, 
-    proctor_last_name   	    VARCHAR(50)     NOT NULL,
-    proctor_email       		VARCHAR(50)     NOT NULL UNIQUE,
-    proctor_phone       		CHAR(12)        NULL UNIQUE -- pattern: 000-000-0000
+    proctor_first_name		VARCHAR(50)     NOT NULL, 
+    proctor_last_name   	VARCHAR(50)     NOT NULL,
+    proctor_email               VARCHAR(50)     NOT NULL UNIQUE,
+    proctor_phone               CHAR(12)        NULL UNIQUE -- pattern: 000-000-0000
 								CONSTRAINT valid_proctor_phone_number
 				                CHECK (proctor_phone SIMILAR TO '[0-9]{3}\-[0-9]{3}\-[0-9]{4}'),
     FOREIGN KEY (university, building)
@@ -122,6 +122,9 @@ CREATE TABLE students_tests (
    test_isAbsent                BOOLEAN         NOT NULL DEFAULT FALSE 
 );
 
+/* 
+This code was moved to the populate.sql file
+
 INSERT INTO students (student_first_name, student_last_name, student_email, student_phone)
 VALUES ('Bob','Smith', 'bob.smith@centre.edu', '678-999-8212'),
        ('Jacob', 'Jones', 'jacob.jones@centre.edu', '404-924-2412'),
@@ -143,8 +146,20 @@ VALUES ('Centre College', 'Young Hall', '08:00', '16:00', 10, 8);
 INSERT INTO tests (professor_id, university, building, test_date, test_time, test_end_time, test_duration, test_isPaper)
 VALUES (1, 'Centre College', 'Young Hall', '2019-11-25', '08:00', '10:00', 2, TRUE);
 
+INSERT INTO proctors(proctor_id, university, building, proctor_first_name, proctor_last_name,   
+                     proctor_email, proctor_phone)
+VALUES(1,'Centre College','Young Hall','Dr.','Allen','dr.allen@centre.edu','716-866-8886');
+
+INSERT INTO students_tests(student_id,test_id 
+)
+VALUES (1,1);
+
+
+--This code was moved to populate.sql
 SELECT * FROM students;
 SELECT * FROM professors;
 SELECT * FROM courses;
 SELECT * FROM testCenters;
 SELECT * FROM tests;
+
+*/
