@@ -1,0 +1,11 @@
+Checked
+- connect to DB
+- query from the table test (for now)
+
+
+
+
+
+To Do
+- create views for test information
+- edit/delete functions
