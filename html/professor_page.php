@@ -1,6 +1,6 @@
 <?php
 
-require('Iris_functions.php');
+require('professor_page_functions.php');
 
 /*  Queries the view display_ducks and displays the results as a table. */
 function display_tests($pdo) {
