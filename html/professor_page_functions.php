@@ -29,8 +29,8 @@ function dm($m, $c) // Shorthand
 function connect_to_psql($db, $verbose=FALSE)
 {
   $host = 'localhost'; 
-  $user = 'jiayu_jiang'; // YOU WILL HAVE TO EDIT THESE
-  $pass = 'Centre11';
+  $user = 'jake_burns'; // YOU WILL HAVE TO EDIT THESE
+  $pass = 'centrecollege';
   
   $dsn = "pgsql:host=$host;dbname=$db;user=$user;password=$pass";
   $options = [
