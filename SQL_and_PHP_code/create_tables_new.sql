@@ -69,10 +69,6 @@ CREATE TABLE tests (
     university                  VARCHAR(50)     NOT NULL,
     building                    VARCHAR(50)     NOT NULL,
 --  test_date_time              TIMESTAMP  (may use this instead of separate date and time. Is DATETIME).
-    test_date                   DATE            NOT NULL,
-	test_time               TIME            NOT NULL,
-    test_end_time               TIME            NOT NULL,
-    test_duration               INT             NOT NULL,
     test_isPaper                BOOLEAN         NOT NULL DEFAULT TRUE,
 	FOREIGN KEY(university,building)      
 		REFERENCES testCenters (university, building)
@@ -125,7 +121,11 @@ CREATE TABLE students_tests (
     test_id                     INT             NOT NULL                     
                                 REFERENCES tests (test_id)
                                 ON DELETE CASCADE,
-   test_isAbsent                BOOLEAN         NOT NULL DEFAULT FALSE 
+   test_isAbsent                BOOLEAN         NOT NULL DEFAULT FALSE,
+   test_date                    DATE            NOT NULL,
+	test_time                   TIME            NOT NULL,
+    test_end_time               TIME            NOT NULL,
+    test_duration               INT             NOT NULL
 );
 
 /* 
