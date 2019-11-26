@@ -27,6 +27,17 @@ SElECT students.student_first_name || ' ' ||students.student_last_name AS name,
       INNER JOIN professors ON (tests.professor_id = professors.professor_id)
       NATURAL JOIN proctors
  WHERE (tests.university = proctors.university AND /*current_data*/ '2019-11-25' = tests.test_date)
- ORDER BY tests.test_time,name;   
+ ORDER BY tests.test_time,name;
+ 
+ /* for professor_page */
+ CREATE VIEW professor_test
+ AS 
+ SELECT course_program || '' || course_code || '' || course_section AS course
+        STRING_AGG(student_first_name || '' || student_last_name, ', ') AS students
+        test_time || '' || test_end_time AS time
+        university || '' || building AS location
+   FROM tests
+        NATURAL JOIN students_tests
+        NATURAL JOIN students;
 
 SELECT * FROM tests_information;
