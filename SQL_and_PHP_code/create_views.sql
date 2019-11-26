@@ -34,11 +34,13 @@ SElECT students.student_first_name || ' ' ||students.student_last_name AS name,
  AS 
  SELECT course_program || ' ' || course_code || ' ' || course_section AS course,
         student_first_name || ' ' || student_last_name AS student,
-        test_time || '-' || test_end_time AS time,
+        test_date AS day,
+        SUBSTRING(test_time, 0, 5) || '-' || SUBSTRING(test_end_time, 0, 5) AS time,
         university || ', ' || building AS test_location
    FROM tests
         NATURAL JOIN students_tests
-        NATURAL JOIN students;
+        NATURAL JOIN students
+ORDER BY time, course, student, ;
 
 SELECT * FROM tests_information;
 SELECT * FROM professor_test;
