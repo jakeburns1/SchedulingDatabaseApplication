@@ -25,7 +25,7 @@ DEPENDENCIES: none
     <body>
        <h1 align='center'> <b>Welcome Back</b> </h1>
 
-       <h2 align ='center'>Upcomming exams</h2>
+       <h2 align ='center'>Upcoming exams</h2>
         <?php
            $pdo = connect_to_psql('acme_proctoring');
            $sql = <<<'SQL'
