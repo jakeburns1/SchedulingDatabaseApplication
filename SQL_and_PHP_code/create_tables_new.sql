@@ -60,11 +60,11 @@ CREATE TABLE tests (
     professor_id                INT             NOT NULL
                                 REFERENCES professors (professor_id)
 								ON DELETE RESTRICT,
-	course_code                 CHAR(3)         NOT NULL,
     course_program              CHAR(3)         NOT NULL,
+    course_code                 CHAR(3)         NOT NULL,
     course_section              CHAR(1)         DEFAULT NULL,
-	FOREIGN KEY (course_code, course_program, course_section)
-		REFERENCES courses (course_code, course_program, course_section)
+	FOREIGN KEY (course_program, course_code, course_section)
+		REFERENCES courses (course_program, course_code, course_section)
 	    ON DELETE RESTRICT,							
     university                  VARCHAR(50)     NOT NULL,
     building                    VARCHAR(50)     NOT NULL,
@@ -105,15 +105,15 @@ CREATE TABLE proctors (
 ); */
 
 CREATE TABLE students_courses (
-    PRIMARY KEY(student_id, course_code, course_program, course_section),
+    PRIMARY KEY(student_id, course_program, course_code, course_section),
     student_id                  INT             NOT NULL                     
                                 REFERENCES students (student_id)
                                 ON DELETE CASCADE,
-    course_code                 CHAR(3)         NOT NULL,
     course_program              CHAR(3)         NOT NULL,
+    course_code                 CHAR(3)         NOT NULL,
     course_section              CHAR(1)         DEFAULT NULL,
-	FOREIGN KEY (course_code, course_program, course_section)
-		REFERENCES courses (course_code, course_program, course_section)
+	FOREIGN KEY (course_program, course_code, course_section)
+		REFERENCES courses (course_program, course_code, course_section)
 	    ON DELETE RESTRICT
 );
 
