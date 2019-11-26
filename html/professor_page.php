@@ -1,5 +1,6 @@
 <?php
-
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
 require('professor_page_functions.php');
 
 /*  Queries the view display_ducks and displays the results as a table. */
