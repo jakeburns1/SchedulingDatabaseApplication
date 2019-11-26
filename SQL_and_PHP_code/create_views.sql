@@ -27,7 +27,7 @@ SElECT students.student_first_name || ' ' ||students.student_last_name AS name,
       INNER JOIN professors ON (tests.professor_id = professors.professor_id)
       NATURAL JOIN proctors
  WHERE (tests.university = proctors.university AND /*current_data*/ '2019-11-25' = students_tests.test_date)
- ORDER BY tests.test_time,name;
+ ORDER BY students_tests.test_time,name;
  
  /* for professor_page */
  CREATE VIEW professor_test
@@ -35,7 +35,7 @@ SElECT students.student_first_name || ' ' ||students.student_last_name AS name,
  SELECT course_program || ' ' || course_code || ' ' || course_section AS course,
         student_first_name || ' ' || student_last_name AS student,
         students_tests.test_date AS day,
-        CONVERT(varchar(15), students_tests.test_time, 100) || '-' || CONVERT(varchar(15), students_tests.test_end_time, 100) AS time,
+        CONVERT(varchar, students_tests.test_time, 100) || '-' || CONVERT(varchar, students_tests.test_end_time, 100) AS time,
         university || ', ' || building AS test_location
    FROM tests
         NATURAL JOIN students_tests
