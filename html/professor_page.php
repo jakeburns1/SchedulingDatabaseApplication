@@ -12,11 +12,12 @@ function display_tests($pdo) {
   echo '<form method="post">';
   
   echo '<table>';
-  echo '<tr><th>Course</th><th>Student</th><th>Test Time</th><th>Test Location</th><th></th><th></th></tr>';
+  echo '<tr><th>Course</th><th>Student</th><th>Test Date</th><th>Test Time</th><th>Test Location</th><th></th><th></th></tr>';
   foreach ($data as $row) {
 	echo '<tr>';
     echo '<td>' . $row['course'] . '</td>';
 	echo '<td>' . $row['student'] . '</td>';
+	echo '<td>' . $row['day'] . '</td>';
 	echo '<td>' . $row['time'] . '</td>';
 	echo '<td>' . $row['test_location'] . '</td>';
 	echo '<td><input type="submit" name= "delete" value="Delete" /></td>';
