@@ -11,8 +11,8 @@ DROP VIEW IF EXISTS tests_information;
 CREATE VIEW tests_information
 AS
 SElECT students.student_first_name || ' ' ||students.student_last_name AS name,
-       tests.test_date,
-       tests.test_time,
+       students_tests.test_date,
+       students_tests.test_time,
        tests.test_id,
        tests.test_isPaper,
        professor_first_name || ' ' || professor_last_name As professor_name,
@@ -34,13 +34,12 @@ SElECT students.student_first_name || ' ' ||students.student_last_name AS name,
  AS 
  SELECT course_program || ' ' || course_code || ' ' || course_section AS course,
         student_first_name || ' ' || student_last_name AS student,
-        test_date AS day,
-        SUBSTRING(test_time, 0, 5) || '-' || SUBSTRING(test_end_time, 0, 5) AS time,
+        students_tests.test_date AS day,
+        SUBSTRING(students_tests.test_time, 0, 5) || '-' || SUBSTRING(students_tests.test_end_time, 0, 5) AS time,
         university || ', ' || building AS test_location
    FROM tests
         NATURAL JOIN students_tests
-        NATURAL JOIN students
-ORDER BY time, course, student, ;
+        NATURAL JOIN students;
 
 SELECT * FROM tests_information;
 SELECT * FROM professor_test;
