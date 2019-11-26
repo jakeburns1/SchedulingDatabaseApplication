@@ -4,7 +4,7 @@ require('professor_page_functions.php');
 
 /*  Queries the view display_ducks and displays the results as a table. */
 function display_tests($pdo) {
-  $sql = 'SELECT * FROM create_views';
+  $sql = 'SELECT * FROM tests_info';
   $data = $pdo->query($sql);
   
   echo '<h1>Test Schedule</h1>';
