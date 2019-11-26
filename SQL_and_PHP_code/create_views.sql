@@ -39,7 +39,7 @@ SElECT students.student_first_name || ' ' ||students.student_last_name AS name,
    FROM tests
         NATURAL JOIN students_tests
         NATURAL JOIN students
-GROUP BY course;
+GROUP BY course, time, location;
 
 SELECT * FROM tests_information;
 SELECT * FROM professor_test;
