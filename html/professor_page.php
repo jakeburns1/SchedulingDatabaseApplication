@@ -17,7 +17,7 @@ function display_tests($pdo) {
 	echo '<tr>';
     echo '<td>' . $row['course'] . '</td>';
 	echo '<td>' . $row['student'] . '</td>';
-	echo '<td>' . $row['day'] . '</td>';
+	echo '<td>' . $row['test_day'] . '</td>';
 	echo '<td>' . $row['time'] . '</td>';
 	echo '<td>' . $row['test_location'] . '</td>';
 	echo '<td><input type="submit" name= "delete" value="Delete" /></td>';
