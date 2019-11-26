@@ -32,10 +32,10 @@ SElECT students.student_first_name || ' ' ||students.student_last_name AS name,
  /* for professor_page */
  CREATE VIEW professor_test
  AS 
- SELECT course_program || '' || course_code || '' || course_section AS course,
+ SELECT course_program || ' ' || course_code || ' ' || course_section AS course,
         STRING_AGG(student_first_name || '' || student_last_name, ', ') AS students,
-        test_time || '' || test_end_time AS time,
-        university || '' || building AS test_location
+        test_time || '-' || test_end_time AS time,
+        university || ', ' || building AS test_location
    FROM tests
         NATURAL JOIN students_tests
         NATURAL JOIN students
