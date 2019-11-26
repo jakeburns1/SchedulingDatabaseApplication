@@ -32,32 +32,31 @@ VALUES ('CSC', '221', 'a', 1),
 INSERT INTO testcenters (university, building, time_open, time_close, available_seats, available_computers)
 VALUES ('Centre College', 'Young Hall', '08:00', '16:00', 10, 8);
 
-INSERT INTO tests (professor_id, course_program, course_code, course_section, university, building, test_date, test_time, test_end_time, test_duration, test_isPaper)
-VALUES (1, 'CSC', '221', 'a', 'Centre College', 'Young Hall', '2019-11-25', '08:00', '10:00', 2, TRUE),
-       (1, 'PSY', '110', 'a', 'Centre College', 'Young Hall', '2019-11-25', '08:00', '9:00', 1, TRUE),
-       (2, 'DRA', '110', 'b', 'Centre College', 'Young Hall', '2019-11-25', '09:00', '10:00', 1, TRUE),
-       (2, 'REL', '130', 'a', 'Centre College', 'Young Hall', '2019-11-25', '09:00', '10:00', 1, TRUE),
-       (3, 'MAT', '240', 'a', 'Centre College', 'Young Hall', '2019-11-25', '13:00', '14:00', 1, TRUE),
-       (3, 'CLA', '350', 'b', 'Centre College', 'Young Hall', '2019-11-25', '13:00', '14:00', 1, TRUE);
+INSERT INTO tests (professor_id, course_program, course_code, course_section, university, building, test_isPaper)
+VALUES (1, 'CSC', '221', 'a', 'Centre College', 'Young Hall', TRUE),
+       (1, 'PSY', '110', 'a', 'Centre College', 'Young Hall', TRUE),
+       (2, 'DRA', '110', 'b', 'Centre College', 'Young Hall', TRUE),
+       (2, 'REL', '130', 'a', 'Centre College', 'Young Hall', TRUE),
+       (3, 'MAT', '240', 'a', 'Centre College', 'Young Hall', TRUE),
+       (3, 'CLA', '350', 'b', 'Centre College', 'Young Hall', TRUE);
 
 INSERT INTO proctors(proctor_id, university, building, proctor_first_name, proctor_last_name,   
 	                     proctor_email, proctor_phone)
 VALUES(1,'Centre College','Young Hall','Thomas','Allen','thomas.allen@centre.edu','432-213-4132');
 VALUES(2,'Centre College','Young Hall','Michael','Bradshaw','michael.bradshaw@centre.edu','241-421-631');
 
-INSERT INTO students_tests(student_id,test_id 
-)
-VALUES (1,1),
-       (1,4),
-       (2,1),
-       (3,2),
-       (4,4),
-       (5,5),
-       (6,6),
-       (7,5),
-       (8,4),
-       (9,3),
-       (10,2);
+INSERT INTO students_tests(student_id,test_id, test_date, test_time, test_end_time, test_duration)
+VALUES (1,1, '2019-11-25', '08:00', '10:00', 2),
+       (1,4, '2019-11-25', '08:00', '9:00', 1),
+       (2,1, '2019-11-25', '09:00', '10:00', 1),
+       (3,2, '2019-11-25', '09:00', '10:00', 1),
+       (4,4, '2019-11-25', '13:00', '14:00', 1),
+       (5,5, '2019-11-25', '13:00', '14:00', 1),
+       (6,6, '2019-11-25', '13:00', '14:00', 1),
+       (7,5, '2019-11-25', '14:00', '15:00', 1),
+       (8,4, '2019-11-25', '13:00', '15:00', 2),
+       (9,3, '2019-11-25', '13:00', '14:00', 1),
+       (10,2, '2019-11-25', '13:00', '14:00', 1);
       
 
 /* verification that code inserted properly*/
