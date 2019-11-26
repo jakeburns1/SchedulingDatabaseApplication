@@ -4,7 +4,7 @@ require('professor_page_functions.php');
 
 /*  Queries the view display_ducks and displays the results as a table. */
 function display_tests($pdo) {
-  $sql = 'SELECT * FROM tests';
+  $sql = 'SELECT * FROM create_views';
   $data = $pdo->query($sql);
   
   echo '<h1>Test Schedule</h1>';
@@ -14,7 +14,7 @@ function display_tests($pdo) {
   echo '<tr><th>Course</th><th>Students</th><th>Test Time</th><th></th>Test Location<th></th></tr>';
   foreach ($data as $row) {
 	echo '<tr>';
-    echo '<td></td>';
+    echo '<td>' . $row['name'] . '</td>';
 	echo '<td></td>';
 	echo '<td>' . $row['test_time'] . '</td>';
 	echo '<td>' . $row['test_location'] . '</td>';
