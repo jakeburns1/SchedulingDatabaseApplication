@@ -123,8 +123,8 @@ CREATE TABLE students_tests (
                                 ON DELETE CASCADE,
    test_isAbsent                BOOLEAN         NOT NULL DEFAULT FALSE,
    test_date                    DATE            NOT NULL,
-	test_time                   TIME            NOT NULL,
-    test_end_time               TIME            NOT NULL,
+	test_time                   TIMESTAMP       NOT NULL,
+    test_end_time               TIMESTAMP       NOT NULL,
     test_duration               INT             NOT NULL
 );
 
