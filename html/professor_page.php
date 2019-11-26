@@ -8,7 +8,7 @@ function display_tests($pdo) {
   $sql = 'SELECT * FROM professor_test';
   $data = $pdo->query($sql);
   
-  echo '<h1>Test Schedule</h1>';
+  echo '<h1 align="center">Test Schedule</h1>';
   echo '<form method="post">';
   
   echo '<table>';
