@@ -88,7 +88,8 @@ SQL;
        function main()
 	   {
              var_dump($_POST);
-	     $pdo = connect_to_psql('acme_proctoring');
+//	     $pdo = connect_to_psql('acme_proctoring');
+            $pdo = connect_to_psql('project');
 	//     $edit = process_post($pdo);
 //	     if($edit===true)
 //	     {
