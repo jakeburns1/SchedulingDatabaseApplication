@@ -2,14 +2,15 @@
 AUTHOR: HENRY GUNNER
 NAME: proctors.php
 PURPOSE: create and fill proctor home page
-DEPENDENCIES: none
+DEPENDENCIES: professor_page_functions.php
 --> 
 
 <html>
   <head>
     <Title> Proctor Home Page</Title>
     <?php
-      require('functions.php');
+        require('professor_page_functions.php');
+  //    require('functions.php');
       ini_set('display_errors',1);
       error_reporting(E_ALL);
     ?>
