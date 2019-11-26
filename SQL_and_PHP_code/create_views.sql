@@ -11,12 +11,12 @@ DROP VIEW IF EXISTS tests_information;
 CREATE VIEW tests_information
 AS
 SElECT students.student_first_name || ' ' ||students.student_last_name AS name,
-       tests.test_date,
-       tests.test_time,
-       tests.test_id,
-       tests.test_isPaper,
+       tests.test_date AS test_date,
+       tests.test_time AS test_time,
+       tests.test_id AS test_id,
+       tests.test_isPaper AS test_isPaper,
        professor_first_name || ' ' || professor_last_name As professor_name,
-       professors.professor_id 
+       professors.professor_id AS professor_id
     /*   CASE WHEN tests.professor_id IN (SELECT professor_id, FROM professors) 
 	                            THEN professor_name
             ELSE ''
