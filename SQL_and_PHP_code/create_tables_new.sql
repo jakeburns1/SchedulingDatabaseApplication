@@ -38,7 +38,7 @@ CREATE TABLE courses (
     PRIMARY KEY (course_program, course_code, course_section),
     course_program	        CHAR(3)         NOT NULL,
     course_code                 CHAR(3)         NOT NULL,
-    course_section              CHAR(1)         DEFAULT NULL,
+    course_section              CHAR(1)         NOT NULL,
     professor_id                INT             NOT NULL      
                                 REFERENCES professors (professor_id)
                                 ON DELETE RESTRICT
@@ -62,7 +62,7 @@ CREATE TABLE tests (
 								ON DELETE RESTRICT,
     course_program              CHAR(3)         NOT NULL,
     course_code                 CHAR(3)         NOT NULL,
-    course_section              CHAR(1)         DEFAULT NULL,
+    course_section              CHAR(1)         NOT NULL,
 	FOREIGN KEY (course_program, course_code, course_section)
 		REFERENCES courses (course_program, course_code, course_section)
 	    ON DELETE RESTRICT,							
@@ -111,7 +111,7 @@ CREATE TABLE students_courses (
                                 ON DELETE CASCADE,
     course_program              CHAR(3)         NOT NULL,
     course_code                 CHAR(3)         NOT NULL,
-    course_section              CHAR(1)         DEFAULT NULL,
+    course_section              CHAR(1)         NOT NULL,
 	FOREIGN KEY (course_program, course_code, course_section)
 		REFERENCES courses (course_program, course_code, course_section)
 	    ON DELETE RESTRICT
