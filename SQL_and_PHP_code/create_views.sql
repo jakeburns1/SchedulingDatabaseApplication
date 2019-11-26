@@ -15,6 +15,7 @@ SElECT students.student_first_name || ' ' ||students.student_last_name AS name,
        students_tests.test_time,
        tests.test_id,
        tests.test_isPaper,
+       tests.course_program || ' ' || tests.course_code || ' '|| tests.course_section As class,
        professor_first_name || ' ' || professor_last_name As professor_name,
        professors.professor_id
     /*   CASE WHEN tests.professor_id IN (SELECT professor_id, FROM professors) 
