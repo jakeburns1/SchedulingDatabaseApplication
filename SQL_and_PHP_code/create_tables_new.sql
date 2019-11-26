@@ -60,6 +60,12 @@ CREATE TABLE tests (
     professor_id                INT             NOT NULL
                                 REFERENCES professors (professor_id)
 								ON DELETE RESTRICT,
+	course_code                 CHAR(3)         NOT NULL,
+    course_program              CHAR(3)         NOT NULL,
+    course_section              CHAR(1)         DEFAULT NULL,
+	FOREIGN KEY (course_code, course_program, course_section)
+		REFERENCES courses (course_code, course_program, course_section)
+	    ON DELETE RESTRICT,							
     university                  VARCHAR(50)     NOT NULL,
     building                    VARCHAR(50)     NOT NULL,
 --  test_date_time              TIMESTAMP  (may use this instead of separate date and time. Is DATETIME).
