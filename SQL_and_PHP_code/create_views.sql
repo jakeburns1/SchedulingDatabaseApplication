@@ -35,11 +35,11 @@ SElECT students.student_first_name || ' ' ||students.student_last_name AS name,
  SELECT course_program || '' || course_code || '' || course_section AS course,
         STRING_AGG(student_first_name || '' || student_last_name, ', ') AS students,
         test_time || '' || test_end_time AS time,
-        university || '' || building AS location
+        university || '' || building AS testLocation
    FROM tests
         NATURAL JOIN students_tests
         NATURAL JOIN students
-GROUP BY course, time, location;
+GROUP BY course, time, testLocation;
 
 SELECT * FROM tests_information;
 SELECT * FROM professor_test;
