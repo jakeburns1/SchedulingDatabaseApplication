@@ -38,7 +38,8 @@ SElECT students.student_first_name || ' ' ||students.student_last_name AS name,
         university || '' || building AS location
    FROM tests
         NATURAL JOIN students_tests
-        NATURAL JOIN students;
+        NATURAL JOIN students
+GROUP BY course;
 
 SELECT * FROM tests_information;
 SELECT * FROM professor_test;
