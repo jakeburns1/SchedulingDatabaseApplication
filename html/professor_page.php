@@ -11,7 +11,7 @@ function display_tests($pdo) {
   echo '<form method="post">';
   
   echo '<table>';
-  echo '<tr><th>Course</th><th>Students</th><th>Test Time</th><th></th>Test Location<th></th></tr>';
+  echo '<tr><th>Course</th><th>Student</th><th>Test Time</th><th></th>Test Location<th></th><th></th></tr>';
   foreach ($data as $row) {
 	echo '<tr>';
     echo '<td></td>';
