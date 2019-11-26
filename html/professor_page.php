@@ -14,7 +14,7 @@ function display_tests($pdo) {
   echo '<tr><th>Course</th><th>Students</th><th>Test Time</th><th></th>Test Location<th></th></tr>';
   foreach ($data as $row) {
 	echo '<tr>';
-    echo '<td>' . $row['name'] . '</td>';
+    echo '<td></td>';
 	echo '<td></td>';
 	echo '<td>' . $row['test_time'] . '</td>';
 	echo '<td>' . $row['test_location'] . '</td>';
