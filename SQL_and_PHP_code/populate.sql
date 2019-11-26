@@ -32,13 +32,13 @@ VALUES ('CSC', '221', 'a', 1),
 INSERT INTO testcenters (university, building, time_open, time_close, available_seats, available_computers)
 VALUES ('Centre College', 'Young Hall', '08:00', '16:00', 10, 8);
 
-INSERT INTO tests (professor_id, university, building, test_date, test_time, test_end_time, test_duration, test_isPaper)
-VALUES (1, 'Centre College', 'Young Hall', '2019-11-25', '08:00', '10:00', 2, TRUE),
-       (1, 'Centre College', 'Young Hall', '2019-11-25', '08:00', '9:00', 1, TRUE),
-       (2, 'Centre College', 'Young Hall', '2019-11-25', '09:00', '10:00', 1, TRUE),
-       (2, 'Centre College', 'Young Hall', '2019-11-25', '09:00', '10:00', 1, TRUE),
-       (3, 'Centre College', 'Young Hall', '2019-11-25', '13:00', '14:00', 1, TRUE),
-       (3, 'Centre College', 'Young Hall', '2019-11-25', '13:00', '14:00', 1, TRUE);
+INSERT INTO tests (professor_id, course_program, course_code, course_section, university, building, test_date, test_time, test_end_time, test_duration, test_isPaper)
+VALUES (1, 'CSC', '221', 'a', 'Centre College', 'Young Hall', '2019-11-25', '08:00', '10:00', 2, TRUE),
+       (1, 'PSY', '110', 'a', 'Centre College', 'Young Hall', '2019-11-25', '08:00', '9:00', 1, TRUE),
+       (2, 'DRA', '110', 'b', 'Centre College', 'Young Hall', '2019-11-25', '09:00', '10:00', 1, TRUE),
+       (2, 'REL', '130', 'a', 'Centre College', 'Young Hall', '2019-11-25', '09:00', '10:00', 1, TRUE),
+       (3, 'MAT', '240', 'a', 'Centre College', 'Young Hall', '2019-11-25', '13:00', '14:00', 1, TRUE),
+       (3, 'CLA', '350', 'b', 'Centre College', 'Young Hall', '2019-11-25', '13:00', '14:00', 1, TRUE);
 
 INSERT INTO proctors(proctor_id, university, building, proctor_first_name, proctor_last_name,   
 	                     proctor_email, proctor_phone)
