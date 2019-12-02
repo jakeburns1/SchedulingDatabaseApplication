@@ -75,7 +75,7 @@ $pdo =connect_to_psql($dBase);
 	       
 	       if ( isset( $_POST['username'] ) && isset( $_POST['password'] ) ) {
 	             $stmt = $pdo->prepare("SELECT * FROM users WHERE username = ?");
-                 $stmt->bind_param('s', $username);   
+                 $stmt->bindParam('s', $username);   
                  
                  
              if ( password_verify( $_POST['password'], $hashed_password) ) {
