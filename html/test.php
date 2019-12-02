@@ -70,7 +70,7 @@ $pdo =connect_to_psql($dBase);
 	       
 	       $insertAccountSQL = "UPDATE users SET password = :hashedPass WHERE username = 'testUser';";
 	       $stmt = $pdo->prepare($insertAccountSQL);
-	       $stmt->bind_param('s', $hashed_password);
+	       $stmt->bindParam('s', $hashed_password);
 	       $stmt->execute();
 	       
 	       if ( isset( $_POST['username'] ) && isset( $_POST['password'] ) ) {
