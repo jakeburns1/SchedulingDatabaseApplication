@@ -63,16 +63,33 @@ function connect_to_psql($db, $verbose=FALSE)
 	  }
 $dBase = 'project';
 $pdo =connect_to_psql($dBase);
-
-	       $username = 'testUser';
-	       $password = 'thomasallen';
+    
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 	       
-	      /* $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-	       
-	       $insertAccountSQL = "INSERT INTO users VALUES ($username,$hashed_password);";
+	       $insertAccountSQL = "UPDATE users SET password = $hashed_password WHERE username = 'testUser';";
 	       $stmt = $pdo->prepare($insertAccountSQL);
 	       $stmt->execute();
-	       */
+	       
+	       if ( isset( $_POST['username'] ) && isset( $_POST['password'] ) ) {
+	             $stmt = $pdo->prepare("SELECT * FROM users WHERE username = ?");
+                 $stmt->bind_param('s', $username);   
+                 
+                 
+             if ( password_verify( $_POST['password'], $hashed_password) ) {
+    		$_SESSION['user_id'] = $user;
+    		echo "password was correct";
+    	}
+    	else{
+    	    
+    	    echo "password was incorrect";
+    	}
+	       }
+	       
+	       
+	       
+	      
 
 	     ?>
 	</body>
