@@ -10,7 +10,6 @@
 	    username: <input type = 'text' name = 'username' value="testing"> <br>
 	    password: <input type = 'password' name = 'password'><br>
 
-	    <button type="button" name= "button">login as professor</button>
 	    <input type="submit" value = "login"><br>
 	    <a href="professor_page.php">professor page</a>
 	    <a href="proctors.php">proctor page</a>
