@@ -22,7 +22,9 @@
 	       
 	       $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 	       
-	       $insertAccountSQL = 'INSERT INTO users ';
+	       $insertAccountSQL = 'INSERT INTO users VALUES ($username,$hashed_password)';
+	       
+	       
 
 	     ?>
 	</body>
