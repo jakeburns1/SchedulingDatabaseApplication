@@ -8,6 +8,7 @@ DEPENDENCIES: professor_page_functions.php
 <html>
   <head>
     <Title> Proctor Home Page</Title>
+    <a href = "professor_page.php">Professor Page</a>
     <?php
         require('professor_page_functions.php');
   //    require('functions.php');
