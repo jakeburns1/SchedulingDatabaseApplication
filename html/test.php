@@ -6,7 +6,7 @@
 	<body>
 	  <h1 align = 'center'> Welcome to Acme Proctoring. Please login below!</h1>
 
-	  <form align = 'center'>
+	  <form method = 'post' align = 'center'>
 	    username: <input type = 'text' name = 'username' value="testing"> <br>
 	    password: <input type = 'password' name = 'password'><br>
 
@@ -17,10 +17,13 @@
 	  
 	  
 	  <?php
-	     $username = $_POST['username'];
-	     $password = $_POST['password'];
+	       $username = 'testUser';
+	       $password = 'thomasallen';
+	       
+	       $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+	       
+	       var_dump($hashed_password);
 
-	     echo "$username";
 	     ?>
 	</body>
 	</html>
