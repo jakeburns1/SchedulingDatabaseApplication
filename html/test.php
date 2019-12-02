@@ -11,7 +11,7 @@
 	    password: <input type = 'password' name = 'password'><br>
 
 	    <button type="button" name= "button">login as professor</button>
-	    <button type="button">login as proctor</button><br>
+	    <input type="submit" value = "login"><br>
 	    <a href="professor_page.php">professor page</a>
 	    <a href="proctors.php">proctor page</a>
 	  </form>
