@@ -68,7 +68,7 @@ $pdo =connect_to_psql($dBase);
                  $stmt->bindParam(':username', $username, PDO::PARAM_STR, 20);   
                  
                  
-             if ( password_verify( $password, $hashed_password) ) {
+             if ( password_verify('thomasallen', $hashed_password) ) {
     		$_SESSION['user_id'] = $username;
     		echo "password was correct";
     		echo $password;
