@@ -55,8 +55,6 @@ $pdo =connect_to_psql($dBase);
 	       $stmt->execute();
         $hashed_password = $stmt->fetchColumn();
     
-        echo $hashed_password;
-
 	   /*  
 	       $insertAccountSQL = "UPDATE users SET password = :hashedPass WHERE username = 'testUser';";
 	       $stmt = $pdo->prepare($insertAccountSQL);
@@ -71,8 +69,6 @@ $pdo =connect_to_psql($dBase);
              if ( password_verify($password, $hashed_password) ) {
     		$_SESSION['user_id'] = $username;
     		echo "password was correct";
-    		echo $password;
-    		echo $hashed_password;
     	}
     	else{
     	    
