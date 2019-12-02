@@ -68,7 +68,7 @@ $pdo =connect_to_psql($dBase);
 	       
 	       $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 	       
-	       $insertAccountSQL = 'INSERT INTO users VALUES ($username,$hashed_password);';
+	       $insertAccountSQL = "INSERT INTO users VALUES ($username,$hashed_password);";
 	       $stmt = $pdo->prepare($insertAccountSQL);
 	       $stmt->execute();
 	       
