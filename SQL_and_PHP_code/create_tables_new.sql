@@ -129,6 +129,11 @@ CREATE TABLE students_tests (
     test_duration               INT             NOT NULL
 );
 
+CREATE TABLE users (
+    username                    VARCHAR(20),
+    password                    VARCHAR(200)
+);
+
 /* 
 This code was moved to the populate.sql file
 
