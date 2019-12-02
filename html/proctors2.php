@@ -1,13 +1,17 @@
-!--Proctors page--> 
-
+<!--
+AUTHOR: HENRY GUNNER
+NAME: proctors.php
+PURPOSE: create and fill proctor home page
+DEPENDENCIES: professor_page_functions.php
+--> 
 <!--This script runs the stuff for the proctors home page-->
 
 <html>
   <head>
     <Title> Proctor Home Page</Title>
     <?php
-  //    require('professor_page_functions.php');
-      require('functions.php');
+      require('professor_page_functions.php');
+    //  require('functions.php');
       ini_set('display_errors',1);
       error_reporting(E_ALL);
     ?>
@@ -336,16 +340,14 @@ SQL;
 	   function editButton($pdo)
 	   {
              $test = selectTest($pdo); 
-             
 	   }
 
-           function main() // Main function. 
+       function main() // Main function. 
 	   {
-	       $pdo = connect_to_psql('acme_proctoring');
-               setTimeZone($pdo);
-	       //$pdo = connect_to_psql('project'); //this should not be commented out. 
-
-               if(isset($_POST['edit']))
+	      // $pdo = connect_to_psql('acme_proctoring');
+	       $pdo = connect_to_psql('project'); //this should not be commented out. 
+           setTimeZone($pdo);
+           if(isset($_POST['edit']))
 	       { 
 		  editButton($pdo);
                   echo"<UL><a href = 'proctors.php'>return to home</a></UL>";
