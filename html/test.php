@@ -6,7 +6,7 @@
 	<body>
 	  <h1 align = 'center'> Welcome to Acme Proctoring. Please login below!</h1>
 
-	  <form method = 'post' align = 'center'>
+	  <form source = 'runLogin.php' method = 'post' align = 'center'>
 	    username: <input type = 'text' name = 'username' value="testing"> <br>
 	    password: <input type = 'password' name = 'password'><br>
 
