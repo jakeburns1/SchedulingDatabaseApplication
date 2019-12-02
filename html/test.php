@@ -79,7 +79,7 @@ $pdo =connect_to_psql($dBase);
                  
                  
              if ( password_verify( $_POST['password'], $hashed_password) ) {
-    		$_SESSION['user_id'] = $user;
+    		$_SESSION['user_id'] = $username;
     		echo "password was correct";
     	}
     	else{
