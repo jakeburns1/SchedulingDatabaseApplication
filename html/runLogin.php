@@ -47,20 +47,20 @@ $dBase = 'project';
 $pdo =connect_to_psql($dBase);
     
     $username = $_POST['username'];
-    $password = $_POST['password'];
-         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-	       
+    $password = $_POST['password']; 
+         $hashed_password = password_hash('thomasallen', PASSWORD_DEFAULT);
+	/*       
 	       $insertAccountSQL = "UPDATE users SET password = :hashedPass WHERE username = 'testUser';";
 	       $stmt = $pdo->prepare($insertAccountSQL);
 	       $stmt->bindParam(':hashedPass', $hashed_password, PDO::PARAM_STR, 100);
 	       $stmt->execute();
-	       
+	       */
 	       if ( isset( $_POST['username'] ) && isset( $_POST['password'] ) ) {
 	             $stmt = $pdo->prepare("SELECT * FROM users WHERE username = :username");
                  $stmt->bindParam(':username', $username, PDO::PARAM_STR, 20);   
                  
                  
-             if ( password_verify( $_POST['password'], $hashed_password) ) {
+             if ( password_verify( $password, $hashed_password) ) {
     		$_SESSION['user_id'] = $username;
     		echo "password was correct";
     	}
