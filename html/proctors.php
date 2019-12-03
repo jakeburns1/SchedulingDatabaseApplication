@@ -6,8 +6,8 @@
   <head>
     <Title> Proctor Home Page</Title>
     <?php
-  //    require('professor_page_functions.php');
-      require('functions.php');
+      require('professor_page_functions.php');
+//      require('functions.php');
       ini_set('display_errors',1);
       error_reporting(E_ALL);
     ?>
@@ -387,11 +387,11 @@ SQL;
 
 	   }
 
-           function main() // Main function. 
+       function main() // Main function. 
 	   {
-	       $pdo = connect_to_psql('acme_proctoring');
-               setTimeZone($pdo);
-	       //$pdo = connect_to_psql('project'); //this should not be commented out. 
+	       //$pdo = connect_to_psql('acme_proctoring');
+	       $pdo = connect_to_psql('project'); //this should not be commented out. 
+	        setTimeZone($pdo);
 
                if(isset($_POST['edit']))
 	       { 
