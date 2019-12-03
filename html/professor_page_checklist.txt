@@ -1,3 +1,0 @@
-- delete button works
-- edit button works
-    - <input type='date' & type='time'>
