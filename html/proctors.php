@@ -5,9 +5,10 @@
 <html>
     <?php
 if ( isset( $_SESSION['user_id'] ) ) {
-   
+    echo "logged in";
 } else {
     // Redirect them to the login page
+    echo "logged out";
     header("http://104.197.235.157/html/login.php");
 }
 ?>
