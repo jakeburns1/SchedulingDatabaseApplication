@@ -28,6 +28,7 @@
        <h2 align ='center'>Upcomming exams</h2>
        <?php
         echo $_SESSION['user_id'];
+        echo "<form method = 'post' action = 'logout.php'> <input type = 'submit' value = 'logout'</form>";
            function displayTests($pdo) // Creates the table displaying test information for current day
 	   {
              $sql = <<<'SQL'
