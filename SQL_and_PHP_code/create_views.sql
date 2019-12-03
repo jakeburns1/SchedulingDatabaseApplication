@@ -26,7 +26,7 @@ SElECT students.student_first_name || ' ' ||students.student_last_name AS name,
       NATURAL JOIN tests
       INNER JOIN professors ON (tests.professor_id = professors.professor_id)
       NATURAL JOIN proctors
- WHERE (tests.university = proctors.university AND /*current_data*/ '2019-11-25' = students_tests.test_date)
+ WHERE (tests.university = proctors.university AND /*current_data*/ students_tests.test_date = '2019-11-25')
  ORDER BY students_tests.test_time,name;
  
  /* for professor_page */
