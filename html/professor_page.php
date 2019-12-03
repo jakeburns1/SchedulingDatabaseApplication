@@ -45,6 +45,27 @@ if (isset($_POST['update'])) {
 	$stmt->execute($data);
 }
 
+if (isset($_POST['add'])) {
+    echo "<form method='post' id='add_form'>";
+    echo "<p>Course Program:</p>";
+	echo "<input type='text' name='course_program' />";
+	echo "<p>Course Code:</p>";
+	echo "<input type='text' name='course_code' />";
+	echo "<p>Course Section:</p>";
+	echo "<input type='text' name='course_section' />";
+	echo "<p>Student First Name:</p>";
+	echo "<select name='student_first_name'><option selected>Choose one</option>";
+	$sql = 'SELECT student_first_name FROM students';
+	$data = $pdo->query($sql);
+
+    foreach ($data as $row) {
+		echo "<option value='" . $row['student_id'] . "'>" . $row['student_first_name'] . "</option>";
+	}
+	echo "</select><br><br>";
+	echo "<input type='submit' name='confirm' value='Confirm' /></form>";
+}
+
+
 				     
 
 
