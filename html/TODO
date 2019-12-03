@@ -5,4 +5,4 @@ proctors.php:
     -display proctor's weekly schedule based on username from $_SESSION variable. Direct query from proctors -> proctors_schedule
     
 runLogin.php:
-    -Login verifies, need to send client to professor or proctor page based on username (email). Query professors/proctors tables and determine which has num_rows > 0
+    -Login verifies, sends client to professor or proctor page based on username (is professor or proctor email??)
