@@ -62,33 +62,30 @@ $pdo =connect_to_psql($dBase);
 	       $stmt->execute();
 	       */
 	       if ( isset( $_POST['username'] ) && isset( $_POST['password'] ) ) {
-	            /* $stmt = $pdo->prepare("SELECT * FROM users WHERE username = :username");
-                 $stmt->bindParam(':username', $username, PDO::PARAM_STR, 20);   
-                 */
-                 
-             if ( password_verify($password, $hashed_password) ) {
-    		$_SESSION['user_id'] = $username;
-    		echo "password was correct";
-    		
-    		$result = $pdo->prepare("SELECT * FROM professors WHERE professor_email = :username");
-    		 $result->bindParam(':username', $username, PDO::PARAM_STR, 20);  
-    		$result->execute();
-                if ($result->fetch())
-                {
-                    header('Location: http://104.197.235.157/html/professor_page.php');
+                
+                //hash password and verify login
+                if ( password_verify($password, $hashed_password) ) {
+            		$_SESSION['user_id'] = $username;
+            		echo "password was correct";
+            		
+            		//determine whether professor or proctor
+            		$result = $pdo->prepare("SELECT * FROM professors WHERE professor_email = :username");
+            		$result->bindParam(':username', $username, PDO::PARAM_STR, 20);  
+            		$result->execute();
+                    if ($result->fetch())
+                    {
+                        header('Location: http://104.197.235.157/html/professor_page.php');
+                    }
+                    else
+                    {
+                        
+                        header('Location: http://104.197.235.157/html/proctors.php');
+                        echo $result->pg_num_rows;
+                    }
                 }
-                else
-                {
-                    
-                    header('Location: http://104.197.235.157/html/proctors.php');
-                    echo $result->pg_num_rows;
-                }
-            
-    	}
-    	else{
-    	    
-    	    echo "password was incorrect";
-    	}
+    	        else{
+    	            echo "password was incorrect";
+    	        }
 	       }
 	       
 	       
