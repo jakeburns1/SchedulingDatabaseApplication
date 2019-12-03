@@ -1,7 +1,9 @@
 <!--Proctors page--> 
 
 <!--This script runs the stuff for the proctors home page-->
-<?php
+
+<html>
+    <?php
 if ( isset( $_SESSION['user_id'] ) ) {
    
 } else {
@@ -9,7 +11,6 @@ if ( isset( $_SESSION['user_id'] ) ) {
     header("http://104.197.235.157/html/login.php");
 }
 ?>
-<html>
   <head>
     <Title> Proctor Home Page</Title>
     <?php
