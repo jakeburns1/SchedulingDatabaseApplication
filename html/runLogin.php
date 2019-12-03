@@ -73,11 +73,11 @@ $pdo =connect_to_psql($dBase);
     		$result = $pdo->prepare("SELECT * from professors WHERE professor.email = $username");
                 if ($result->num_rows > 0)
                 {
-                    header('Location: http://104.197.235.157/professor_page.php');
+                    header('Location: http://104.197.235.157/html/professor_page.php');
                 }
                 else
                 {
-                    header('Location: http://104.197.235.157/proctors.php');
+                    header('Location: http://104.197.235.157/html/proctors.php');
                 }
             
     	}
