@@ -6,3 +6,4 @@ proctors.php:
     
 runLogin.php:
     -Login verifies, sends client to professor or proctor page based on username (is professor or proctor email??)
+    -remove proctor/professor page links
