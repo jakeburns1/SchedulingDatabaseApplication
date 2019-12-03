@@ -147,7 +147,9 @@ CREATE TABLE students_tests(
    test_schedule_end            TIME            NOT NULL,
    test_status                  CHAR(20)        NOT NULL DEFAULT 'Pending'
                                                 CHECK(test_status IN ('Pending','in Progress',
-					        'Completed','Incomplete'))
+					        'Completed','Incomplete')),
+   test_description             CHAR(200)       DEFAULT NULL
+					 
 );
 
 CREATE TABLE users (
