@@ -492,7 +492,7 @@ SQL;
        
 } else {
     // Redirect them to the login page
-    echo "logged out";
+    echo "Please go back and log in to access page";
     header("http://104.197.235.157/html/login.php");
 }
 ?>
