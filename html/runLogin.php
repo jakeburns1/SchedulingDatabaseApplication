@@ -79,7 +79,7 @@ $pdo =connect_to_psql($dBase);
                 {
                     
                     header('Location: http://104.197.235.157/html/proctors.php');
-                    debug_message($result->num_rows);
+                    debug_message($result->pg_num_rows);
                 }
             
     	}
