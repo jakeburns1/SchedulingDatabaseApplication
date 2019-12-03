@@ -129,7 +129,7 @@ CREATE TABLE students_tests(
 
    test_end_time                TIME            DEFAULT NULL,
 
-   test_duration                INT             NOT NULL,
+   test_schedule_end            TIME            NOT NULL,
    test_status                  CHAR(20)        NOT NULL DEFAULT 'Pending'
                                                 CHECK(test_status IN ('Pending','in Progress',
 					        'Completed','Incomplete'))
