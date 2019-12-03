@@ -454,7 +454,7 @@ SQL;
 
            function main() // Main function. 
 	   {
-	       $pdo = connect_to_psql('acme_proctoring');
+	       $pdo = connect_to_psql('project');
                setTimeZone($pdo);
 	       //$pdo = connect_to_psql('project'); //this should not be commented out. 
 
