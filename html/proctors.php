@@ -356,11 +356,18 @@ SQL;
 	      $html = <<<_HTML_
 		<h1>$title_string</h1>
 		<form method="post">
-		  <table>
-		    <tr><td>Start time</td><td><input type="text" name="start_time" value="$start" /></td></tr>
-		    <tr><td>End time</td><td><input type="text" name="end_time" value="$end" /></td></tr>
-		    <tr><td>Status</td><td><input type="text" name="status" value="$status" /></td></tr>
-                    <tr><td colspan="2" align="center"><button type="submit" name="update" value= "$student_id,$test_id" >Enter</button></td></tr>
+		  <table align="center">
+		    <tr><td>Start time</td><td><input type="text" name="start_time" value="$start"/> input of form hh:mm:ss</td></tr>
+		    <tr><td>End time</td><td><input type="text" name="end_time" value="$end" /> input of form hh:mm:ss</td></tr>
+		    <tr><td>Status</td><td><select name='status'>
+			<!-- <option value="Pending"</option>Pending<br />-->
+			 <option value="in Progress"</option>in Progress<br />
+			 <option value="Completed"</option>Completed<br />
+			 <option value="Incomplete"</option>Incomplete<br /> 
+                    </select></td></tr>   
+		  <!--  <tr><td>Status</td><td><input type="text" name="status" value="$status" /></td></tr> -->
+                    <tr><td colspan="1" align="center"><button type="submit" name="update" value= "$student_id,$test_id" >Enter</button></td>
+                    <td><a  href = 'proctors.php'>Cancel</a></td></tr>
 		  </table>
 		</form>
 _HTML_;
@@ -377,14 +384,12 @@ _HTML_;
 				  test_status = :test_status
 		      WHERE students_tests.student_id = :stud_id AND students_tests.test_id = :test_id
 SQL;
-	       //var_dump($_POST['start_time']);
 	       $stmt = $pdo->prepare($sql);
 	       $data['stud_id'] = $ids[0];
 	       $data['test_id'] = $ids[1];
 	       $data['test_start_time'] = $_POST['start_time'];
 	       $data['test_end_time'] = $_POST['end_time'];
-	       $data['test_status'] = $_POST['status_time'];
-	       var_dump($_POST['start_time']);
+	       $data['test_status'] = $_POST['status'];
 	       try
 	       {
 	         $stmt->execute($data);
@@ -402,10 +407,10 @@ SQL;
 	       $pdo = connect_to_psql('project'); //this should not be commented out. 
 	        setTimeZone($pdo);
 
-               if(isset($_POST['edit']))
+           if(isset($_POST['edit']))
 	       { 
-		  editButton($pdo);
-                  echo"<UL><a href = 'proctors.php'>return to home</a></UL>";
+		       editButton($pdo);
+                 // echo"<UL><a href = 'proctors.php'>return to home</a></UL>";
 	       }
 	       elseif (isset($_POST['update']))
 	       {
