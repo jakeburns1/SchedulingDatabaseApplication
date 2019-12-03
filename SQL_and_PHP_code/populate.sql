@@ -59,7 +59,8 @@ VALUES (1,1, '2019-11-25', '08:00', '10:00'),
        (10,2, '2019-11-29','13:00', '15:00');
       
 
-
+INSERT INTO users
+VALUES ('testUser','thomasallen');
 
 /* verification that code inserted properly*/
 SELECT * FROM students;
