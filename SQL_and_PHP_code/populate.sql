@@ -45,18 +45,18 @@ INSERT INTO proctors(proctor_id, university, building, proctor_first_name, proct
 VALUES(1,'Centre College','Young Hall','Thomas','Allen','thomas.allen@centre.edu','432-213-4132');
 VALUES(2,'Centre College','Young Hall','Michael','Bradshaw','michael.bradshaw@centre.edu','241-421-631');
 
-INSERT INTO students_tests(student_id,test_id, test_date, test_time,  test_duration)
-VALUES (1,1, '2019-11-25', '08:00', 2),
-       (1,4, '2019-11-26', '08:00', 1),
-       (2,1, '2019-11-25', '09:00', 1),
-       (3,2, '2019-11-27', '09:00', 1),
-       (4,4, '2019-11-26', '13:00', 1),
-       (5,5, '2019-11-25', '13:00', 1),
-       (6,6, '2019-11-25', '13:00', 1),
-       (7,5, '2019-11-27', '14:00', 1),
-       (8,4, '2019-11-25', '13:00', 2),
-       (9,3, '2019-11-28', '13:00', 1),
-       (10,2, '2019-11-29','13:00',1);
+INSERT INTO students_tests(student_id,test_id, test_date, test_time, test_schedule_end)
+VALUES (1,1, '2019-11-25', '08:00', '10:00'),
+       (1,4, '2019-11-26', '08:00', '9:00'),
+       (2,1, '2019-11-25', '09:00', '10:00'),
+       (3,2, '2019-11-27', '09:00', '11:00'),
+       (4,4, '2019-11-26', '13:00', '14:00'),
+       (5,5, '2019-11-25', '13:00', '15:00',
+       (6,6, '2019-11-25', '13:00', '14:00'),
+       (7,5, '2019-11-27', '14:00', '16:00'),
+       (8,4, '2019-11-25', '13:00', '14:00'),
+       (9,3, '2019-11-28', '13:00', '14:00'),
+       (10,2, '2019-11-29','13:00', '15:00');
       
 INSERT INTO users
 VALUES('testUser','thomasallen');
