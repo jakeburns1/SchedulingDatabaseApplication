@@ -76,7 +76,6 @@ function display_tests($pdo) {
 	<input type='submit' name= 'delete' value='Delete' />
 	<input type='submit' name= 'edit' value='Edit' />
 	</td></form></tr>";
-	echo '</tr>';
   }
   echo '</table><br>';
   
