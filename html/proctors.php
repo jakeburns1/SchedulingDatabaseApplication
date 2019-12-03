@@ -29,7 +29,7 @@
     <?php
 if ( isset( $_SESSION['user_id'] ) ) {
 
-        echo $_SESSION['user_id'];
+        echo "User logged in :" .$_SESSION['user_id'];
         echo "<form method = 'post' action = 'logout.php'> <input type = 'submit' value = 'logout'></form>";
         
         function displaySchedule($pdo)
