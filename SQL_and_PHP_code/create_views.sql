@@ -3,6 +3,7 @@ This file contains the views used for application queries to database
 */
 
 --DROP views if exist--
+DROP VIEW IF EXISTS professor_test;
 DROP VIEW IF EXISTS tests_information;
 
 ----------
@@ -13,15 +14,13 @@ AS
 SElECT students.student_first_name || ' ' ||students.student_last_name AS name,
        students_tests.test_date,
        students_tests.test_time,
+       students_tests.test_status,
        tests.test_id,
+       students_tests.student_id,
        tests.test_isPaper,
-       tests.course_program || ' ' || tests.course_code || ' '|| tests.course_section As class,
+       tests.course_program || ' ' ||tests.course_code || ' ' || tests.course_section AS class,
        professor_first_name || ' ' || professor_last_name As professor_name,
        professors.professor_id
-    /*   CASE WHEN tests.professor_id IN (SELECT professor_id, FROM professors) 
-	                            THEN professor_name
-            ELSE ''
-       END AS prof_name*/
  FROM students
       INNER JOIN students_tests ON(students.student_id = students_tests.student_id)
       NATURAL JOIN tests
@@ -45,3 +44,4 @@ ORDER BY test_day, time, course, student;
 
 SELECT * FROM tests_information;
 SELECT * FROM professor_test;
+--SELECT * FROM students_tests;
