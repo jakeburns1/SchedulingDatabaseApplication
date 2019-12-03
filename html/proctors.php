@@ -3,15 +3,7 @@
 <!--This script runs the stuff for the proctors home page-->
 <?php
 if ( isset( $_SESSION['user_id'] ) ) {
-    // Grab user data from the database using the user_id
-    // Let them access the "logged in only" pages
-} else {
-    // Redirect them to the login page
-    header("http://104.197.235.157/html/login.php");
-}
-
-?>
-<html>
+   <html>
   <head>
     <Title> Proctor Home Page</Title>
     <?php
@@ -440,5 +432,12 @@ SQL;
     </body>
 
 </html>
+} else {
+    // Redirect them to the login page
+    header("http://104.197.235.157/html/login.php");
+}
+
+?>
+
 
 
