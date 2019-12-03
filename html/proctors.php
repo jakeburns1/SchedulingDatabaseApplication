@@ -23,10 +23,6 @@
   </head>
     <body>
        <h1 align='center'> <b>Welcome Back</b> </h1>
-       
-
-       <h2 align ='center'>Upcomming exams</h2>
-       
     </body>
 
 </html>
@@ -35,6 +31,59 @@ if ( isset( $_SESSION['user_id'] ) ) {
 
         echo $_SESSION['user_id'];
         echo "<form method = 'post' action = 'logout.php'> <input type = 'submit' value = 'logout'></form>";
+        
+        function displaySchedule($pdo)
+	   {
+             $sql = <<<'SQL'
+		     SELECT * FROM proctors_schedule 
+                     WHERE proctor_id = :proctor_id 
+SQL;
+             $stmt = $pdo->prepare($sql);
+	     $data['proctor_id'] = 1;
+	     try
+	     {
+		 $stmt->execute($data);
+	//	 $schedule= $stmt->fetchALL();
+	     }
+	     catch (\PDOException $e)
+	     {
+		 debug_message("Error: ".$e);
+	     }
+	   //  var_dump($schedule);
+	     $i = 0;
+	     while($row = $stmt->fetch())
+	     {
+		$days[$i] = $row['day_name'];
+		$proctor_ids[$i] = $row['proctor_id'];
+		$start_times[$i] = $row['start_shift'];
+	        $end_times[$i] = $row['end_shift'];	
+	//	echo"<tr><th>$day</th></tr>";
+		$i++;
+	     }
+	     $hold[0] = $days;
+	    // $hold[] = $proctor_ids;
+	     $hold[1] = $start_times;
+	     $hold[2] = $end_times;
+
+             echo"<h2 align = 'center'>This weeks work schedule</h2>";
+             echo "<p><table border = 1, align ='center'></p><tr>";
+             for($j = 0; $j < $i; $j++)
+	     {
+               echo "<th>". $days[$j]."</th>";
+	     }
+             
+	     for($k = 1; $k < 3; $k++)
+	     {
+                echo"<tr>";
+		for($j = 0; $j < $i; $j++)
+		{
+		   echo "<td>".$hold[$k][$j]."</td>";
+		}
+		echo"</tr>";
+             }
+	     echo"</th></tr></table>";
+	   }
+
            function displayTests($pdo) // Creates the table displaying test information for current day
 	   {
              $sql = <<<'SQL'
@@ -45,7 +94,6 @@ if ( isset( $_SESSION['user_id'] ) ) {
 		            END As paper, 
                             professor_name  
                        FROM tests_information
-
 SQL;
 	      try
 	      {
@@ -55,6 +103,7 @@ SQL;
 	      {
                debug_message('Error Occured: '.$e);
 	      }
+              echo"<h2 align ='center'>Upcomming exams</h2>";
 	      echo "<p><table border = 1, align ='center'>";
 	      echo"<tr><th>Student Name</th>";
 	      echo"<th>Class</th>";
@@ -130,7 +179,7 @@ SQL;
               $ids = explode(",",filter_input(INPUT_POST, 'edit' , FILTER_SANITIZE_STRING));
               $sql = <<<'SQL'
 		   SELECT test_start_time, test_end_time, test_status,
-                          student_id, test_id
+                          student_id, test_id, test_description
                    FROM students_tests 
                    WHERE student_id = :sid AND test_id = :tid
 SQL;
@@ -222,7 +271,7 @@ SQL;
 	      }
 	      else
 	      {
-		  if($print) {echo"<UL><p>ERROR: already  has a start time of (".$value['test_start_time'].")</p></UL>";}
+		  if($print) {echo"<UL><p><b>ERROR:</b> already  has a start time of (".$value['test_start_time'].")</p></UL>";}
 		  return true;
 	      }
 	   }
@@ -263,7 +312,7 @@ SQL;
            function startButton($pdo) //Updates the start time for the reservation. 
 	   {
              $ids = explode(",",filter_input(INPUT_POST, 'start' , FILTER_SANITIZE_STRING));
-	     echo"<p>Setting start time for ".getStudName($pdo,$ids[0],$ids[1])."'s test...<br />";
+	     echo"<h2 align = 'center'>Setting start time for ".getStudName($pdo,$ids[0],$ids[1])."'s test...</h2><br />";
 
 	     if (startIsValued($pdo,$ids[0],$ids[1],true)===false) 
 	     { 	       
@@ -302,7 +351,7 @@ SQL;
 	   function endButton($pdo) //enters the end time for the reservation
 	   {
 	     $ids = explode(",",filter_input(INPUT_POST, 'end' , FILTER_SANITIZE_STRING));
-	     echo"<p>Setting end time for ".getStudName($pdo,$ids[0],$ids[1])."'s test...<br />";
+	     echo"<h2 align = 'center'>Setting end time for ".getStudName($pdo,$ids[0],$ids[1])."'s test...</h2><br />";
 
 	     if (endIsValued($pdo,$ids[0],$ids[1])===false AND startIsValued($pdo,$ids[0],$ids[1],false) === true)
 	     { 	       
@@ -352,20 +401,21 @@ SQL;
 	      $status = $test['test_status']; 
 	      $student_id = $test['student_id'];
 	      $test_id = $test['test_id'];
+	      $description = $test['test_description'];
 	      $title_string = "Edit Test for student ". getStudName($pdo,$student_id,$test_id);
 	      $html = <<<_HTML_
-		<h1>$title_string</h1>
+		<h2 align = "center">$title_string</h2>
 		<form method="post">
 		  <table align="center">
-		    <tr><td>Start time</td><td><input type="text" name="start_time" value="$start"/> input of form hh:mm:ss</td></tr>
-		    <tr><td>End time</td><td><input type="text" name="end_time" value="$end" /> input of form hh:mm:ss</td></tr>
+		    <tr><td>Start time</td><td><input type="time" name="start_time" value="$start"/> input of form "hh:mm  AM/PM"</td></tr>
+		    <tr><td>End time</td><td><input type="time" name="end_time" value="$end" /> input of form "hh:mm AM/PM"</td></tr>
 		    <tr><td>Status</td><td><select name='status'>
 			<!-- <option value="Pending"</option>Pending<br />-->
 			 <option value="in Progress"</option>in Progress<br />
 			 <option value="Completed"</option>Completed<br />
 			 <option value="Incomplete"</option>Incomplete<br /> 
                     </select></td></tr>   
-		  <!--  <tr><td>Status</td><td><input type="text" name="status" value="$status" /></td></tr> -->
+		   <tr><td>Description</td><td><input type="text" name="description" value="$description" /> (optional)</td></tr>
                     <tr><td colspan="1" align="center"><button type="submit" name="update" value= "$student_id,$test_id" >Enter</button></td>
                     <td><a  href = 'proctors.php'>Cancel</a></td></tr>
 		  </table>
@@ -392,30 +442,29 @@ SQL;
 	       $data['test_status'] = $_POST['status'];
 	       try
 	       {
-	         $stmt->execute($data);
-	       }
+		 $stmt->execute($data);
+               }
 	       catch(\PDOException $e)
 	       {
                  debug_message("ERROR: ".$e);
 	       }
+	       echo"<p>edit successful</p>";
 
 	   }
 
-       function main() // Main function. 
+           function main() // Main function. 
 	   {
-	       //$pdo = connect_to_psql('acme_proctoring');
-	       $pdo = connect_to_psql('project'); //this should not be commented out. 
-	        setTimeZone($pdo);
+	       $pdo = connect_to_psql('acme_proctoring');
+               setTimeZone($pdo);
+	       //$pdo = connect_to_psql('project'); //this should not be commented out. 
 
-           if(isset($_POST['edit']))
+               if(isset($_POST['edit']))
 	       { 
-		       editButton($pdo);
-                 // echo"<UL><a href = 'proctors.php'>return to home</a></UL>";
+		  editButton($pdo);
+       //           echo"<UL><a href = 'proctors.php'>cancel</a></UL>";
 	       }
 	       elseif (isset($_POST['update']))
-	       {
-		  var_dump($_POST['update']);
-		  echo"You tried to start updating a test <br />";
+	       {		  
 		  updateTest($pdo);
                   echo"<UL><a href = 'proctors.php'>return to home</a></UL>";
 	       }
@@ -433,7 +482,9 @@ SQL;
 
 	       else
 	       {
-	        $pdo = displayTests($pdo);
+		       displaySchedule($pdo);
+		       $pdo = displayTests($pdo); 
+
 	       }
 	   }
 
