@@ -3,7 +3,13 @@
 <!--This script runs the stuff for the proctors home page-->
 <?php
 if ( isset( $_SESSION['user_id'] ) ) {
-   <html>
+   
+} else {
+    // Redirect them to the login page
+    header("http://104.197.235.157/html/login.php");
+}
+?>
+<html>
   <head>
     <Title> Proctor Home Page</Title>
     <?php
@@ -432,12 +438,7 @@ SQL;
     </body>
 
 </html>
-} else {
-    // Redirect them to the login page
-    header("http://104.197.235.157/html/login.php");
-}
 
-?>
 
 
 
