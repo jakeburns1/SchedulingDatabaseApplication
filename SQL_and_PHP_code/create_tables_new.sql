@@ -2,7 +2,8 @@
 
 DROP TABLE IF EXISTS students_tests CASCADE;	
 DROP TABLE IF EXISTS students_courses CASCADE;
-/* DROP TABLE IF EXISTS schedule CASCADE; */
+DROP TABLE IF EXISTS proctors_schedule CASCADE;
+DROP TABLE IF EXISTS days CASCADE;
 DROP TABLE IF EXISTS proctors CASCADE;
 DROP TABLE IF EXISTS tests CASCADE;
 DROP TABLE IF EXISTS testCenters CASCADE;
@@ -92,14 +93,28 @@ CREATE TABLE proctors (
 	    ON DELETE RESTRICT
 );
 
-/* CREATE TABLE schedule (
-	PRIMARY KEY (proctor_id, start_shift, end_shift),
+CREATE TABLE days(
+        PRIMARY KEY (day_name),
+	day_name                              CHAR(10)         NOT NULL UNIQUE
+	
+
+);
+INSERT INTO days (day_name) --THis is really an input validation table, so put the populating here. 
+VALUES ('Monday'),('Tuesday'),('Wednesday'),('Thursday'),('Friday');
+
+CREATE TABLE proctors_schedule ( 
+	PRIMARY KEY (proctor_id,day_name),
 	proctor_id			        INT             NOT NULL
-					            REFERENCES proctors (proctor_id)
-					            ON DELETE RESTRICT,
+					        REFERENCES proctors(proctor_id)
+					        ON DELETE RESTRICT,
+        day_name                                CHAR(10)        REFERENCES days(day_name)
+	                                        ON DELETE RESTRICT,
 	start_shift			        TIME            NOT NULL,
 	end_shift			        TIME            NOT NULL
-); */
+--	day_of_week                            DATE            NOT NULL
+--        UNIQUE(proctor_id, start_shift, end_shift)
+        
+);
 
 CREATE TABLE students_courses (
     PRIMARY KEY(student_id, course_program, course_code, course_section),
