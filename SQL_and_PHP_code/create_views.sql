@@ -35,7 +35,7 @@ SElECT students.student_first_name || ' ' ||students.student_last_name AS name,
  SELECT student_id, course_program || ' ' || course_code || ' ' || course_section AS course,
         student_first_name || ' ' || student_last_name AS student,
         students_tests.test_date AS test_day,
-        to_char(students_tests.test_time, 'HH:MI') || '-' || to_char(students_tests.test_end_time, 'HH:MI AM') AS time,
+        to_char(students_tests.test_time, 'HH:MI') || '-' || to_char(students_tests.test_schedule_end, 'HH:MI AM') AS time,
         university || ', ' || building AS test_location
    FROM tests
         NATURAL JOIN students_tests
