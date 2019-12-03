@@ -70,14 +70,14 @@ $pdo =connect_to_psql($dBase);
     		$_SESSION['user_id'] = $username;
     		echo "password was correct";
     		
-    		/*$result = $mysqli->query("SELECT * from professors WHERE professor.email = $username");
+    		/*$result = $pdo->prepare("SELECT * from professors WHERE professor.email = $username");
                 if ($result->num_rows > 0)
                 {
-                    header('Location: ###.###.###/professor_page.php');
+                    header('Location: http://104.197.235.157/professor_page.php');
                 }
                 else
                 {
-                    header('Location: ###.###.###/proctors.php');
+                    header('Location: http://104.197.235.157/proctors.php');
                 }
             */
     	}
