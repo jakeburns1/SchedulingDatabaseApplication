@@ -9,7 +9,7 @@ DROP TABLE IF EXISTS testCenters CASCADE;
 DROP TABLE IF EXISTS courses CASCADE;
 DROP TABLE IF EXISTS professors CASCADE;
 DROP TABLE IF EXISTS students CASCADE;
-DROP TABLE IF EXISTS users CASCADE;
+
 
 --creates all tables in the database. 
 
