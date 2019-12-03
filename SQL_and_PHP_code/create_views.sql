@@ -11,7 +11,7 @@ DROP VIEW IF EXISTS tests_information;
 ----------
 CREATE VIEW tests_information
 AS
-SElECT students.student_first_name || ' ' ||students.student_last_name AS name,
+SElECT DISTINCT students.student_first_name || ' ' ||students.student_last_name AS name,
        students_tests.test_date,
        students_tests.test_time,
        students_tests.test_status,
