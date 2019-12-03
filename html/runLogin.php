@@ -71,7 +71,7 @@ $pdo =connect_to_psql($dBase);
     		echo "password was correct";
     		
     		$result = $pdo->prepare("SELECT * FROM professors WHERE professor_email = $username");
-                if ($result->pg_num_rows > 0)
+                if ($result->fetch())
                 {
                     header('Location: http://104.197.235.157/html/professor_page.php');
                 }
