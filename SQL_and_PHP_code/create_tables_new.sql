@@ -125,13 +125,9 @@ CREATE TABLE students_tests(
    test_isAbsent                BOOLEAN         NOT NULL DEFAULT FALSE,
    test_date                    DATE            NOT NULL,
    test_time                    TIME            NOT NULL,
-   test_start_time              TIME            DEFAULT NULL
-                                                CONSTRAINT valid_start_time
-                                                CHECK(test_start_time < test_end_time),
+   test_start_time              TIME            DEFAULT NULL,
 
-   test_end_time                TIME            DEFAULT NULL
-                                                CONSTRAINT valid_start_time
-                                                CHECK(test_start_time < test_end_time),
+   test_end_time                TIME            DEFAULT NULL,
 
    test_duration                INT             NOT NULL,
    test_status                  CHAR(20)        NOT NULL DEFAULT 'Pending'
