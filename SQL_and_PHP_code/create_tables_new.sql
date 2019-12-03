@@ -135,6 +135,11 @@ CREATE TABLE students_tests(
 					        'Completed','Incomplete'))
 );
 
+CREATE TABLE users (
+    username                    VARCHAR(20),
+    password                    VARCHAR(100)
+);
+
 /* 
 This code was moved to the populate.sql file
 
