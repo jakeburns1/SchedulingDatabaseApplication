@@ -6,6 +6,7 @@
   <head>
     <Title> Proctor Home Page</Title>
     <?php
+    session_start();
       require('professor_page_functions.php');
 //      require('functions.php');
       ini_set('display_errors',1);
