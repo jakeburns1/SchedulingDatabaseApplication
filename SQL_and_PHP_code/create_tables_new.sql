@@ -77,7 +77,7 @@ CREATE TABLE tests (
 );             
 
 CREATE TABLE proctors (
-    PRIMARY KEY (proctor_id, university, building),
+    PRIMARY KEY (proctor_id),
     proctor_id                 	SERIAL,
     university		  	VARCHAR(50)     NOT NULL,
     building                    VARCHAR(50)     NOT NULL,
@@ -114,7 +114,7 @@ CREATE TABLE students_courses (
 	    ON DELETE RESTRICT
 );
 
-CREATE TABLE students_tests (
+CREATE TABLE students_tests(
     PRIMARY KEY(student_id, test_id),
     student_id                  INT             NOT NULL                     
                                 REFERENCES students (student_id)
@@ -124,15 +124,19 @@ CREATE TABLE students_tests (
                                 ON DELETE CASCADE,
    test_isAbsent                BOOLEAN         NOT NULL DEFAULT FALSE,
    test_date                    DATE            NOT NULL,
-	test_time                   TIME            NOT NULL,
-	test_start_time             TIME            DEFAULT NULL,
-    test_end_time               TIME            DEFAULT NULL,
-    test_duration               INT             NOT NULL
-);
+   test_time                    TIME            NOT NULL,
+   test_start_time              TIME            DEFAULT NULL
+                                                CONSTRAINT valid_start_time
+                                                CHECK(test_start_time < test_end_time),
 
-CREATE TABLE users (
-    username                    VARCHAR(20),
-    password                    VARCHAR(200)
+   test_end_time                TIME            DEFAULT NULL
+                                                CONSTRAINT valid_start_time
+                                                CHECK(test_start_time < test_end_time),
+
+   test_duration                INT             NOT NULL,
+   test_status                  CHAR(20)        NOT NULL DEFAULT 'Pending'
+                                                CHECK(test_status IN ('Pending','in Progress',
+					        'Completed','Incomplete'))
 );
 
 /* 
