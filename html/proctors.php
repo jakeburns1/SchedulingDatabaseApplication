@@ -22,6 +22,7 @@
   </head>
     <body>
        <h1 align='center'> <b>Welcome Back</b> </h1>
+       echo $_SESSION['user_id'];
 
        <h2 align ='center'>Upcomming exams</h2>
        <?php
