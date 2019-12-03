@@ -69,6 +69,17 @@ $pdo =connect_to_psql($dBase);
              if ( password_verify($password, $hashed_password) ) {
     		$_SESSION['user_id'] = $username;
     		echo "password was correct";
+    		
+    		/*$result = $mysqli->query("SELECT * from professors WHERE professor.email =   '{$username}'");
+                if ($result->num_rows > 0)
+                {
+                    header('Location: ###.###.###/professor_page.php');
+                }
+                else
+                {
+                    header('Location: ###.###.###/proctors.php');
+                }
+            */
     	}
     	else{
     	    
