@@ -62,9 +62,9 @@ $pdo =connect_to_psql($dBase);
 	       $stmt->execute();
 	       */
 	       if ( isset( $_POST['username'] ) && isset( $_POST['password'] ) ) {
-	             $stmt = $pdo->prepare("SELECT * FROM users WHERE username = :username");
+	            /* $stmt = $pdo->prepare("SELECT * FROM users WHERE username = :username");
                  $stmt->bindParam(':username', $username, PDO::PARAM_STR, 20);   
-                 
+                 */
                  
              if ( password_verify($password, $hashed_password) ) {
     		$_SESSION['user_id'] = $username;
