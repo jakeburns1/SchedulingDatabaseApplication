@@ -103,7 +103,7 @@ INSERT INTO days (day_name) --THis is really an input validation table, so put t
 VALUES ('Monday'),('Tuesday'),('Wednesday'),('Thursday'),('Friday');
 
 CREATE TABLE proctors_schedule ( 
-	PRIMARY KEY (proctor_id,day_name),
+	PRIMARY KEY (proctor_id,day_name), --if there is time include shift in the PK
 	proctor_id			        INT             NOT NULL
 					        REFERENCES proctors(proctor_id)
 					        ON DELETE RESTRICT,
