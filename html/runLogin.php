@@ -54,7 +54,7 @@ $pdo =connect_to_psql($dBase);
 	       $stmt->bindParam(':username', $username, PDO::PARAM_STR, 100);
 	       $stmt->execute();
         /*$hashed_password = $stmt->fetchColumn(); */
-        $hashed_password = ("thomasallen", PASSWORD_DEFAULT);
+        $hashed_password = password_hash("thomasallen", PASSWORD_DEFAULT);
 	   
 	       $insertAccountSQL = "UPDATE users SET password = :hashedPass WHERE username = 'testUser';";
 	       $stmt = $pdo->prepare($insertAccountSQL);
