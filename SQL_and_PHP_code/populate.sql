@@ -57,9 +57,6 @@ VALUES (1,1, '2019-11-25', '08:00', 2),
        (8,4, '2019-11-25', '13:00', 2),
        (9,3, '2019-11-28', '13:00', 1),
        (10,2, '2019-11-29','13:00',1);
-      
-INSERT INTO users
-VALUES('testUser','thomasallen');
 
 /* verification that code inserted properly*/
 SELECT * FROM students;
