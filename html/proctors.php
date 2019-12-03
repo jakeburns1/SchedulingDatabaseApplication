@@ -1,26 +1,17 @@
 <!--Proctors page--> 
 
 <!--This script runs the stuff for the proctors home page-->
-
-<html>
-    <?php
-if ( isset( $_SESSION['user_id'] ) ) {
-    echo "logged in";
-} else {
-    // Redirect them to the login page
-    echo "logged out";
-    header("http://104.197.235.157/html/login.php");
-}
-?>
-  <head>
-    <Title> Proctor Home Page</Title>
-    <?php
+<?php
     session_start();
       require('professor_page_functions.php');
 //      require('functions.php');
       ini_set('display_errors',1);
       error_reporting(E_ALL);
     ?>
+    
+<html>
+    <head>
+    <Title> Proctor Home Page</Title>
     <style>
         h1 {
            font-size:300%;
@@ -35,7 +26,13 @@ if ( isset( $_SESSION['user_id'] ) ) {
        
 
        <h2 align ='center'>Upcomming exams</h2>
-       <?php
+       
+    </body>
+
+</html>
+    <?php
+if ( isset( $_SESSION['user_id'] ) ) {
+
         echo $_SESSION['user_id'];
         echo "<form method = 'post' action = 'logout.php'> <input type = 'submit' value = 'logout'></form>";
            function displayTests($pdo) // Creates the table displaying test information for current day
@@ -436,10 +433,15 @@ SQL;
 	   }
 
 	   main();
-       ?> 
-    </body>
-
-</html>
+       
+} else {
+    // Redirect them to the login page
+    echo "logged out";
+    header("http://104.197.235.157/html/login.php");
+}
+?>
+  
+    
 
 
 
