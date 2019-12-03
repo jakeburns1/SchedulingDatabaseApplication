@@ -70,7 +70,8 @@ $pdo =connect_to_psql($dBase);
     		$_SESSION['user_id'] = $username;
     		echo "password was correct";
     		
-    		$result = $pdo->prepare("SELECT * FROM professors WHERE professor_email = $username");
+    		$result = $pdo->prepare("SELECT * FROM professors WHERE professor_email = :username");
+    		 $result->bindParam(':username', $username, PDO::PARAM_STR, 20);  
     		$result->execute();
                 if ($result->fetch())
                 {
