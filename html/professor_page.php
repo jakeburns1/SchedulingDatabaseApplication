@@ -92,13 +92,13 @@ function display_tests($pdo) {
 		 debug_message("Error: ".$e);
 	}
 	
-	$result = pg_fetch_assoc($stmt->fetch());
+	$result = $stmt->fetch();
   
   echo '<h1 align="center">Test Schedule</h1>';
   
   echo '<table>';
   echo '<tr><th>Course</th><th>Student</th><th>Test Date</th><th>Test Time</th><th>Test Location</th><th></th></tr>';
-  foreach ($result as $row) {
+  while ($row = pg_fetch_assoc($stmt)) {
 	echo '<tr>';
 	echo '<form method="post">';
     echo '<td>' . $row['course'] . '</td>';
