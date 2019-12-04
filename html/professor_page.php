@@ -92,7 +92,7 @@ function display_tests($pdo) {
 		 debug_message("Error: ".$e);
 	}
 	
-	$result = $stmt->fetch_all(PDO::FETCH_ASSOC);
+	$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
   
   echo '<h1 align="center">Test Schedule</h1>';
   
