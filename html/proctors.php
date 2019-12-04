@@ -78,11 +78,12 @@ SQL;
 	//	echo"<tr><th>$day</th></tr>";
 		$i++;
 	     }
-	     $hold[0] = $days;
-	    // $hold[] = $proctor_ids;
-	     $hold[1] = $start_times;
-	     $hold[2] = $end_times;
-
+	     if($i===0){$start_times = null; $end_times = null;}
+	     else
+	     {
+	        $hold[1] = $start_times;
+	        $hold[2] = $end_times;
+	     }
              echo"<h2 align = 'center'>This weeks work schedule</h2>";
              echo "<p><table border = 1, align ='center'></p><tr>";
              for($j = 0; $j < $i; $j++)
@@ -99,6 +100,8 @@ SQL;
 		}
 		echo"</tr>";
              }
+             if($j===0){echo"<p align = 'center'>No work this week</p>";}
+	     echo"</th></tr></table>";
 	     echo"</th></tr></table>";
 	   }
 
@@ -112,11 +115,11 @@ SQL;
 		            END As paper, 
                             professor_name  
 		     FROM tests_information
-                     WHERE(tests_information.proctor_id = :proctor_id)
+                     WHERE(tests_information.proctor_email = :proctor_id)
 		     
 SQL;
 	     $stmt = $pdo->prepare($sql); 
-	     $data['proctor_id'] = '1';
+	     $data['proctor_id'] = $_SESSION['user_id'];;
 	      try
 	      {
 		 $stmt->execute($data);     
