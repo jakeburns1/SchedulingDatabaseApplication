@@ -53,14 +53,14 @@ $pdo =connect_to_psql($dBase);
      $stmt = $pdo->prepare($getAccountPassword);
 	       $stmt->bindParam(':username', $username, PDO::PARAM_STR, 100);
 	       $stmt->execute();
-      $hashed_password = $stmt->fetchColumn(); 
-     /*  $hashed_password = password_hash("thomasallen", PASSWORD_DEFAULT); 
+     /* $hashed_password = $stmt->fetchColumn(); */
+       $hashed_password = password_hash("thomasallen", PASSWORD_DEFAULT); 
 	   
 	      $insertAccountSQL = "UPDATE users SET password = :hashedPass WHERE username = 'testUser';";
 	       $stmt = $pdo->prepare($insertAccountSQL);
 	       $stmt->bindParam(':hashedPass', $hashed_password, PDO::PARAM_STR, 100);
 	       $stmt->execute();
-	       */
+	       
 	       if ( isset( $_POST['username'] ) && isset( $_POST['password'] ) ) {
                 
                 //hash password and verify login
