@@ -73,8 +73,20 @@ if (isset($_POST['add'])) {
 
 /*  Queries the view display_tests and displays the results as a table. */
 function display_tests($pdo) {
-  $sql = 'SELECT * FROM professor_test';
-  $data = $pdo->query($sql);
+  $sql = 'SELECT *
+            FROM professor_test
+            NATURAL JOIN students_courses, courses, professors
+            WHERE professor.email = :user_id';
+  $stmt = $pdo->prepare($sql);
+  $data['user_id'] = $_SESSION['user_id'];
+  try
+  {
+		    $stmt->execute($data);
+	     }
+	     catch (\PDOException $e)
+	     {
+		    debug_message("Error: ".$e);
+	     }
   
   echo '<h1 align="center">Test Schedule</h1>';
   
