@@ -41,8 +41,8 @@ VALUES (1, 'CSC', '221', 'a', 'Centre College', 'Young Hall', TRUE),
        (3, 'CLA', '350', 'b', 'Centre College', 'Young Hall', TRUE);
 
 INSERT INTO proctors(proctor_id, university, building, proctor_first_name, proctor_last_name, proctor_email)-- proctor_phone)
-VALUES(1,'Centre College','Young Hall','Thomas','Allen','thomas.allen@centre.edu'), --,'432-213-4132'),
-      (2,'Centre College','Young Hall','Michael','Bradshaw','michael.bradshaw@centre.edu');--,'241-421-631');
+VALUES(1,'Centre College','Young Hall','Barry','Totter','barry.totter@centre.edu'), --,'432-213-4132'),
+      (2,'Centre College','Young Hall','Mike','Motten','mike.motten@centre.edu');--,'241-421-631');
 
 INSERT INTO proctors_schedule(proctor_id,day_name,start_shift,end_shift)
 VALUES (1,'Monday','8:00','12:00'),
