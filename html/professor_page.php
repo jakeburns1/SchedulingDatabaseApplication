@@ -77,7 +77,7 @@ if (isset($_POST['add'])) {
 function display_tests($pdo) {
     $sql = 'SELECT *
             FROM professor_test
-            NATURAL JOIN students_courses, courses, professors
+            
             WHERE professor_email = :user_id';
     $stmt = $pdo->prepare($sql);
     $data['user_id'] = $_SESSION['user_id'];
