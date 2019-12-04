@@ -97,11 +97,11 @@ function display_tests($pdo) {
   foreach ($data as $row) {
 	echo '<tr>';
 	echo '<form method="post">';
-    echo '<td>' . $row[0] . '</td>';
-	echo '<td>' . $row[1] . '</td>';
-	echo '<td>' . $row[2] . '</td>';
-	echo '<td>' . $row[3] . '</td>';
-	echo '<td>' . $row[4] . '</td>';
+    echo '<td>' . $row['course'] . '</td>';
+	echo '<td>' . $row['student'] . '</td>';
+	echo '<td>' . $row['test_day'] . '</td>';
+	echo '<td>' . $row['time'] . '</td>';
+	echo '<td>' . $row['test_location'] . '</td>';
 	echo "<td>
 	<input type='hidden' name='id' value='" . $row["student_id"] . "'/>
 	<input type='submit' name= 'delete' value='Delete' />
