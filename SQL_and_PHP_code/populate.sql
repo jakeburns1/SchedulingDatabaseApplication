@@ -44,17 +44,17 @@ INSERT INTO proctors(proctor_id, university, building, proctor_first_name, proct
 VALUES(1,'Centre College','Young Hall','Barry','Totter','barry.totter@centre.edu'), --,'432-213-4132'),
       (2,'Centre College','Young Hall','Mike','Motten','mike.motten@centre.edu');--,'241-421-631');
 
-INSERT INTO proctors_schedule(proctor_id,day_name,start_shift,end_shift)
-VALUES (1,'Monday','8:00','12:00'),
-(1,'Tuesday','8:00','12:00'),
-(1,'Wednesday','8:00','12:00'),
-(1,'Thursday','8:00','12:00'),
-(1,'Friday','8:00','12:00'),
-(2,'Monday','11:00','17:00'),
-(2,'Tuesday','11:00','17:00'),
-(2,'Wednesday','11:00','17:00'),
-(2,'Thursday','11:00','17:00'),
- (2,'Friday','11:00','17:00');
+INSERT INTO proctors_schedule(proctor_id,day_name,start_shift,end_shift, proctor_email)
+VALUES (1,'Monday','8:00','12:00','barry.totter@centre.edu'),
+(1,'Tuesday','8:00','12:00','barry.totter@centre.edu'),
+(1,'Wednesday','8:00','12:00','barry.totter@centre.edu'),
+(1,'Thursday','8:00','12:00','barry.totter@centre.edu'),
+(1,'Friday','8:00','12:00','barry.totter@centre.edu'),
+(2,'Monday','11:00','17:00','mike.motten@centre.edu'),
+(2,'Tuesday','11:00','17:00','mike.motten@centre.edu'),
+(2,'Wednesday','11:00','17:00','mike.motten@centre.edu'),
+(2,'Thursday','11:00','17:00','mike.motten@centre.edu'),
+ (2,'Friday','11:00','17:00','mike.motten@centre.edu');
 
 INSERT INTO students_tests(student_id,test_id, test_date, test_time, test_schedule_end)
 VALUES (1,1, '2019-11-25', '08:00', '10:00'),
