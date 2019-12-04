@@ -57,7 +57,7 @@ if ( isset( $_SESSION['user_id'] ) ) {
                      WHERE proctor_email = :user_id 
 SQL;
              $stmt = $pdo->prepare($sql);
-	     //$data['proctor_id'] = 1;
+	     $data['user_id'] = $_SESSION['user_id'];
 	     try
 	     {
 		 $stmt->execute($data);
