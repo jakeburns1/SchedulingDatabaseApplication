@@ -8,10 +8,12 @@ FUNCTIONS:
 	function setTimeZone($pdo)
 	function getStudName($pdo,$sid,$tid)
 	function selectTest($pdo)
+	
 	function inProgress($pdo,$stud_id,$test_id)
 	function completed($pdo,$stud_id,$test_id)
 	function startIsValued($pdo,$stud_id,$test_id,$print)
 	function endIsValued($pdo,$stud_id,$test_id)
+	
 	function startButton($pdo)
 	function endButton($pdo)
 	function editButton($pdo)
