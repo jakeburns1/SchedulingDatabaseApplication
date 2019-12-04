@@ -102,7 +102,7 @@ function display_tests($pdo) {
   foreach ($result as $row){
 	echo '<tr>';
 	echo '<form method="post">';
-    echo '<td>' . $row['course_program'] . $row['course_code'] . $row['course_section'] . '</td>';
+    echo '<td>' . $row["course_program"] . $row['course_code'] . $row['course_section'] . '</td>';
 	echo '<td>' . $row['student'] . '</td>';
 	echo '<td>' . $row['test_day'] . '</td>';
 	echo '<td>' . $row['time'] . '</td>';
