@@ -98,8 +98,8 @@ function display_tests($pdo) {
   
   echo '<table>';
   echo '<tr><th>Course</th><th>Student</th><th>Test Date</th><th>Test Time</th><th>Test Location</th><th></th></tr>';
+  var_dump($result);
   foreach ($result as $row){
-    var_dump($row['course']);
 	echo '<tr>';
 	echo '<form method="post">';
     echo '<td>' . $row['course'] . '</td>';
