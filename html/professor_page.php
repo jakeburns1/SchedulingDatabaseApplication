@@ -99,11 +99,10 @@ function display_tests($pdo) {
   echo '<table>';
   echo '<tr><th>Course</th><th>Student</th><th>Test Date</th><th>Test Time</th><th>Test Location</th><th></th></tr>';
   foreach ($result as $row){
-      //var_dump($row);
+    var_dump($row['course']);
 	echo '<tr>';
 	echo '<form method="post">';
-	$line = $row['course'];
-    echo '<td>' . $line . '</td>';
+    echo '<td>' . $row['course'] . '</td>';
 	echo '<td>' . $row['student'] . '</td>';
 	echo '<td>' . $row['test_day'] . '</td>';
 	echo '<td>' . $row['time'] . '</td>';
