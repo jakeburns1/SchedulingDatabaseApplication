@@ -113,7 +113,7 @@ CREATE TABLE proctors_schedule (
 	start_shift			        TIME            NOT NULL,
 	end_shift			        TIME            NOT NULL,
 	proctor_email               CHAR(40)
-	                            REFERENCES proctors(proctor_email);
+	                            REFERENCES proctors(proctor_email)
 --	day_of_week                            DATE            NOT NULL
 --        UNIQUE(proctor_id, start_shift, end_shift)
         
