@@ -93,7 +93,8 @@ function display_tests($pdo) {
 	}
   
   echo '<h1 align="center">Test Schedule</h1>';
-  
+  var_dump($data);
+  /*
   echo '<table>';
   echo '<tr><th>Course</th><th>Student</th><th>Test Date</th><th>Test Time</th><th>Test Location</th><th></th></tr>';
   foreach ($data as $row) {
@@ -111,6 +112,7 @@ function display_tests($pdo) {
 	</td></form></tr>";
   }
   echo '</table><br>';
+  */
   
   style();
 }
