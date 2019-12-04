@@ -8,6 +8,8 @@ session_start();
 
 $pdo = connect_to_psql('project', $verbose=TRUE);
 
+echo "<form method = 'post' action = 'logout.php'> <input type = 'submit' value = 'logout'></form>";
+
 if (isset($_POST['delete'])) {
     $sql = 'DELETE FROM students_tests WHERE student_id = :student_id';
 	$stmt = $pdo->prepare($sql);
