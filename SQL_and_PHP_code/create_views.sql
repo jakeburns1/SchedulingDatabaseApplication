@@ -20,7 +20,8 @@ SElECT DISTINCT students.student_first_name || ' ' ||students.student_last_name 
        tests.test_isPaper,
        tests.course_program || ' ' ||tests.course_code || ' ' || tests.course_section AS class,
        professor_first_name || ' ' || professor_last_name As professor_name,
-       professors.professor_id
+       professors.professor_id,
+       proctors.proctor_id
  FROM students
       INNER JOIN students_tests ON(students.student_id = students_tests.student_id)
       NATURAL JOIN tests
