@@ -4,6 +4,8 @@ error_reporting(E_ALL);
 
 require('professor_page_functions.php');
 
+session_start();
+
 $pdo = connect_to_psql('project', $verbose=TRUE);
 
 if (isset($_POST['delete'])) {
@@ -83,10 +85,10 @@ function display_tests($pdo) {
     {
         $stmt->execute($data);
 	}
-	     catch (\PDOException $e)
-	     {
-		    debug_message("Error: ".$e);
-	     }
+	catch (\PDOException $e)
+	{
+		 debug_message("Error: ".$e);
+	}
   
   echo '<h1 align="center">Test Schedule</h1>';
   
