@@ -101,11 +101,11 @@ function display_tests($pdo) {
   var_dump($result);
 	echo '<tr>';
 	echo '<form method="post">';
-    echo '<td>' . $row["course"] . '</td>';
-	echo '<td>' . $row['student'] . '</td>';
-	echo '<td>' . $row['test_day'] . '</td>';
-	echo '<td>' . $row['time'] . '</td>';
-	echo '<td>' . $row['test_location'] . '</td>';
+    echo '<td>' . $result['course'] . '</td>';
+	echo '<td>' . $result['student'] . '</td>';
+	echo '<td>' . $result['test_day'] . '</td>';
+	echo '<td>' . $result['time'] . '</td>';
+	echo '<td>' . $result['test_location'] . '</td>';
 	echo "<td>
 	<input type='hidden' name='id' value='" . $row["student_id"] . "'/>
 	<input type='submit' name= 'delete' value='Delete' />
