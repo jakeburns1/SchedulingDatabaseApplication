@@ -99,7 +99,6 @@ function display_tests($pdo) {
   while($roww = $stmt->fetch())
   {
       echo '<tr>';
-      echo '<td>' . $row['course'] . '</td>';
   foreach ($roww as $row) {
       echo '<td>'.$row.'</td>';
 	/*echo '<tr>';
