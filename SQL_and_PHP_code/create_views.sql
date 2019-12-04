@@ -33,7 +33,7 @@ SElECT DISTINCT students.student_first_name || ' ' ||students.student_last_name 
  /* for professor_page */
  CREATE VIEW professor_test
  AS 
- SELECT student_id, course_program || ' ' || course_code || ' ' || course_section AS course,
+ SELECT student_id, tests.course_program || ' ' || tests.course_code || ' ' || tests.course_section AS course,
         student_first_name || ' ' || student_last_name AS student,
         students_tests.test_date AS test_day,
         to_char(students_tests.test_time, 'HH:MI') || '-' || to_char(students_tests.test_schedule_end, 'HH:MI AM') AS time,
