@@ -69,12 +69,24 @@ VALUES (1,1, '2019-11-25', '08:00', '10:00'),
        (9,3, '2019-11-28', '13:00', '14:00'),
        (10,2, '2019-11-29','13:00', '15:00');
       
-
+INSERT INTO students_courses (student_id,course_program,course_code,course_section)
+VALUES (1,'CSC', '221', 'a'),
+       (1,'REL', '130', 'a'), 
+       (2,'CSC', '221', 'a'),  
+       (3,'PSY', '110', 'a'), 
+       (4,'REL', '130', 'a'), 
+       (5,'MAT', '240', 'a'),
+       (6,'CLA', '350', 'b'),
+       (7,'MAT', '240', 'a'),
+       (8,'REL', '130', 'a'),
+       (9,'DRA', '110', 'b'), 
+       (10,'PSY', '110', 'a'); 
 
 /* verification that code inserted properly*/
-SELECT * FROM students;
-SELECT * FROM professors;
-SELECT * FROM courses;
-SELECT * FROM testCenters;
-SELECT * FROM tests;
-SELECT * FROM proctors_schedule;
+--SELECT * FROM students;
+--SELECT * FROM professors;
+--SELECT * FROM courses;
+--SELECT * FROM testCenters;
+--SELECT * FROM tests;
+--SELECT * FROM proctors_schedule;
+--SELECT * FROM students_courses;
