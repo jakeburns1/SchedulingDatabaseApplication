@@ -54,10 +54,10 @@ if ( isset( $_SESSION['user_id'] ) ) {
 	   {
              $sql = <<<'SQL'
 		     SELECT * FROM proctors_schedule 
-                     WHERE proctor_id = :proctor_id 
+                     WHERE proctor_email = :user_id 
 SQL;
              $stmt = $pdo->prepare($sql);
-	     $data['proctor_id'] = 1;
+	     //$data['proctor_id'] = 1;
 	     try
 	     {
 		 $stmt->execute($data);
