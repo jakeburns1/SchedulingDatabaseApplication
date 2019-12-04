@@ -92,7 +92,7 @@ function display_tests($pdo) {
 		 debug_message("Error: ".$e);
 	}
 	
-	$result = $stmt->fetch();
+	$result = pg_fetch_assoc($stmt->fetch());
   
   echo '<h1 align="center">Test Schedule</h1>';
   
