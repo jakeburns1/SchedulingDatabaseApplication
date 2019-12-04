@@ -41,7 +41,9 @@ SElECT DISTINCT students.student_first_name || ' ' ||students.student_last_name 
    FROM tests
         NATURAL JOIN students_tests
         NATURAL JOIN students
-        NATURAL JOIN students_courses, courses, professors
+        NATURAL JOIN students_courses
+        NATURAL JOIN courses
+        NATURAL JOIN professors
         --NATURAL JOIN students_courses, courses, professors WHERE username = professor.email --> to link professors.php given a professor's email as login
 ORDER BY test_day, time, course, student;
 
