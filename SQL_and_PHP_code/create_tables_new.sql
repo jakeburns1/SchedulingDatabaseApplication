@@ -153,7 +153,7 @@ CREATE TABLE students_tests(
 );
 
 CREATE TABLE users (
-    username                    VARCHAR(20),
+    username                    VARCHAR(40),
     password                    VARCHAR(100)
 );
 
