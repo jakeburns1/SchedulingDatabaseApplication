@@ -96,12 +96,8 @@ function display_tests($pdo) {
   
   echo '<table>';
   echo '<tr><th>Course</th><th>Student</th><th>Test Date</th><th>Test Time</th><th>Test Location</th><th></th></tr>';
-  while($roww = $stmt->fetch())
-  {
-      echo '<tr>';
-  foreach ($roww as $row) {
-      echo '<td>'.$row.'</td>';
-	/*echo '<tr>';
+  foreach ($data as $row) {
+	echo '<tr>';
 	echo '<form method="post">';
     echo '<td>' . $row['course'] . '</td>';
 	echo '<td>' . $row['student'] . '</td>';
@@ -112,9 +108,7 @@ function display_tests($pdo) {
 	<input type='hidden' name='id' value='" . $row["student_id"] . "'/>
 	<input type='submit' name= 'delete' value='Delete' />
 	<input type='submit' name= 'edit' value='Edit' />
-	</td></form></tr>";*/
-  }
-  echo '</tr>';
+	</td></form></tr>";
   }
   echo '</table><br>';
   
