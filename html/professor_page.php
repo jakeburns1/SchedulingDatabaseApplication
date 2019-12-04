@@ -91,13 +91,14 @@ function display_tests($pdo) {
 	{
 		 debug_message("Error: ".$e);
 	}
+	
+	$result = $stmt->fetch();
   
   echo '<h1 align="center">Test Schedule</h1>';
-  var_dump($stmt->fetch());
-  /*
+  
   echo '<table>';
   echo '<tr><th>Course</th><th>Student</th><th>Test Date</th><th>Test Time</th><th>Test Location</th><th></th></tr>';
-  foreach ($data as $row) {
+  foreach ($result as $row) {
 	echo '<tr>';
 	echo '<form method="post">';
     echo '<td>' . $row['course'] . '</td>';
@@ -112,7 +113,7 @@ function display_tests($pdo) {
 	</td></form></tr>";
   }
   echo '</table><br>';
-  */
+  
   
   style();
 }
