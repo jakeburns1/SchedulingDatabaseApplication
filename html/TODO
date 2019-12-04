@@ -3,6 +3,7 @@ professor_page.php:
     
 proctors.php:
     -display proctor's weekly schedule based on username from $_SESSION variable. Direct query from proctors -> proctors_schedule
+    -just needs to pass the proctor_id to the querys in in displaySchedules() and displayTests().
     
 runLogin.php:
     -remove proctor/professor page links LAST
