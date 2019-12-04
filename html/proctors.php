@@ -1,6 +1,22 @@
-<!--Proctors page--> 
-
-<!--This script runs the stuff for the proctors home page-->
+<!--Proctors page
+AUTHOR: 
+DESCRIPTION: This page renders the proctors home page. All functions are exectued by main(), 
+which is at the bottom of the script. 
+FUNCTIONS: 
+	function displaySchedule($pdo) 
+	function displayTests($pdo)
+	function setTimeZone($pdo)
+	function getStudName($pdo,$sid,$tid)
+	function selectTest($pdo)
+	function inProgress($pdo,$stud_id,$test_id)
+	function completed($pdo,$stud_id,$test_id)
+	function startIsValued($pdo,$stud_id,$test_id,$print)
+	function endIsValued($pdo,$stud_id,$test_id)
+	function startButton($pdo)
+	function endButton($pdo)
+	function editButton($pdo)
+	function updateTest($pdo)
+--> 
 <?php
     session_start();
       require('professor_page_functions.php');
@@ -93,11 +109,16 @@ SQL;
 			         ELSE 'no' 
 		            END As paper, 
                             professor_name  
-                       FROM tests_information
+		     FROM tests_information
+                     WHERE(tests_information.proctor_id = :proctor_id)
+		     
 SQL;
+	     $stmt = $pdo->prepare($sql); 
+	     $data['proctor_id'] = '1';
 	      try
 	      {
-	       $stmt = $pdo->query($sql);
+		 $stmt->execute($data);     
+//	         $stmt = $pdo->query($sql);
 	      }
 	      catch(\PDOException $e)
 	      {
@@ -303,7 +324,7 @@ SQL;
 	      }
 	      else
 	      {
-		  echo"<UL><p>ERROR: already  has an end time of (".$value['test_end_time'].")</p></UL>";
+		  echo"<UL><p><b>ERROR</b>: already  has an end time of (".$value['test_end_time'].")</p></UL>";
 		  return true;
 	      }
 
@@ -403,12 +424,18 @@ SQL;
 	      $test_id = $test['test_id'];
 	      $description = $test['test_description'];
 	      $title_string = "Edit Test for student ". getStudName($pdo,$student_id,$test_id);
+
+	     /* if(($start-'13:00:00') > 0)
+	      {
+		  $start = $start - '13:00:00';
+	          $start = "$start"." PM";
+	      } */
 	      $html = <<<_HTML_
 		<h2 align = "center">$title_string</h2>
 		<form method="post">
 		  <table align="center">
-		    <tr><td>Start time</td><td><input type="time" name="start_time" value="$start"/> input of form "hh:mm  AM/PM"</td></tr>
-		    <tr><td>End time</td><td><input type="time" name="end_time" value="$end" /> input of form "hh:mm AM/PM"</td></tr>
+		    <tr><td>Start time</td><td><input type="time" name="start_time" value="$start"/>Current start time: '$start'. (input "hh:mm  AM/PM")</td></tr>
+		    <tr><td>End time</td><td><input type="time" name="end_time" value="$end" />Current end time: '$end'. (input"hh:mm AM/PM")</td></tr>
 		    <tr><td>Status</td><td><select name='status'>
 			<!-- <option value="Pending"</option>Pending<br />-->
 			 <option value="in Progress"</option>in Progress<br />
