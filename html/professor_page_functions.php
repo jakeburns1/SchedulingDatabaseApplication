@@ -76,7 +76,7 @@ function style() {
             background-color: #dddddd;
         }
         
-        div {
+        div #main{
             width: 85%;
             height: 60%;
             overflow: scroll;
@@ -91,6 +91,10 @@ function style() {
         
         #edit_start, #edit_end, #add_student, #add_start, #add_end {
             float:left;
+        }
+        
+        div #add_button {
+            text-align:center;
         }
         
         </style>';
