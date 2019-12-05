@@ -83,7 +83,7 @@ $pdo =connect_to_psql($dBase);
                     }
                 }
     	        else{
-    	            echo "<h1>Password or username was incorrect please go back and retry /h1> ";
+    	            echo "<h1 align = 'center'>Password or username was incorrect please go back and retry </h1> ";
     	        }
 	       }
 	       
