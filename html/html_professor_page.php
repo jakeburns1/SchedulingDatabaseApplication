@@ -22,7 +22,7 @@ if (isset($_POST['delete'])) {
 if (isset($_POST['edit'])) {
     echo "<form method='post' id='edit_form'>";
     $ids = explode(",", $_POST['id']);
-    echo "<input type='hidden' name='id' value=" . $ids[0] . "/>";
+    echo "<input type='hidden' name='id' value=" . $ids[0] . " />";
     echo "<div id='edit_date'>";
     echo "<p>Test Date:</p>";
     echo "<input type='date' name='test_date' value='2019-12-03' min='2019-12-03' /></div>";
@@ -41,14 +41,12 @@ if (isset($_POST['edit'])) {
 }
 
 if (isset($_POST['update'])) {
-        echo $_POST['id'];
-        $ids = explode(",", $_POST['id']);
 		$sql = 'UPDATE students_tests SET test_date = :test_date, 
 		test_time = :test_start_time, test_schedule_end = :test_end_time
 		WHERE student_id = :student_id';
 		$stmt = $pdo->prepare($sql);
 
-		$data = ['student_id' => $ids[0],
+		$data = ['student_id' => $_POST['id'],
 		   		  'test_date' => $_POST['test_date'],
 		   'test_start_time'  => $_POST['start_time'],
 		   'test_end_time'    => $_POST['end_time']];
