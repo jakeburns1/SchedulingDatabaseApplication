@@ -127,7 +127,7 @@ SQL;
 		     
 SQL;
 	     $stmt = $pdo->prepare($sql); 
-	     $data['proctor_id'] = '1';
+	     $data['proctor_id'] = 1;
 	     //$_SESSION['user_id'];
 	      try
 	      {
