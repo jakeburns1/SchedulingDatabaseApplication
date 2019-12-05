@@ -75,6 +75,24 @@ function style() {
         tr:nth-child(even) {
             background-color: #dddddd;
         }
+        
+        div {
+            width: 85%;
+            height: 60%;
+            overflow: scroll;
+            margin: auto;
+        }
+
+        #add_form, #edit_form {
+            position: absolute;
+            top: 70%;
+            left: 50%;
+        }
+        
+        #edit_start, #edit_end, #add_student, #add_start, #add_end {
+            float:left;
+        }
+        
         </style>';
 }
 
