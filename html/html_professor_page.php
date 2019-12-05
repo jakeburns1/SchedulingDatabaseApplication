@@ -180,20 +180,19 @@ $sql = 'INSERT INTO tests (professor_id, course_program, course_code, course_sec
 function display_tests($pdo) {
 $sql = 'SELECT *
             FROM professor_test
-				                NATURAL JOIN professors
-						            WHERE professor_email = :user_id';
-							        $stmt = $pdo->prepare($sql);
-								    $data['user_id'] = $_SESSION['user_id'];
-								        try
-									    {
-									            $stmt->execute($data);
-											}
-												catch (\PDOException $e)
-												      {
-														 debug_message("Error: ".$e);
-														 		       }
-
-																       $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+				 NATURAL JOIN professors
+		    WHERE professor_email = :user_id';
+$stmt = $pdo->prepare($sql);
+$data['user_id'] = $_SESSION['user_id'];
+try
+{
+    $stmt->execute($data);
+}
+catch (\PDOException $e)
+{
+    debug_message("Error: ".$e);
+}
+$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 																       
   
   echo '<br>';
@@ -215,9 +214,9 @@ $sql = 'SELECT *
 	<input type='submit' name= 'edit' value='Edit' />
 	</td></form></tr>";
   }
-  echo '</table><br>';
+  echo "</table><br><div id='add_button'>";
   echo "<form method='post'>";
-  echo "<input type='submit' name='add' value='Add new test'></form>";  
+  echo "<input type='submit' name='add' value='Add new test'></form></div>";  
   
   style();
 }
