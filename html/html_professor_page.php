@@ -187,7 +187,7 @@ $sql = 'SELECT *
   
   echo '<br>';
   echo '<h1 align="center">Test Schedule</h1>';
-  echo '<div>';
+  echo "<div id='main'>";
   echo '<table>';
   echo '<tr><th>Course</th><th>Student</th><th>Test Date</th><th>Test Time</th><th>Test Location</th><th></th></tr>';
   foreach ($result as $row) {
