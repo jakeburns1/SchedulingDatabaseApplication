@@ -37,6 +37,11 @@ FUNCTIONS:
         table{
            border-collapse: thick;
         }
+        td, th{
+            border: 1px solid black;
+            text-align: left;
+            padding: 8px;
+        }
     </style>
   </head>
     <body>
