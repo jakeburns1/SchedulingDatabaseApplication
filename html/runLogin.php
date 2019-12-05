@@ -1,4 +1,4 @@
- <?php
+<?php
 	  session_start();
 	  ini_set('display_errors',1);
  error_reporting(E_ALL);
@@ -83,7 +83,7 @@ $pdo =connect_to_psql($dBase);
                     }
                 }
     	        else{
-    	            echo "password was incorrect";
+    	            echo "<h1>Password or username was incorrect please go back and retry /h1> ";
     	        }
 	       }
 	       
