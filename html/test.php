@@ -12,7 +12,7 @@ body {
   height: 100px;
   padding: 4px 0;
   
-  transform: translateX(-50%) translateY(-50%);
+ 
   border-radius: 3px;
 
   &:hover {
