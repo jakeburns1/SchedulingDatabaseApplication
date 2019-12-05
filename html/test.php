@@ -53,7 +53,7 @@
 					
 					<div class="container-login100-form-btn">
 						<button class="login100-form-btn">
-							<input type="submit" class = "button" value = "Login">
+							<input type="submit" value = "Login">
 						</button>
 					</div>
 
