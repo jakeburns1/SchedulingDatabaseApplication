@@ -1,54 +1,89 @@
 <!DOCTYPE html>
-<html>
-	<head>
-	    <style>
-body {
-  background: #349eeb;
-}
+<html lang="en">
+<head>
+	<title>Acme Test Log In</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
+</head>
+<body>
+	
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<div class="login100-pic js-tilt" data-tilt>
+					<img src="images/img-01.png" alt="IMG">
+				</div>
 
-body {font-family: Arial, Helvetica, sans-serif;}
-form {border: 3px solid #f1f1f1;}
+				<form class="login100-form validate-form" action = 'runLogin.php' method = 'post' align = 'center'>
+					<span class="login100-form-title">
+						Acme Test Login Below
+					</span>
 
-input[type=text], input[type=password] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-}
+					<div class="wrap-input100 validate-input">
+						<input class="input100" type = 'text' name = 'username' placeholder = 'username'>
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-envelope" aria-hidden="true"></i>
+						</span>
+					</div>
 
-button {
-  background-color: #4CAF50;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-}
+					<div class="wrap-input100 validate-input" data-validate = "Password is required">
+						<input class="input100" type = 'password' name = 'password' placeholder="Password">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-lock" aria-hidden="true"></i>
+						</span>
+					</div>
+					
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn">
+							<input type="submit" class = "button" value = "Login">
+						</button>
+					</div>
 
-button:hover {
-  opacity: 0.8;
-}
-
-
-</style>
-	<title>Achme Test Log In</title>
-
-	</head>
-	<body>
-	  <h1 align = 'center'> Welcome to Acme Proctoring. Please login below!</h1>
-
-	  <form action = 'runLogin.php' method = 'post' align = 'center'>
-	    username: <input type = 'text' name = 'username'> <br>
-	    password: <input type = 'password' name = 'password'><br>
-
-	    <input type="submit" class = "button" value = "Login"><br>
-	    <a href="professor_page.php">professor page</a>
+<a href="professor_page.php">professor page</a>
 	    <a href="proctors.php">proctor page</a>
-	  </form>
+				</form>
+				
+			</div>
+		</div>
+	</div>
+	
+	
 
-	  
-	</body>
-	</html>
+	
+<!--===============================================================================================-->	
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/tilt/tilt.jquery.min.js"></script>
+	<script >
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+	</script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+
+</body>
+</html>
