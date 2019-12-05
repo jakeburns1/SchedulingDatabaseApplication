@@ -57,8 +57,6 @@
 						</button>
 					</div>
 
-<a href="html_professor_page.php">professor page</a>
-	    <a href="proctors.php">proctor page</a>
 				</form>
 				
 			</div>
