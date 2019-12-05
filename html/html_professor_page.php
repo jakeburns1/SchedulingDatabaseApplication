@@ -208,9 +208,8 @@ $sql = 'SELECT *
 	</td></form></tr>";
   }
   echo '</table><br>';
-  echo "</div id='add_button'>";
   echo "<form method='post'>";
-  echo '<input type="submit" name="add" value="Add new test" /></div></form>';  
+  echo '<input type="submit" name="add" value="Add new test" /></form>';  
   
   style();
 }
