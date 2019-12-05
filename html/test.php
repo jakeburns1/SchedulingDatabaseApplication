@@ -8,8 +8,8 @@ body {
 
 .button {
   background: #e60e59;
-  width: 180px;
-  height: 300px;
+  width: 250px;
+  height: 200px;
   padding: 4px 0;
   
   position: absolute;
