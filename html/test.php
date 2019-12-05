@@ -3,7 +3,7 @@
 	<head>
 	    <style>
 body {
-  background: #f1c40f;
+  background: blue;
 }
 
 .button {
@@ -17,14 +17,6 @@ body {
   transform: translateX(-50%) translateY(-50%);
   border-radius: 3px;
 
-  p {
-   	font-family: 'Roboto'; 
-	  text-align: center;
-  	text-transform: uppercase;
-    color: #FFF;
-    user-select: none;
-  }
-  
   &:hover {
     cursor: pointer;
   }
