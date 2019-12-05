@@ -6,31 +6,33 @@ body {
   background: #349eeb;
 }
 
-.button {
-  background: #e60e59;
-  width: 175px;
-  height: 100px;
-  padding: 4px 0;
-  
- 
-  border-radius: 3px;
+body {font-family: Arial, Helvetica, sans-serif;}
+form {border: 3px solid #f1f1f1;}
 
-  &:hover {
-    cursor: pointer;
-  }
-  
-  &:after {
-    content: "";
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 10%;
-    border-radius: 50%;
-    background-color: darken(#f1c40f, 20%);
-    opacity: 0.4;
-    bottom: -30px;
-  }
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
 }
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+
 </style>
 	<title>Achme Test Log In</title>
 
