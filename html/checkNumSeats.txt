@@ -1,0 +1,55 @@
+function checkNumSeats($pdo)
+{
+             //Query for number of tests scheduled for that time and date in the testCenter
+	     $sql = <<<'SQL'
+                    SELECT test_date,
+                           test_time,
+                           COUNT(DISTINCT(student_id,test_id)) AS num_seats
+                    FROM students_tests
+                         NATURAL JOIN tests
+		    WHERE (university = :university AND building :=building AND test_date = :test_date
+                          AND test_time = :test_time)
+                    GROUP BY test_date, test_time
+SQL;
+             //Set the values of attribtues to be checked 
+	     $stmt = $pdo->prepare($sql);
+             $data['test_date'] = $_POST['date'];
+	     $data['test_time'] = $_POST['time'];
+	     $data['university'] = $_POST['university'];
+	     $data['building'] = $_POST['building'];
+	     try 
+	     {
+	         $stmt->execute($data);
+	     }
+	     catch(\PDOException $e)
+	     {
+		   debug_message('Error Occured: '.$e);
+	     }
+             
+	     //Retrives the number of seats in the testCenter
+	     $sql2 = <<<'SQL'
+		     SELECT :seats,
+		     FROM testCenters
+		     WHERE (university = :university AND building = :building)
+SQL;
+	     //If it is paper, check available_seats. If not paper, check computer seats.
+	    $seats = 'available_seats';
+	    if ($_POST['is_paper']===false)
+	    {
+               $seats = 'computer_seats';
+	    }
+	    //Set the values of attribtues to be checked 
+            $stmt2 = $pdo->prepare($sql);
+            $data2['seats'] = $seats;
+	    $data2['university'] = $_POST['university'];
+	    $data2['building'] = $_POST['building'];
+            try 
+	    {
+	        $stmt2->execute($data2);
+	    }
+	    catch(\PDOException $e)
+	    {
+		debug_message('Error Occured: '.$e);
+	    }
+
+}
