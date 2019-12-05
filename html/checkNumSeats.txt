@@ -51,5 +51,11 @@ SQL;
 	    {
 		debug_message('Error Occured: '.$e);
 	    }
+	    number_tests_scheduled = $stmt->fetch();
+	    max_num_seasts = $stmt2->fetch();
+	    if(number_tests_scheduled >= max_num_seasts)
+	    {
+	      echo"<p><b>ERROR</b>: no available seats</p>";
+	    }
 
 }
