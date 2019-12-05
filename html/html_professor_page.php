@@ -186,7 +186,7 @@ $sql = 'SELECT *
   echo '<div>';
   echo '<table>';
   echo '<tr><th>Course</th><th>Student</th><th>Test Date</th><th>Test Time</th><th>Test Location</th><th></th></tr>';
-  foreach ($data as $row) {
+  foreach ($result as $row) {
 	echo '<tr>';
 	echo '<form method="post">';
     echo '<td>' . $row['course'] . '</td>';
