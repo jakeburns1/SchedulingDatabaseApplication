@@ -13,7 +13,7 @@ CREATE VIEW tests_information
 AS
 SElECT DISTINCT students.student_first_name || ' ' ||students.student_last_name AS name,
        students_tests.test_date,
-       to_char(students_tests.test_time, 'HH:MI') || '-' || to_char(students_tests.test_schedule_end, 'HH:MI AM')test_time,
+       students_tests.test_time AS test_time, --to_char(students_tests.test_time, 'HH:MI') || '-' || to_char(students_tests.test_schedule_end, 'HH:MI AM')test_time,
        students_tests.test_status,
        tests.test_id,
        students_tests.student_id,
