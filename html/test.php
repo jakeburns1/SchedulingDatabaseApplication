@@ -12,9 +12,6 @@ body {
   height: 100px;
   padding: 4px 0;
   
-  position: absolute;
-  left: 50%;
-  top: 50%;
   transform: translateX(-50%) translateY(-50%);
   border-radius: 3px;
 
@@ -45,7 +42,7 @@ body {
 	    username: <input type = 'text' name = 'username'> <br>
 	    password: <input type = 'password' name = 'password'><br>
 
-	    <input type="submit" class = "button" value = "login"><br>
+	    <input type="submit" class = "button" value = "Login"><br>
 	    <a href="professor_page.php">professor page</a>
 	    <a href="proctors.php">proctor page</a>
 	  </form>
