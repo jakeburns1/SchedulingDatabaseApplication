@@ -543,7 +543,7 @@ SQL;
 	       else
 	       {
 		       displaySchedule($pdo);
-		       $pdo = displayTests($pdo); 
+		       displayTests($pdo); 
 
 	       }
 	   }
