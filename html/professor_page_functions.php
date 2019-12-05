@@ -83,26 +83,59 @@ function style() {
             margin: auto;
         }
 
-        #add_form, #edit_form {
-	position: absolute;
+    #add_form, #edit_form {
+	    position: absolute;
          top: 80%;
-	 left: 45%;
+	     left: 45%;
         }
         
-        #edit_date {
-	position: relative;
-	left: -400px;
+    #edit_date {
+	    position: relative;
+	    left: -400px;
 	}
 	#edit_start {
-	position: relative;
-	left: -150px;
-	top: -75px;
+	    position: relative;
+	    left: -150px;
+	    top: -75px;
 	}
 	#edit_end{
-	        position: relative;
-		        left: 200px;
-			        top: -150px;
-				        }
+	    position: relative;
+	    left: 200px;
+	    top: -150px;
+	}
+	#add_button{
+	    align: center;
+	}
+	#add_course{
+	    position: relative;
+	    left: -275px;
+	}
+	#add_stuent{
+	    position: relative;
+	    left: 100px;
+	    top: -75px;
+	}
+	#add_date{
+	    position: relative;
+	    left: -400px;
+	    top: -75px;
+	}
+	#add_start{
+	    position: relative;
+	    left: -150px;
+	    top: -150px;
+	}
+	#add_end{
+	    position: relative;
+	    left: 200px;
+	    top: -225px;
+	}
+	#add_location{
+	    position: relative;
+	    top: -225px;
+	}
+	body {background-color: #CBC0D3;}
+	
         
         </style>';
 }
