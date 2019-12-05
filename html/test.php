@@ -2,6 +2,14 @@
 <html>
 	<head>
 	<title>Achme Test Log In</title>
+		  <style type=”text/css”>
+
+
+h1 {
+   color: blue;
+}
+
+</style>
 	</head>
 	<body>
 	  <h1 align = 'center'> Welcome to Acme Proctoring. Please login below!</h1>
@@ -14,14 +22,7 @@
 	    <a href="professor_page.php">professor page</a>
 	    <a href="proctors.php">proctor page</a>
 	  </form>
-	  <style type=”text/css”>
 
-
-h1 {
-   color: blue;
-}
-
-</style>
 	  
 	</body>
 	</html>
