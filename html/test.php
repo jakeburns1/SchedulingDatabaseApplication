@@ -7,7 +7,7 @@ body {
 }
 
 .button {
-  background: #3498db;
+  background: #e60e59;
   width: 180px;
   padding: 4px 0;
   
