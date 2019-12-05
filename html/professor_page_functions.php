@@ -78,24 +78,31 @@ function style() {
         
         div #main{
             width: 85%;
-            height: 60%;
+            height: 50%;
             overflow: scroll;
             margin: auto;
         }
 
         #add_form, #edit_form {
-            position: absolute;
-            top: 70%;
-            left: 50%;
+	position: absolute;
+         top: 80%;
+	 left: 45%;
         }
         
-        #edit_start, #edit_end, #add_student, #add_start, #add_end {
-            float:left;
-        }
-        
-        div #add_button {
-            text-align:center;
-        }
+        #edit_date {
+	position: relative;
+	left: -400px;
+	}
+	#edit_start {
+	position: relative;
+	left: -150px;
+	top: -75px;
+	}
+	#edit_end{
+	        position: relative;
+		        left: 200px;
+			        top: -150px;
+				        }
         
         </style>';
 }
