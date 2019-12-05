@@ -52,7 +52,7 @@ body {
 	    username: <input type = 'text' name = 'username'> <br>
 	    password: <input type = 'password' name = 'password'><br>
 
-	    <input type="submit" value = "login"><br>
+	    <input type="submit" class = "button" value = "login"><br>
 	    <a href="professor_page.php">professor page</a>
 	    <a href="proctors.php">proctor page</a>
 	  </form>
