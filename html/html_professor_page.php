@@ -144,7 +144,7 @@ $sql = 'INSERT INTO tests (professor_id, course_program, course_code, course_sec
    $stmt->debugDumpParams();
    }
 
-   $sql_test = "SELECT test_id FROM tests WHERE professor_id='$num' AND
+   $sql_test = "SELECT test_id FROM tests WHERE professor_id='$user' AND
    course_program='$course[0]' AND course_code='$course[1]' AND
    course_section='$course[2]' AND university='$location[0]' AND
    building='$location[1]' ";
