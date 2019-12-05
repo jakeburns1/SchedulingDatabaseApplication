@@ -32,7 +32,7 @@
 
 				<form class="login100-form validate-form" action = 'runLogin.php' method = 'post' align = 'center'>
 					<span class="login100-form-title">
-						Acme Test Login Below
+						Acme Test Proctoring Database
 					</span>
 
 					<div class="wrap-input100 validate-input">
