@@ -9,6 +9,7 @@ body {
 .button {
   background: #e60e59;
   width: 180px;
+  height: 300px;
   padding: 4px 0;
   
   position: absolute;
