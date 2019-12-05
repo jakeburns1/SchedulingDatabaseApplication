@@ -209,7 +209,7 @@ $sql = 'SELECT *
   }
   echo '</table><br>';
   echo "<form method='post'>";
-  echo '<input type="submit" name="add" value="Add new test"></form>';  
+  echo "<input type='submit' name='add' value='Add new test'></form>";  
   
   style();
 }
