@@ -3,7 +3,7 @@
 	<head>
 	    <style>
 body {
-  background: blue;
+  background: #349eeb;
 }
 
 .button {
