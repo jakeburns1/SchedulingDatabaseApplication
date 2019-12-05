@@ -110,7 +110,10 @@ if (isset($_POST['confirm'])) {
 
 $sql = 'INSERT INTO tests (professor_id, course_program, course_code, course_section, university, building) VALUES (?, UPPER(?), ?, ?, ?, ?)';
   $stmt = $pdo->prepare($sql);
-   $num = 1;
+  
+  $sql_professor = "SELECT professor_id FROM professors WHERE professor_email = $_SESSION['user_id']";
+    $data_professor = $pdo->query($sql_professor);
+    $professor_id = $data_professor->fetch();
    
   /*
    $stmt->bindValue(':professor_id', $num, PDO::PARAM_INT);
@@ -127,7 +130,7 @@ $sql = 'INSERT INTO tests (professor_id, course_program, course_code, course_sec
    'building'      => $location[1]];*/
 
    try{
-   $stmt->execute([$num, $course[0], $course[1], $course[2], $location[0], $location[1]]);
+   $stmt->execute([$professor_id['professor_id'], $course[0], $course[1], $course[2], $location[0], $location[1]]);
    }
    catch (Exception $e){
    $stmt->debugDumpParams();
@@ -205,9 +208,9 @@ $sql = 'SELECT *
 	</td></form></tr>";
   }
   echo '</table><br>';
-  echo '</div>';
+  echo "</div id='add_button'>";
   echo "<form method='post'>";
-  echo '<input type="submit" name="add" value="Add new test" /></form>';  
+  echo '<input type="submit" name="add" value="Add new test" /></div></form>';  
   
   style();
 }
