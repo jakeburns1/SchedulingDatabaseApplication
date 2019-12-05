@@ -22,7 +22,7 @@ if (isset($_POST['delete'])) {
 if (isset($_POST['edit'])) {
     echo "<form method='post' id='edit_form'>";
     $ids = explode(",", $_POST['id']);
-    echo "<input type='hidden' name='id' value=" . $ids[0] . " />";
+    echo "<input type='hidden' name='id' value=" . $ids[0] . " >";
     echo "<div id='edit_date'>";
     echo "<p>Test Date:</p>";
     echo "<input type='date' name='test_date' value='2019-12-03' min='2019-12-03' /></div>";
