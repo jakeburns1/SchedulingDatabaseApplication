@@ -123,11 +123,12 @@ SQL;
 		            END As paper, 
                             professor_name  
 		     FROM tests_information
-                     WHERE(tests_information.proctor_email = :proctor_id)
+		     NATURAL JOIN proctors
+                     WHERE(proctors.proctor_email = :proctor_id)
 		     
 SQL;
 	     $stmt = $pdo->prepare($sql); 
-	     $data['proctor_id'] = 'barry.totter@centre.edu';
+	     $data['proctor_id'] = $_SESSION['user_id'];
 	     //$_SESSION['user_id'];
 	      try
 	      {
