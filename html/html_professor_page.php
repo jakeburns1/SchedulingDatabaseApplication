@@ -21,27 +21,30 @@ if (isset($_POST['delete'])) {
 
 if (isset($_POST['edit'])) {
     echo "<form method='post' id='edit_form'>";
-    echo "<input type='hidden' name='id' value='" . $_POST['id'] . "'/>";
+    $ids = explode(",", $_POST['id']);
+    echo "<input type='hidden' name='id' value=" . $ids[0] . "/>";
     echo "<p>Test Date:</p>";
     echo "<input type='date' id='edit_date' name='test_date' value='2019-12-03' min='2019-12-03' />";
 	
     echo "<p>Test Start Time:</p>";
-    echo "<input type='time' id='edit_start' name='start_time' value='08:00' min='08:00' max='12:00'|(min='13:00' max='15:00') />";
+    echo "<input type='text' id='edit_start' name='start_time' value='08:00' pattern='(08|09|10|11|13|14|15):[0-5]{1}[0-9]{1}' />";
+    echo "<small> Time of 24-hour</small>";
 
     echo "<p>Test End Time:</p>";
-    echo "<input type='time' id='edit_end' name='end_time' value='09:00' min='08:00' max='12:00'|(min='13:00' max='15:00') />";
+    echo "<input type='text' id='edit_end' name='end_time' value='09:00' pattern='(08|09|10|11|13|14|15):[0-5]{1}[0-9]{1}' />";
     echo "<small> Working hours are 8-12am and 1-4pm</small><br><br>";
     
      echo "<input type='submit' id='update' name='update' value='Update' /></form>";
 }
 
 if (isset($_POST['update'])) {
+        $ids = explode(",", $_POST['id']);
 		$sql = 'UPDATE students_tests SET test_date = :test_date, 
 		test_time = :test_start_time, test_schedule_end = :test_end_time
 		WHERE student_id = :student_id';
 		$stmt = $pdo->prepare($sql);
 
-		$data = ['student_id' => $_POST['id'],
+		$data = ['student_id' => $ids[0],
 		   		  'test_date' => $_POST['test_date'],
 		   'test_start_time'  => $_POST['start_time'],
 		   'test_end_time'    => $_POST['end_time']];
@@ -76,10 +79,10 @@ if (isset($_POST['add'])) {
 	
     echo "<p>Test Start Time:</p>";
     echo "<input type='text' id='add_start' name='start_time' value='08:00' pattern='(08|09|10|11|13|14|15):[0-5]{1}[0-9]{1}' />";
-    
+    echo "<small> Time of 24-hour</small>";
 
     echo "<p>Test End Time:</p>";
-    echo "<input type='time' id='add_end' name='end_time' value='09:00' min='08:00' max='12:00'|min='13:00' max='15:00' />";
+    echo "<input type='text' id='add_end' name='end_time' value='09:00' pattern='(08|09|10|11|13|14|15):[0-5]{1}[0-9]{1}' />";
     echo "<small> Working hours are 8-12am and 1-4pm</small>";
 	
 	echo "<p>Test Location:</p>";
