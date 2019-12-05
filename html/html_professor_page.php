@@ -164,8 +164,6 @@ $sql = 'INSERT INTO tests (professor_id, course_program, course_code, course_sec
 function display_tests($pdo) {
 $sql = 'SELECT *
             FROM professor_test
-	                NATURAL JOIN students_courses
-			            NATURAL JOIN courses
 				                NATURAL JOIN professors
 						            WHERE professor_email = :user_id';
 							        $stmt = $pdo->prepare($sql);
