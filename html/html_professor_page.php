@@ -41,11 +41,13 @@ if (isset($_POST['edit'])) {
 }
 
 if (isset($_POST['update'])) {
+        echo $_POST['id'];
         $ids = explode(",", $_POST['id']);
 		$sql = 'UPDATE students_tests SET test_date = :test_date, 
 		test_time = :test_start_time, test_schedule_end = :test_end_time
 		WHERE student_id = :student_id';
 		$stmt = $pdo->prepare($sql);
+		echo $ids[0];
 
 		$data = ['student_id' => $ids[0],
 		   		  'test_date' => $_POST['test_date'],
