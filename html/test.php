@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html>
 	<head>
-	<title>Achme Test Log In</title>
-		  <style type=”text/css”>
-
-
-body {
-   background: blue;
-}
-
+	    <style>
+body {background-color: powderblue;}
+h1   {color: blue;}
+p    {color: red;}
 </style>
+	<title>Achme Test Log In</title>
+
 	</head>
 	<body>
 	  <h1 align = 'center'> Welcome to Acme Proctoring. Please login below!</h1>
