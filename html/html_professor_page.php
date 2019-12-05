@@ -2,7 +2,7 @@
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
-require('html_professor_page_functions.php');
+require('professor_page_functions.php');
 
 session_start();
 
