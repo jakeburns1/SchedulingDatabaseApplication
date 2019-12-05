@@ -185,6 +185,7 @@ $sql = 'SELECT *
 																       $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 																       
   
+  echo '<br>';
   echo '<h1 align="center">Test Schedule</h1>';
   echo '<div>';
   echo '<table>';
