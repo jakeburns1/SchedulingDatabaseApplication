@@ -243,7 +243,7 @@ _HTML_;
 SQL;
 
 		   $stmt = $pdo->prepare($sql); 
-	           $data['proctor_email'] = 'thomas.allen@centre.edu';//'berry.totter@centre.edu';
+	           $data['proctor_email'] = 'barry.totter@centre.edu'; //''thomas.allen@centre.edu';//'berry.totter@centre.edu';
 		   $query_type = 'all';
 		   $value = "";
 
