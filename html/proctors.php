@@ -118,9 +118,9 @@ SQL;
 	     echo"</th></tr></table>";
 	   }
 
-       function displayTests($pdo) // Creates the table displaying test information for current day
+         function displayTests($pdo) // Creates the table displaying test information for current day
 	   {
-		   $stmt_and_data= newQuery($pdo);
+		   $stmt_and_data= newQuery($pdo); //this function allows for changing the queries
 		   $stmt = $stmt_and_data[0];
 		   $data = $stmt_and_data[1];
 	      try
@@ -196,8 +196,8 @@ SQL;
 	      return $pdo;
 	   }
 
-       function newFilter($pdo)
-	   {   
+       function newFilter($pdo) //This form gets the specific value the user
+	   {                        //wants to query. Does this based on the Filter Selected. 
 	     if(isset($_POST['Filter']))
 	     {
 		   $catagory = $_POST['Filter'];
@@ -230,7 +230,7 @@ _HTML_;
 	   }
 
 	   function newQuery($pdo) //used to create the proper queries to query the database. 
-	   {
+	   {                       //runs different queries if specified, otherwise runs  the below query. 
                    $sql = <<<'SQL'
 			     SELECT name, test_date, test_time, test_id,test_status, student_id,
 				    class,
@@ -377,7 +377,7 @@ SQL;
 	      }
 	   }
 
-	   function inProgress($pdo,$stud_id,$test_id) //updates status of started test to "in progress".
+	   function inProgress($pdo,$stud_id,$test_id)//helper funciton, updates status of started test to "in progress".
 	   {
 	      $string = "in Progress";
 	      $sql = <<<'SQL'
@@ -399,7 +399,7 @@ SQL;
 	      }
 	   }
 
-	   function completed($pdo,$stud_id,$test_id) // updates Status to "completed" when end_time entered
+	   function completed($pdo,$stud_id,$test_id)//helper function, updates Status to "completed" when end_time entered
 	   {
 	      $string = "Completed";
 	      $sql = <<<'SQL'
@@ -421,7 +421,7 @@ SQL;
 	      }
 	   }
 
-	   function startIsValued($pdo,$stud_id,$test_id,$print) //checks if test_start_time is valued or not for given reservation.                                                    //returns true if it is valued, flase otherwise. 
+	   function startIsValued($pdo,$stud_id,$test_id,$print) //helper function, checks if test_start_time is valued or not for given reservation.                                                    //returns true if it is valued, flase otherwise. 
 	   {
 		   $sql = <<<'SQL'
 			  SELECT test_start_time FROM students_tests
@@ -573,8 +573,8 @@ SQL;
 	     }
 	   }
 
-	   function editButton($pdo)
-	   {
+	   function editButton($pdo) // Displays what the proctor can edit and 
+	   {                        //collects those inputs. Post position of this form is $_POST['update']
 	      $test = selectTest($pdo);
 	      $start = $test['test_start_time'];
 	      $end =  $test['test_end_time'];
@@ -613,8 +613,8 @@ _HTML_;
 
 	   }
 
-	   function updateTest($pdo)
-	   {
+	   function updateTest($pdo) //applies changes to database based on information
+	   {                        //from the $_POST data set in edit. 
 		$ids = explode(",",filter_input(INPUT_POST, 'update' , FILTER_SANITIZE_STRING));
 		$sql = <<<'SQL'
 		      UPDATE students_tests 
@@ -661,31 +661,31 @@ SQL;
 	       //$pdo = connect_to_psql('project'); //this should not be commented out.
 	       // style(); 
 
-	       if(isset($_POST['edit']))
+	       if(isset($_POST['edit']))  //Determines if user clicked the edit button
 	       { 
-		  editButton($pdo);
+		  editButton($pdo); 
        //           echo"<UL><a href = 'proctors.php'>cancel</a></UL>";
 	       }
-	       elseif (isset($_POST['update']))
+	       elseif (isset($_POST['update'])) //applies the changes specified in the editButton() form.
 	       {		  
 		          updateTest($pdo);
                   echo"<p align='center'><a href = 'proctors.php'>return to home</a></p>";
 	       }
-	       elseif (isset($_POST['start'])) //IF START is the button pushed
+	       elseif (isset($_POST['start'])) //IF START is the button pushed.
 	       {
 		     startButton($pdo);      
 	         echo"<UL><p align='center'><a href = 'proctors.php'>return to home</a></p></UL>";
 	       }
-           elseif (isset($_POST['end'])) //If END is the button pushed
+           elseif (isset($_POST['end'])) //If END is the button pushed.
 	       {
 		     endButton($pdo);
 		     echo"<UL><p align='center'><a href = 'proctors.php'>return to home</a></p></UL>";
 	       }
-          elseif (isset($_POST['change_filter']))
+          elseif (isset($_POST['change_filter'])) //If a new filter for displaying tests has been selected. 
 	       {
 	           newFilter($pdo);
 	       }
-           elseif(isset($_POST['apply_filter']) AND isset($_POST['filter_value']))
+           elseif(isset($_POST['apply_filter']) AND isset($_POST['filter_value']))//Runs a query based on the filter, and value being searched. 
 	       { 
                    displaySchedule($pdo);
 		           $pdo = displayTests($pdo);
