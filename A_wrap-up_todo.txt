@@ -15,7 +15,7 @@ testCenters
 days
 tests
 
-To Implementation:
+To Implement:
 
 available seats constraint - still needs implementation. Requires a query, and a php function,
                    should be written in either professor_page_functions. 
@@ -25,10 +25,10 @@ OperatingHours constraint- need to fix time constraints so that lunch (12-1), sa
                  
 Proctor Scheduleing - We should have a calander system for proctor schedueling, so that 
               it can be more flexible, and not just repeating every week. Other 
-              teams had this so we ought to have it. 
+              teams had this so we ought to have it. (optional) 
               
 Filters - we should have buttons able to filter the test information being 
-          displayed on the proctors and professors pages. 
+          displayed on the professors pages. (proctors has been implemented). 
               
 
 
