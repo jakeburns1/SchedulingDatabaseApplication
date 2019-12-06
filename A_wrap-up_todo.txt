@@ -1,0 +1,34 @@
+IF YOU COMPLETE ANY OF THESE TODOS PLEASE WRITE NEXT TO IT THAT IT IS DONE
+IMIDIATLEY AFTER YOU FINISH IT. 
+
+
+Field_specification forms still needing updating for tables:
+
+courses
+proctors
+proffessors
+schedules
+students
+students_courses
+students_tests
+testCenters
+days
+tests
+
+To Implementation:
+
+available seats constraint - still needs implementation. Requires a query, and a php function,
+                   should be written in either professor_page_functions. 
+                   
+OperatingHours constraint- need to fix time constraints so that lunch (12-1), saturday and sunday 
+                 are not allowed. May require not using "time" as the input type. 
+                 
+Proctor Scheduleing - We should have a calander system for proctor schedueling, so that 
+              it can be more flexible, and not just repeating every week. Other 
+              teams had this so we ought to have it. 
+              
+Filters - we should have buttons able to filter the test information being 
+          displayed on the proctors and professors pages. 
+              
+
+
