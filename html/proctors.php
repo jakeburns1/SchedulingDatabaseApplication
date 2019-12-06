@@ -118,33 +118,42 @@ SQL;
 	     echo"</th></tr></table>";
 	   }
 
-           function displayTests($pdo) // Creates the table displaying test information for current day
+       function displayTests($pdo) // Creates the table displaying test information for current day
 	   {
-             $sql = <<<'SQL'
-		     SELECT name, test_date, test_time, test_id,test_status, student_id,
-                            class,
-		            CASE WHEN  test_isPaper = TRUE THEN 'yes'
-			         ELSE 'no' 
-		            END As paper, 
-                            professor_name  
-		     FROM tests_information
-		     NATURAL JOIN proctors
-                     WHERE(proctors.proctor_id = :proctor_id)
-		     
-SQL;
-	     $stmt = $pdo->prepare($sql); 
-	     $data['proctor_id'] = 1;
-	     //$_SESSION['user_id'];
+		   $stmt_and_data= newQuery($pdo);
+		   $stmt = $stmt_and_data[0];
+		   $data = $stmt_and_data[1];
 	      try
 	      {
-		 $stmt->execute($data);     
-//	         $stmt = $pdo->query($sql);
+		     $stmt->execute($data);     
 	      }
 	      catch(\PDOException $e)
 	      {
-	       debug_message('Error Occured: '.$e);
+	       echo "<p align = 'center'><b>ERROR</b>: incorrect input type</p>";//debug_message('Error Occured: '.$e);
 	      }
 	      echo"<h2 align ='center'>Upcoming exams</h2>";
+
+              echo"<form method = 'post'>";
+              //---------Creates drop down for View by.---------------
+	      echo"<p align = 'center'>View by: <select name='Filter'>".
+		        "<option value ='all'</option>all<br />".
+			"<option value ='date'</option>date<br />".
+			"<option value ='name'</option>name<br />".
+                        "<option value ='time'</option>time<br />".
+			"<option value ='status'</option>status<br />";
+	      // <option value="Incomplete"</option>Incomplete<br /> 
+	      echo"</select>";//echo"<button  type = 'submit' name='change_filter' value ='enter'>ENTER</button></p>";
+	      //------------------------------------------------------
+
+	      //---Creates table for displaying tests ---------------------------
+	      //echo"<form method = 'post'>";
+	      //echo"<input type = 'text' name='filter_value' value = 'what you want'></p>";
+	      $val_to_show = ""; 
+	      if(isset($_POST['Filter'])){$val_to_show = $_POST['Filter'];}
+
+	      echo"<button  type = 'submit' name='change_filter' value ='enter'>ENTER</button>";
+	     // echo" Currently Viewing by : ".$val_to_show."</p>";
+	     //
 	      echo "<p><table border = 1, align ='center'>";
 	      echo"<tr><th>Student Name</th>";
 	      echo"<th>Class</th>";
@@ -153,13 +162,11 @@ SQL;
 	      echo"<th>Test Time</th>";
 	      echo"<th>Paper Copy</th>";
 	      echo"<th>Status</th>";
-	      echo"<th> </th><th>  </th><th> </th></tr>"; //<th> </th></tr>";
-
-	      echo"<form method = 'post'>";
+	      echo"<th> </th><th> </th><th> </th></tr>"; //<th> </th></tr>";
+	    //  echo"<form method = 'post'>";
 	      $index = 0;
 	      while($row = $stmt->fetch())     
 	      {
-
 		  $test_id = $row['test_id'];
 		  $student_id = $row['student_id'];
 		  $ids[0] = $student_id;
@@ -180,8 +187,139 @@ SQL;
 		  echo"</tr>";
 		  $index++;
 	      }
+	      //------------------------------------------------------------------------
 	      echo"</form>";
+	      if($index ===0)
+	      {
+                echo"<p align = 'center'><b>Error</b>: no matching data in database</p>";
+	      }
 	      return $pdo;
+	   }
+
+       function newFilter($pdo)
+	   {   
+	     if(isset($_POST['Filter']))
+	     {
+		   $catagory = $_POST['Filter'];
+		   $value = NULL;
+		   if($_POST['Filter']==="name")      {$value = "first_name last_name";}
+		   elseif($_POST['Filter']==="date")  {$value = "YYYY-mm-dd";}
+		   elseif($_POST['Filter']==="status"){$value = "Pending, in Progress, Completed, Incomplete";}
+		   elseif($_POST['Filter'] ==="time") {$value = "enter a time hh:mm (on 24 hour scale)";} 
+
+		   if($value !== NULL) {
+		       echo"<h2>Input the ".$catagory." you would like to search</h2>";
+		       $html = <<<_HTML_
+			   <form method = "post">
+				<input  type = 'text' name='filter_value' value = '' >$value
+				<button type = 'submit' name = 'apply_filter' value = $catagory >ENTER</button> 
+                           </form>
+_HTML_;
+
+                      echo $html;
+                      echo"<a href = 'proctors.php'>Cancel</a></form></p>";
+		   }
+		   else
+		   {
+		       echo"<h2>Confirm 'View by all' selection</h2>";
+		       echo"<p align = 'center'><form  method = 'post'><button type = 'submit' name = 'apply_filter' value = 'all' >ENTER</button>";
+                       echo"<a href = 'proctors.php'>Cancel</a></form></p>";
+		   }
+	     }
+	     else{ echo "thinks Filter isn't set";}
+	   }
+
+	   function newQuery($pdo) //used to create the proper queries to query the database. 
+	   {
+                   $sql = <<<'SQL'
+			     SELECT name, test_date, test_time, test_id,test_status, student_id,
+				    class,
+				    CASE WHEN  test_isPaper = TRUE THEN 'yes'
+					 ELSE 'no' 
+				    END As paper, 
+				    professor_name  
+			     FROM tests_information
+			     WHERE(tests_information.proctor_email= :proctor_email)
+SQL;
+
+		   $stmt = $pdo->prepare($sql); 
+	           $data['proctor_email'] = 'thomas.allen@centre.edu';//'berry.totter@centre.edu';
+		   $query_type = 'all';
+		   $value = "";
+
+		   if(isset($_POST['apply_filter']) AND isset($_POST['filter_value']))
+		   {
+		      $query_type = $_POST['apply_filter'];
+		      $value = $_POST['filter_value'];
+                      //var_dump($_POST);
+
+		     if($query_type ==="date")//queries based on the date given. 
+		     {
+			//echo"sort by date";
+                        $sql = <<<'SQL'
+			     SELECT name, test_date, test_time, test_id,test_status, student_id,
+				    class,
+				    CASE WHEN  test_isPaper = TRUE THEN 'yes'
+					 ELSE 'no' 
+				    END As paper, 
+				    professor_name  
+			     FROM tests_information
+			     WHERE(tests_information.proctor_email= :proctor_email AND test_date =:test_date)
+SQL;
+			$stmt = $pdo->prepare($sql);	
+			$data['test_date'] = $value;	
+		     }
+		     elseif ($query_type ==="name")
+		     { 
+                        $sql = <<<'SQL'
+			     SELECT name, test_date, test_time, test_id,test_status, student_id,
+				    class,
+				    CASE WHEN  test_isPaper = TRUE THEN 'yes'
+					 ELSE 'no' 
+				    END As paper, 
+				    professor_name  
+			     FROM tests_information
+			     WHERE(tests_information.proctor_email= :proctor_email AND name = :name)
+SQL;
+		       $stmt = $pdo->prepare($sql); 
+		       $data['name'] = $value;
+
+		     }
+		     elseif ($query_type ==='status')
+	             { 
+                         $sql = <<<'SQL'
+			     SELECT name, test_date, test_time, test_id,test_status, student_id,
+				    class,
+				    CASE WHEN  test_isPaper = TRUE THEN 'yes'
+					 ELSE 'no' 
+				    END As paper, 
+				    professor_name  
+			     FROM tests_information
+			     WHERE(tests_information.proctor_email= :proctor_email AND test_status =:test_status)
+SQL;
+		       $stmt = $pdo->prepare($sql); 
+		       $data['test_status'] = $value;
+		     }
+                     elseif ($query_type ==='time')
+	             { 
+                         $sql = <<<'SQL'
+			     SELECT name, test_date, test_time, test_id,test_status, student_id,
+				    class,
+				    CASE WHEN  test_isPaper = TRUE THEN 'yes'
+					 ELSE 'no' 
+				    END As paper, 
+				    professor_name  
+			     FROM tests_information
+			     WHERE(tests_information.proctor_email= :proctor_email AND test_time =:test_time)
+SQL;
+		         $stmt = $pdo->prepare($sql); 
+			 $data['test_time'] = $value;
+		     }
+
+		   }
+
+              $stmt = $pdo->prepare($sql);
+              return [$stmt,$data];
 	   }
 
 	   function setTimeZone($pdo) // sets the time zone
@@ -530,21 +668,28 @@ SQL;
 	       }
 	       elseif (isset($_POST['update']))
 	       {		  
-		  updateTest($pdo);
+		          updateTest($pdo);
                   echo"<p align='center'><a href = 'proctors.php'>return to home</a></p>";
 	       }
 	       elseif (isset($_POST['start'])) //IF START is the button pushed
 	       {
-		 startButton($pdo);      
+		     startButton($pdo);      
 	         echo"<UL><p align='center'><a href = 'proctors.php'>return to home</a></p></UL>";
 	       }
-               elseif (isset($_POST['end'])) //If END is the button pushed
+           elseif (isset($_POST['end'])) //If END is the button pushed
 	       {
-		  endButton($pdo);
-		  echo"<UL><p align='center'><a href = 'proctors.php'>return to home</a></p></UL>";
+		     endButton($pdo);
+		     echo"<UL><p align='center'><a href = 'proctors.php'>return to home</a></p></UL>";
 	       }
-	      // elseif (isset($POST['Absent']))
-
+          elseif (isset($_POST['change_filter']))
+	       {
+	           newFilter($pdo);
+	       }
+           elseif(isset($_POST['apply_filter']) AND isset($_POST['filter_value']))
+	       { 
+                   displaySchedule($pdo);
+		           $pdo = displayTests($pdo);
+	       }
 	       else
 	       {
 		       displaySchedule($pdo);
