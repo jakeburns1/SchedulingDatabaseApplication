@@ -18,7 +18,7 @@ Description:          _ The course code for which this test has been issued.
 
 PHYSICAL ELEMENTS
 
-Data Type:            _ AlphaNumeric
+Data Type:            _ Numeric
 Length:               _ 3
 Decimal Places:       _ 0
 Input Mask:           _ ###
