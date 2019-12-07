@@ -98,14 +98,17 @@ if (isset($_POST['add'])) {
     foreach ($data3 as $row) {
 		echo "<option value='" . $row['location'] . "'>" . $row['location'] . "</option>";
 	}
-	echo "</select><br><br>";
-	
+    echo "</select><br>";
+	//-------------------------Added Code for isPaper--------------------------------------
+	echo "<p>Is this examination a paper copy?</p>";
+	echo"<p><select name='is_paper'><option value =true>YES</option><option value =false>NO</option>";
+	echo"</select><br /><br />";
+	//---------------------------------------------------------------------------
 	echo "<input type='submit' id='confirm' name='confirm' value='Confirm' /></form>";
 }
 
-if (isset($_POST['confirm'])) {
+if (isset($_POST['confirm'])) { //Creates form for adding a test reservation.
 	$course = explode(" ", $_POST['course']);
-   
     $student = explode(" ", $_POST['student_name']);
     $sql_student = "SELECT student_id FROM students WHERE student_first_name = '$student[0]' AND student_last_name = '$student[1]'";
     $data_student = $pdo->query($sql_student);
@@ -168,11 +171,13 @@ $sql = 'INSERT INTO tests (professor_id, course_program, course_code, course_sec
    $stmt2->bindValue(':test_schedule_end', $_POST['end_time'], PDO::PARAM_STR);
    try{
       $stmt2->execute();
+      echo "<p> ". $_POST['student_name']. " has had test scheduled for ".$_POST['course']."!</p>";
         }
    catch (Exception $e){
        /* $stmt2->debugDumpParams(); */
-       echo "<p> ". $_POST['student_name']. " has been enrolled in ".$_POST['course']."!</p>";
+       echo "<p>Insertion Failed</p>";
        }
+       echo"<a href = 'professor_page.php'>Continue</a>"; // added continue
 }									
 				   
 
@@ -220,7 +225,80 @@ $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
   
   style();
 }
-  
-  display_tests($pdo);
+function checkNumSeats($pdo)
+{
+	    $sql = <<<'SQL'
+                SELECT test_date,
+                       test_time,
+                       COUNT(DISTINCT(student_id,test_id)) AS num_seats
+                FROM students_tests
+                      NATURAL JOIN tests
+		   WHERE (university = :university AND building = :building AND test_date = :test_date)
+           GROUP BY test_date, test_time
+SQL;
+	     $stmt = $pdo->prepare($sql);
+	     $location = explode(", ",filter_input(INPUT_POST,'location',FILTER_SANITIZE_STRING));
+	     //var_dump($location);------------------------------------------------------------------------------------------
+	     $data['test_date'] = $_POST['test_date'];
+	     //$data['test_time'] = $_POST['start_time']; (delete this)
+	     $data['university'] = $location[0];
+             $data['building'] = $location[1];
+	     try 
+             {
+	       $stmt->execute($data);
+	     }
+	     catch(\PDOException $e)
+	     {
+	       debug_message('Error Occured: '.$e);
+	     }
+	     $sql2 = <<<'SQL'
+		     SELECT available_seats
+		     FROM testCenters
+		     WHERE (university = :university AND building = :building)
+SQL;
+	   
+	     $seats = "available_seats";
+	     var_dump($_POST['is_paper']);
+	    if ($_POST['is_paper']==='false')
+       	    {
+		$seats = "available_computers";
+		$sql2 = <<<'SQL'
+			SELECT available_computers
+                        FROM testCenters
+			WHERE (university = :university AND building = :building)
+SQL;
+	    }
+	     var_dump($seats);
+            $stmt2 = $pdo->prepare($sql2);
+          //  $data2['seats'] = $seats;
+	    $data2['university'] = $location[0];
+	    $data2['building'] = $location[1];
+            try 
+            {
+	      $stmt2->execute($data2);
+            }
+	    catch(\PDOException $e)
+	    {
+	      debug_message('Error Occured: '.$e);
+	    }
+	    echo"<p>--------------------</p>";
+	    $conflict_tests = $stmt->fetch();
+	    $max_num_array = $stmt2->fetch();
+
+	    var_dump($conflict_tests);
+	    var_dump($max_num_array);
+
+	    echo"<p>---------------------------</p>";
+	    if($conflict_tests['num_seats'] >= $max_num_array[$seats])
+        {
+	      echo"<p><b>ERROR</b>: no available seats</p>";
+	    }
+	    else
+	    {
+	      echo"<p>seats are available</p>";
+	    }
+	    
+	}
+    display_tests($pdo);
 
 ?>
