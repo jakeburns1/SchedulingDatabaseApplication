@@ -1,0 +1,117 @@
+FIELD SPECIFICATIONS
+
+GENERAL ELEMENTS
+
+Field Name:           _ day_name
+
+Specification Type:
+  Unique:  _ 
+  Generic: _ X
+  Replica: _ 
+Parent Table:         _ Days
+Label:                _ 
+Source Specification: _ 
+Shared By:            _ ProctorsSchedule
+Aliases:              _ 
+Description:          _ Days of the week for validating the proctors' schedules.
+
+
+PHYSICAL ELEMENTS
+
+Data Type:            _ AlphaNumeric
+Length:               _ 9
+Decimal Places:       _ 0
+Input Mask:           _ N/A
+Display Format:       _ aaaaaaaaa
+Character Support:
+  Letters (A-Z):      _ X
+  Numbers (0-9):      _
+  Keyboard (.,/$#%):  _ 
+  Special (©®™Σπ):    _ 
+
+
+LOGICAL ELEMENTS
+
+Key Type:      Non:        _ 
+               Primary:    _ X
+               Foreign:    _ 
+               Alternate:  _ 
+
+Key Structure: Simple:     _ X
+               Composite:  _ 
+
+Uniqueness:    Non-unique: _ X
+               Unique:     _ 
+
+Null Support:  Nulls OK:   _ 
+               No nulls:   _ X
+
+Values Entered By: User:   _ 
+                   System: _ X
+
+Required Value:    No:     _ 
+                   Yes:    _ X
+
+Default Value:     _ 
+
+Range of Values:   _ 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'
+
+Edit Rule:
+  Enter now, edits allowed:       _ 
+  Enter now, edits not allowed:   _ X
+  Enter later, edits allowed:     _ 
+  Enter later, edits not allowed: _ 
+  Not determined at this time:    _ 
+
+Comparisons Allowed:
+  Same Field:   _ X
+                ALL  _ 
+                =    _ X
+                >    _ 
+                >=   _ 
+                !=   _
+                <    _ 
+                <=   _ 
+
+  Other Fields: _
+                ALL  _ 
+                =    _ 
+                >    _ 
+                >=   _ 
+                !=   _ 
+                <    _ 
+                <=   _ 
+
+  Value Expr.:  _ X
+                ALL  _ 
+                =    _ X
+                >    _ 
+                >=   _ 
+                !=   _ 
+                <    _ 
+                <=   _ 
+
+Operations Allowed:
+  Same Field:   _ 
+                ALL  _ 
+                +    _ 
+                -    _ 
+                *    _ 
+                /    _ 
+
+  Other Fields: _ X
+                ALL  _ 
+                +    _ X
+                -    _ 
+                *    _ 
+                /    _ 
+
+  Value Expr.:  _ X
+                ALL  _ 
+                +    _ X
+                -    _ 
+                *    _ 
+                /    _ 
+
+NOTES:
+
