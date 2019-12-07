@@ -62,7 +62,7 @@ function style() {
         table {
             /* font-family: arial, sans-serif; */
             border-collapse: collapse;
-            width: 80%;
+            width: 85%;
             margin: auto;
         }
 
@@ -75,37 +75,40 @@ function style() {
         tr:nth-child(even) {
             background-color: #dddddd;
         }
+
+	th {
+	   background-color: #80C2AF;
+	}
         
-        div #main{
-            width: 85%;
-            height: 50%;
+        div #ta{
+           
+            height: 500px;
             overflow: scroll;
             margin: auto;
         }
 
     #add_form, #edit_form {
 	    position: absolute;
-         top: 80%;
-	     left: 45%;
+         top: 750px;
+	     left: 35%;
         }
         
-    #edit_date {
-	    position: relative;
-	    left: -400px;
-	}
-	#edit_start {
-	    position: relative;
-	    left: -150px;
-	    top: -75px;
-	}
-	#edit_end{
-	    position: relative;
-	    left: 200px;
-	    top: -150px;
-	}
 	body {background-color: #CBC0D3;}
 	
-        
+	* {
+         font-size: 100%;
+	 font-family: "Comic Sans MS", cursive, sans-serif;
+	  }
+	 #title {
+	 font-size: 150%;
+	 font-weight: bold;
+	 }
+	 input {
+			     cursor: pointer;
+			     }
+	div #add_button {
+	    text-align: center;
+	}
         </style>';
 }
 
