@@ -225,7 +225,7 @@ $sql = 'INSERT INTO tests (professor_id, course_program, course_code, course_sec
        /* $stmt2->debugDumpParams(); */
        echo "<p>Insertion Failed</p>";
        }
-       echo"<a href = 'professor_page.php'>Continue</a>"; // added continue
+       echo"<a href = 'html_professor_page.php'>Continue</a>"; // added continue
        }
 }
 				   
