@@ -2,7 +2,7 @@ FIELD SPECIFICATIONS
 
 GENERAL ELEMENTS
 
-Field Name:           _ first name
+Field Name:           _ first_name
 
 Specification Type:
   Unique:  _ X
@@ -64,27 +64,27 @@ Edit Rule:
   Not determined at this time:    _ 
 
 Comparisons Allowed:
-  Same Field:   _ 
+  Same Field:   _ X
                 ALL  _ 
-                =    _ 
+                =    _ X
                 >    _ 
                 >=   _ 
                 !=   _ 
                 <    _ 
                 <=   _ 
 
-  Other Fields: _
+  Other Fields: _ X
                 ALL  _ 
-                =    _ 
+                =    _ X
                 >    _ 
                 >=   _ 
                 !=   _ 
                 <    _ 
                 <=   _ 
 
-  Value Expr.:  _ 
+  Value Expr.:  _ X
                 ALL  _ 
-                =    _ 
+                =    _ X
                 >    _ 
                 >=   _ 
                 !=   _ 
@@ -99,16 +99,16 @@ Operations Allowed:
                 *    _ 
                 /    _ 
 
-  Other Fields: _ 
+  Other Fields: _ X
                 ALL  _ 
-                +    _ 
+                +    _ X
                 -    _ 
                 *    _ 
                 /    _ 
 
-  Value Expr.:  _ 
+  Value Expr.:  _ X
                 ALL  _ 
-                +    _ 
+                +    _ X
                 -    _ 
                 *    _ 
                 /    _ 
