@@ -249,9 +249,10 @@ catch (\PDOException $e)
 $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 																       
   
-  echo '<br>';
-  echo '<h1 align="center">Test Schedule</h1>';
+  echo "<p>User: " . $data['user_id'] . "</p>";
+  echo '<p align="center" id="title">Test Schedule</p>';
   echo "<div id='main'>";
+  echo "<div id='ta'>";
   echo '<table>';
   echo '<tr><th>Course</th><th>Student</th><th>Test Date</th><th>Test Time</th><th>Test Location</th><th></th></tr>';
   foreach ($result as $row) {
@@ -268,9 +269,10 @@ $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 	<input type='submit' name= 'edit' value='Edit' />
 	</td></form></tr>";
   }
-  echo "</table><br><div id='add_button'>";
+  echo "</table></div><br>";
+  echo "<div id='add_button'>";
   echo "<form method='post'>";
-  echo "<input type='submit' name='add' value='Add new test'></form></div>";  
+  echo "<input type='submit' name='add' value='Add new test'></form></div></div>";  
   
   style();
 }
