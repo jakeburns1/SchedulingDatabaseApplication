@@ -23,24 +23,50 @@ if (isset($_POST['edit'])) {
     echo "<form method='post' id='edit_form'>";
     $ids = explode(",", $_POST['id']);
     echo "<input type='hidden' name='id' value=" . $ids[0] . " >";
-    echo "<div id='edit_date'>";
-    echo "<p>Test Date:</p>";
-    echo "<input type='date' name='test_date' value='2019-12-03' min='2019-12-03' /></div>";
-
-    echo "<div id='edit_start'>";
-    echo "<p>Test Start Time:</p>";
-    echo "<input type='text' name='start_time' value='08:00' pattern='(08|09|10|11|13|14|15):[0-5]{1}[0-9]{1}' />";
-    echo "<small> Time of 24-hour</small></div>";
-
-    echo "<div id='edit_end'>";
-    echo "<p>Test End Time:</p>";
-    echo "<input type='text' name='end_time' value='09:00' pattern='(08|09|10|11|13|14|15):[0-5]{1}[0-9]{1}' />";
-    echo "<small> Working hours are 8-12am and 1-4pm</small></div><br><br>";
+    echo "<div>";
+    echo "<label for='test_date'>Test Date: </label>";
+date_default_timezone_set("America/New_York");
+        $today = date('Y-m-d');
+	    echo "<input type='date' name='test_date' value='$today' min='$today' /></div><br>";
+    echo "<div>";
+    echo "<label for='start_time'>Start Time: </label>";
+    echo "<input type='time' name='start_time' min='08:00' max='16:00' /></div><br>";
+   
+    echo "<div>";
+    echo "<label for='end_time'>End Time: </label>";
+    echo "<input type='time' name='end_time' min='08:00' max='16:00' />";
+    echo "<small> Work from 8:00-16:00 (12:00-13:00 is lunch hour!)</small></div><br><br>";
     
      echo "<input type='submit' id='update' name='update' value='Update' /></form>";
 }
 
 if (isset($_POST['update'])) {
+$start = $_POST['start_time'];
+   $end = $_POST['end_time'];
+      $problem=false;
+      if ($_POST['start_time'] >= '12:00' AND $_POST['start_time'] < '13:00') {
+      $problem=true;
+      $message = "Nah we don't work at $start";
+      }
+      if ($_POST['end_time'] >= '12:00' AND $_POST['end_time'] < '13:00') {
+      $problem=true;
+      $message = "Nah we don't work at $end";
+      }
+      if ($_POST['start_time'] < '12:00' AND $_POST['end_time'] >= '13:00') {
+      $problem=true;
+      $message = "Choose morning time or afternoon time";
+      }
+      if ($_POST['start_time'] >= $_POST['end_time']) {
+      $problem=true;
+      $message = "The end time should be after the start time";
+      }
+
+
+   if ($problem==true) {
+         echo "<p>$message</p>";
+
+    }
+    else {
 		$sql = 'UPDATE students_tests SET test_date = :test_date, 
 		test_time = :test_start_time, test_schedule_end = :test_end_time
 		WHERE student_id = :student_id';
@@ -51,58 +77,85 @@ if (isset($_POST['update'])) {
 		   'test_start_time'  => $_POST['start_time'],
 		   'test_end_time'    => $_POST['end_time']];
 	$stmt->execute($data);
-	
+	}
 }
 
 if (isset($_POST['add'])) {
-    echo "<form method='post' id='add_form'>";
-    echo "<div id='add_course'>";
-    echo "<p>Course:</p>";
+   echo "<form method='post' id='add_form'>";
+   
+    echo "<label for='course'>Course: </label>";
 	echo "<select name='course'><option selected>Choose one</option>";
 	$sql = "SELECT course_program||' '||course_code||' '||course_section AS course FROM courses";
 	$data = $pdo->query($sql);
     foreach ($data as $row) {
 		echo "<option value='" . $row['course'] . "'>" . $row['course'] . "</option>";
 	}
-	echo "</select></div>";
-
-	echo "<div id='add_student'>";
-	echo "<p>Student Name:</p>";
+	echo "</select>";
+	
+	echo "<label for='student_name'>Student: </label>";
 	echo "<select name='student_name'><option selected>Choose one</option>";
 	$sql2 = "SELECT student_first_name||' '||student_last_name AS name FROM students";
 	$data2 = $pdo->query($sql2);
     foreach ($data2 as $row) {
 		echo "<option value='" . $row['name'] . "'>" . $row['name'] . "</option>";
 	}
-	echo "</select></div>";
+	echo "</select><br><br>";
 
-	echo "<div id='add_date'>";
-	echo "<p>Test Date:</p>";
+	echo "<div><label for='test_date'>Test Date: </label>";
 	date_default_timezone_set("America/New_York");
 	$today = date('Y-m-d');
-    echo "<input type='date' name='test_date' value='$today' min='$today' /></div>";
+    echo "<input type='date' name='test_date' value='$today' min='$today' /></div><br>";
+    
+    echo "<label for='start_time'>Start Time: </label>";
+    echo "<input type='time' name='start_time' value='08:00' min='08:00' max='16:00' />";
 
-    echo "<div id='add_start'>";
-    echo "<p>Test Start Time:</p>";
-    echo "<input type='text' name='start_time' value='08:00' pattern='(08|09|10|11|13|14|15):[0-5]{1}[0-9]{1}' />";
-    echo "<small> Time of 24-hour</small></div>";
-
-    echo "<p>Test End Time:</p>";
-    echo "<input type='text' id='add_end' name='end_time' value='09:00' pattern='(08|09|10|11|13|14|15):[0-5]{1}[0-9]{1}' />";
-    echo "<small> Working hours are 8-12am and 1-4pm</small>";
+    echo "<label for='end_time'>End Time: </label>";
+    echo "<input type='time' name='end_time' value='09:00' min='08:00' max='16:00' />";
+    echo "<small> Work from 8:00-16:00 (12:00-13:00 is lunch hour!)</small><br><br>";
 	
-	echo "<p>Test Location:</p>";
-	echo "<select id='add_location' name='location'><option selected>Choose one</option>";
+	echo "<div><label for='location'>Test Location: </label>";
+	echo "<select name='location'><option selected>Choose one</option>";
 	$sql3 = "SELECT DISTINCT university || ', ' || building AS location FROM testCenters";
 	$data3 = $pdo->query($sql3);
     foreach ($data3 as $row) {
 		echo "<option value='" . $row['location'] . "'>" . $row['location'] . "</option>";
 	}
-    echo "</select><br><br>";
+    echo "</select></div><br>";
+	//-------------------------Added Code for isPaper--------------------------------------
+	echo "<label for='is_paper'>Paper Test? </label>";
+	echo"<select name='is_paper'><option value =true>YES</option><option value =false>NO</option>";
+	echo"</select><br><br>";
+	//---------------------------------------------------------------------------
 	echo "<input type='submit' id='confirm' name='confirm' value='Confirm' /></form>";
 }
 
 if (isset($_POST['confirm'])) { //Creates form for adding a test reservation.
+   $start = $_POST['start_time'];
+   $end = $_POST['end_time'];
+   $problem=false;
+   if ($_POST['start_time'] >= '12:00' AND $_POST['start_time'] < '13:00') {
+      $problem=true;
+      $message = "Nah we don't work at $start"; 
+   }
+   if ($_POST['end_time'] >= '12:00' AND $_POST['end_time'] < '13:00') {
+      $problem=true;
+      $message = "Nah we don't work at $end";
+   }
+   if ($_POST['start_time'] < '12:00' AND $_POST['end_time'] >= '13:00') {
+      $problem=true;
+      $message = "Choose morning time or afternoon time";
+   }
+   if ($_POST['start_time'] >= $_POST['end_time']) {
+      $problem=true;
+      $message = "The end time should be after the start time";
+   }
+
+
+   if ($problem==true) {
+      echo "<p>$message</p>";
+
+    }
+   else {
 	$course = explode(" ", $_POST['course']);
     $student = explode(" ", $_POST['student_name']);
     $sql_student = "SELECT student_id FROM students WHERE student_first_name = '$student[0]' AND student_last_name = '$student[1]'";
@@ -115,7 +168,7 @@ if (isset($_POST['confirm'])) { //Creates form for adding a test reservation.
 $sql = 'INSERT INTO tests (professor_id, course_program, course_code, course_section, university, building) VALUES (?, UPPER(?), ?, ?, ?, ?)';
   $stmt = $pdo->prepare($sql);
   
-  $user = $_SESSION['user_id'];
+  $user = "thomas.allen@centre.edu";
   $sql_professor = "SELECT professor_id FROM professors WHERE professor_email = '$user'";
     $data_professor = $pdo->query($sql_professor);
     $professor_id = $data_professor->fetch();
@@ -171,10 +224,10 @@ $sql = 'INSERT INTO tests (professor_id, course_program, course_code, course_sec
    catch (Exception $e){
        /* $stmt2->debugDumpParams(); */
        echo "<p>Insertion Failed</p>";
-       debug_message("ERROR: ".$e);
        }
-      // echo"<a href = 'professor_page.php'>Continue</a>"; // added continue
-}									
+       echo"<a href = 'professor_page.php'>Continue</a>"; // added continue
+       }
+}
 				   
 
 /*  Queries the view display_tests and displays the results as a table. */
