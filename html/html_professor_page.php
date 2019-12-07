@@ -98,12 +98,7 @@ if (isset($_POST['add'])) {
     foreach ($data3 as $row) {
 		echo "<option value='" . $row['location'] . "'>" . $row['location'] . "</option>";
 	}
-    echo "</select><br>";
-	//-------------------------Added Code for isPaper--------------------------------------
-	echo "<p>Is this examination a paper copy?</p>";
-	echo"<p><select name='is_paper'><option value =true>YES</option><option value =false>NO</option>";
-	echo"</select><br /><br />";
-	//---------------------------------------------------------------------------
+    echo "</select><br><br>";
 	echo "<input type='submit' id='confirm' name='confirm' value='Confirm' /></form>";
 }
 
@@ -176,8 +171,9 @@ $sql = 'INSERT INTO tests (professor_id, course_program, course_code, course_sec
    catch (Exception $e){
        /* $stmt2->debugDumpParams(); */
        echo "<p>Insertion Failed</p>";
+       debug_message("ERROR: ".$e);
        }
-       echo"<a href = 'professor_page.php'>Continue</a>"; // added continue
+      // echo"<a href = 'professor_page.php'>Continue</a>"; // added continue
 }									
 				   
 
@@ -226,15 +222,18 @@ $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
   style();
 }
 function checkNumSeats($pdo)
-{
-	    $sql = <<<'SQL'
-                SELECT test_date,
-                       test_time,
-                       COUNT(DISTINCT(student_id,test_id)) AS num_seats
-                FROM students_tests
-                      NATURAL JOIN tests
-		   WHERE (university = :university AND building = :building AND test_date = :test_date)
-           GROUP BY test_date, test_time
+	{//COUNT(DISTINCT(student_id,test_id)) AS num_seats
+	            $sql = <<<'SQL'
+                    SELECT test_date,
+			   test_time,
+			   test_schedule_end,
+			   student_id,
+			   test_id,
+			   test_isPaper
+                    FROM students_tests
+                         NATURAL JOIN tests
+		    WHERE (university = :university AND building = :building AND test_date = :test_date)
+                    
 SQL;
 	     $stmt = $pdo->prepare($sql);
 	     $location = explode(", ",filter_input(INPUT_POST,'location',FILTER_SANITIZE_STRING));
@@ -251,27 +250,29 @@ SQL;
 	     {
 	       debug_message('Error Occured: '.$e);
 	     }
+
 	     $sql2 = <<<'SQL'
 		     SELECT available_seats
 		     FROM testCenters
 		     WHERE (university = :university AND building = :building)
 SQL;
 	   
-	     $seats = "available_seats";
-	     var_dump($_POST['is_paper']);//-----------------print statement
+/*	    $seats = "available_seats";
+	    $ispaper = true;
+	    var_dump($_POST['is_paper']);//-------------------------print
 	    if ($_POST['is_paper']==='false')
-       	    {
+	    {
 		$seats = "available_computers";
 		$sql2 = <<<'SQL'
 			SELECT available_computers
                         FROM testCenters
 			WHERE (university = :university AND building = :building)
 SQL;
-	    }
-	     var_dump($seats);
+		$ispaper = false;
+	    }*/
+	    /*var_dump($seats);//-------------------------print*/
             $stmt2 = $pdo->prepare($sql2);
-          //  $data2['seats'] = $seats;
-	    $data2['university'] = $location[0];
+            $data2['university'] = $location[0];
 	    $data2['building'] = $location[1];
             try 
             {
@@ -281,21 +282,66 @@ SQL;
 	    {
 	      debug_message('Error Occured: '.$e);
 	    }
-	    echo"<p>--------------------</p>";
-	    $conflict_tests = $stmt->fetch();
+
+	    //set inital conditions before checks begin
 	    $max_num_array = $stmt2->fetch();
+	    //var_dump($max_num_array);//-------------------------print
+	    $start_time = $_POST['start_time'];
+	    $end_time = $_POST['end_time'];
+	    $num_conflicts = 0;
+	    $conflict = false;
+	    $max_num_seats = $max_num_array['available_seats'];
+	/* $max_num_seats = $max_num_array[$seats];*/
 
-	    var_dump($conflict_tests);//---------------print statement. 
-	    var_dump($max_num_array);//----------------print statement.
+	     while($cur_test = $stmt->fetch() AND $num_conflicts < $max_num_seats)
+	     {
+		 //var_dump($cur_test);
+		 //echo"<br />";
+                 $conflict = false;
+		 $ts = $cur_test['test_time'];
+		 $te = $cur_test['test_schedule_end'];
 
-	    echo"<p>---------------------------</p>";
-	    if($conflict_tests['num_seats'] >= $max_num_array[$seats])
-        {
-	      echo"<p><b>ERROR</b>: no available seats</p>";
+		 /*var_dump($ispaper); //---------------------------------print
+		 var_dump($cur_test['test_ispaper']."<br />");//--------print
+
+		 if($ispaper===$cur_test['test_ispaper'])
+		 {*/
+			 //deteremines if a current test conflicts with desired schedule time. 
+			 if ($ts ===$start_time){
+			     $conflict = true;		 
+			 }
+			 elseif($te ===$end_time){
+			      $conflict = true;
+			 }
+			 elseif(($start_time<$ts AND $ts<$end_time)||($start_time<$te AND $te <$end_time)){
+			      $conflict = true;	 
+			 }
+			 elseif($start_time>$ts AND $start_time<$te){
+			      $conflict = true;
+			 }
+			 elseif($end_time<$te  AND $end_time>$ts){
+			      $conflict = true;	 
+			 }
+
+			 if($conflict){ //increments the counter. 
+			    $num_conflicts++;
+			 }
+		// }
+	    }
+            //echo"---------------------------------<br />";
+            //echo$num_conflicts;	   
+	    //var_dump($max_num_seats);//-------------------------print
+
+	    if($num_conflicts >= $max_num_seats)
+            {
+		    echo"<p><b>ERROR</b>: no available seats at chosen time.</p>";
+		    return false;
 	    }
 	    else
 	    {
-	      echo"<p>seats are available</p>";
+	      $diff = $max_num_seats-$num_conflicts;
+	      echo"<p> ".$diff."seats are available</p>";
+	      return true; 
 	    }
 	    
 	}
