@@ -2,7 +2,7 @@ FIELD SPECIFICATIONS
 
 GENERAL ELEMENTS
 
-Field Name:           _ professorID
+Field Name:           _ professor_id
 
 Specification Type:
   Unique:  _ 
@@ -18,11 +18,11 @@ Description:          _ Foreign key that limks back to the profesor table. It ap
 
 PHYSICAL ELEMENTS
 
-Data Type:            _ INT
-Length:               _ 6
-Decimal Places:       _ None
-Input Mask:           _ 111111
-Display Format:       _ 123456
+Data Type:            _ Numeric
+Length:               _ 5
+Decimal Places:       _ 0
+Input Mask:           _ #####
+Display Format:       _ 00000
 Character Support:
   Letters (A-Z):      _ 
   Numbers (0-9):      _ X
@@ -54,7 +54,7 @@ Required Value:    No:     _
 
 Default Value:     _ 
 
-Range of Values:   _ 000000-999999
+Range of Values:   _ 0-99999
 
 Edit Rule:
   Enter now, edits allowed:       _ X
