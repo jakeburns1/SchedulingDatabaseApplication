@@ -2,7 +2,7 @@ FIELD SPECIFICATIONS
 
 GENERAL ELEMENTS
 
-Field Name:           _ last_name
+Field Name:           _ student_last_name
 
 Specification Type:
   Unique:  _ X
