@@ -5,15 +5,23 @@ PHP Pages
 -------------
 
 log in screen
-    filename: login_check.php (CURRENTLY TEST.PHP)
+    filename: test.php
     description: this will take the info from the log in fields and validate it from the database
     team member responsible for creating: Jake
     team member responsible for testing: Jake
     dependencies: login_screen.html
     deadline: two weeks
 
+login script 
+    filename: runLogin.php
+    description: does the actually hashing and verifying login 
+    team member responsible for creating: Jake
+    team member responsible for testing: Jake
+    dependencies: test.php
+    deadline: two weeks
+    
 proctor page 
-    filename: proctor_page.PHP
+    filename: proctor_page.php
     description: this page is the page a user sees if they login as a proctor, it allows them to see a schedule of students tests and gives them pop ups to edit tests and record info on them.
     variables: 
     team member responsible for creating: Henry
@@ -25,7 +33,7 @@ proctor page
     - test edit page
 
 professor page
-    filename: professor_page.PHP
+    filename: professor_page.php
     description: page a user sees if they login as a professor, can see all students they have scheduled and allows them to edit / schedule additional students 
     variables:
     team member responsible for creating: Iris
