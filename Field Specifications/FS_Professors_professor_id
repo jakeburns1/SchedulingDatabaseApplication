@@ -2,7 +2,7 @@ FIELD SPECIFICATIONS
 
 GENERAL ELEMENTS
 
-Field Name:           _ professor ID
+Field Name:           _ professor_id
 
 Specification Type:
   Unique:  _ X
@@ -11,7 +11,7 @@ Specification Type:
 Parent Table:         _ Professors
 Label:                _ 
 Source Specification: _ 
-Shared By:            _ Students, Proctors, Test Centers, Tests
+Shared By:            _ Courses, Tests
 Aliases:              _ 
 Description:          _ A unique number used to identify each professor who will register for test(s).
 
@@ -54,7 +54,7 @@ Required Value:    No:     _
 
 Default Value:     _ 
 
-Range of Values:   _ 000000-999999
+Range of Values:   _ 0-99999
 
 Edit Rule:
   Enter now, edits allowed:       _ 
@@ -82,9 +82,9 @@ Comparisons Allowed:
                 <    _ 
                 <=   _ 
 
-  Value Expr.:  _ X
+  Value Expr.:  _
                 ALL  _ 
-                =    _ X
+                =    _
                 >    _ 
                 >=   _ 
                 !=   _ 
