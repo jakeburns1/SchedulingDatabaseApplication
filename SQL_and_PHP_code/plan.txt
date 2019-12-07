@@ -41,6 +41,17 @@ professor page
     dependencies:
     deadline: two weeks
     
+professor page functions
+    filename: professor_page_functions.php
+    description: handles functions for the professor page
+    variables:
+    team member responsible for creating: Iris
+    team member responsible for testing: Iris
+    dependencies: professor page
+    deadline: two weeks
+    
+    
+    
     - view / edit test page 
         - schedule new test pop up (have a pop up on the current page rather then going to a new html page)
         
