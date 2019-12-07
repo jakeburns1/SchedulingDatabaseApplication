@@ -34,14 +34,34 @@ FUNCTIONS:
         h1 {
            font-size:300%;
         }
-        table{
-           border-collapse: thick;
-        }
+
         td, th{
             border: 1px solid black;
             text-align: left;
             padding: 8px;
         }
+        
+        body {
+            background-color: #CBC0D3;
+        }
+        
+        * {
+         font-family: "Comic Sans MS", cursive, sans-serif;
+        }
+        
+        table {
+            margin: auto;
+            border-collapse: thick;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+        
+        th {
+           background-color: #80C2AF;
+        }
+        
     </style>
   </head>
     <body>
