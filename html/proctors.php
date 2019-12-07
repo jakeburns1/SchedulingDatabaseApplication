@@ -62,6 +62,10 @@ FUNCTIONS:
            background-color: #80C2AF;
         }
         
+        input {
+		   cursor: pointer;
+		}
+        
     </style>
   </head>
     <body>
