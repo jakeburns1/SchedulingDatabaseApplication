@@ -62,7 +62,7 @@ FUNCTIONS:
            background-color: #80C2AF;
         }
         
-        input {
+        input, button {
 		   cursor: pointer;
 		}
         
