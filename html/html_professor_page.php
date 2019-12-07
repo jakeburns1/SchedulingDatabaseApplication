@@ -258,7 +258,7 @@ SQL;
 SQL;
 	   
 	     $seats = "available_seats";
-	     var_dump($_POST['is_paper']);
+	     var_dump($_POST['is_paper']);//-----------------print statement
 	    if ($_POST['is_paper']==='false')
        	    {
 		$seats = "available_computers";
@@ -285,8 +285,8 @@ SQL;
 	    $conflict_tests = $stmt->fetch();
 	    $max_num_array = $stmt2->fetch();
 
-	    var_dump($conflict_tests);
-	    var_dump($max_num_array);
+	    var_dump($conflict_tests);//---------------print statement. 
+	    var_dump($max_num_array);//----------------print statement.
 
 	    echo"<p>---------------------------</p>";
 	    if($conflict_tests['num_seats'] >= $max_num_array[$seats])
