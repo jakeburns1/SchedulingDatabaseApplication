@@ -33,7 +33,7 @@ proctor page
     - test edit page
 
 professor page
-    filename: professor_page.php
+    filename: html_professor_page.php
     description: page a user sees if they login as a professor, can see all students they have scheduled and allows them to edit / schedule additional students 
     variables:
     team member responsible for creating: Iris
@@ -51,11 +51,7 @@ professor page functions
     deadline: two weeks
     
     
-    
-    - view / edit test page 
-        - schedule new test pop up (have a pop up on the current page rather then going to a new html page)
-        
-        
+various additional files for the login in  css & javascript
 
 
 
