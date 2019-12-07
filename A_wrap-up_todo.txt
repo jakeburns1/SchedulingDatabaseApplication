@@ -6,7 +6,7 @@ Field_specification forms still needing updating for tables:
 
 courses
 proctors
-proffessors
+professors          DONE
 schedules
 students            DONE
 students_courses
