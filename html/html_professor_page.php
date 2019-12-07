@@ -248,7 +248,7 @@ catch (\PDOException $e)
 }
 $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 																       
-  
+  echo "<head><Title> Professor Home Page</Title></head>";
   echo "<p>User: " . $data['user_id'] . "</p>";
   echo '<p align="center" id="title">Test Schedule</p>';
   echo "<div id='main'>";
