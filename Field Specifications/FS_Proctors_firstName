@@ -2,18 +2,18 @@ FIELD SPECIFICATIONS
 
 GENERAL ELEMENTS
 
-Field Name:           _ first_name
+Field Name:           _ lastName
 
 Specification Type:
   Unique:  _ X
   Generic: _ 
   Replica: _ 
-Parent Table:         _ Students
+Parent Table:         _ Proctors
 Label:                _ 
 Source Specification: _ 
 Shared By:            _ 
 Aliases:              _ 
-Description:          _ The first name of each student.
+Description:          _ The first name of each proctor.
 
 
 PHYSICAL ELEMENTS
@@ -64,27 +64,27 @@ Edit Rule:
   Not determined at this time:    _ 
 
 Comparisons Allowed:
-  Same Field:   _ X
+  Same Field:   _ 
                 ALL  _ 
-                =    _ X
+                =    _ 
                 >    _ 
                 >=   _ 
                 !=   _ 
                 <    _ 
                 <=   _ 
 
-  Other Fields: _ X
+  Other Fields: _
                 ALL  _ 
-                =    _ X
+                =    _ 
                 >    _ 
                 >=   _ 
                 !=   _ 
                 <    _ 
                 <=   _ 
 
-  Value Expr.:  _ X
+  Value Expr.:  _ 
                 ALL  _ 
-                =    _ X
+                =    _ 
                 >    _ 
                 >=   _ 
                 !=   _ 
@@ -99,16 +99,16 @@ Operations Allowed:
                 *    _ 
                 /    _ 
 
-  Other Fields: _ X
+  Other Fields: _ 
                 ALL  _ 
-                +    _ X
+                +    _ 
                 -    _ 
                 *    _ 
                 /    _ 
 
-  Value Expr.:  _ X
+  Value Expr.:  _ 
                 ALL  _ 
-                +    _ X
+                +    _ 
                 -    _ 
                 *    _ 
                 /    _ 
