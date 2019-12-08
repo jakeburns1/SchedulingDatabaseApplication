@@ -2,7 +2,7 @@ FIELD SPECIFICATIONS
 
 GENERAL ELEMENTS
 
-Field Name:           _ proctorID
+Field Name:           _ proctor_id
 
 Specification Type:
   Unique:  _ X
@@ -11,7 +11,7 @@ Specification Type:
 Parent Table:         _ Proctors
 Label:                _ 
 Source Specification: _ 
-Shared By:            _ Professors, Test Centers, schedules
+Shared By:            _ ProctorsSchedule
 Aliases:              _ 
 Description:          _ A unique number used to identify each proctor in test centers.
 
@@ -54,7 +54,7 @@ Required Value:    No:     _
 
 Default Value:     _ 
 
-Range of Values:   _ 000000-999999
+Range of Values:   _ 0-99999
 
 Edit Rule:
   Enter now, edits allowed:       _ 
