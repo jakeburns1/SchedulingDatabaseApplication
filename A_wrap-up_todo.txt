@@ -9,7 +9,7 @@ proctors
 professors          DONE
 schedules
 students            DONE
-students_courses
+students_courses    DONE
 students_tests
 testCenters
 days                DONE
