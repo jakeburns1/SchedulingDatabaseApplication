@@ -2,7 +2,7 @@ FIELD SPECIFICATIONS
 
 GENERAL ELEMENTS
 
-Field Name:           _ student ID 
+Field Name:           _ student_id
 
 Specification Type:
   Unique:  _ 
@@ -11,7 +11,7 @@ Specification Type:
 Parent Table:         _ StudentsTests
 Label:                _ 
 Source Specification: _ studentID from Students table. 
-Shared By:            _ 
+Shared By:            _ Students, StudentsCourses
 Aliases:              _ 
 Description:          _ links students to the tests they are set to take. 
 
