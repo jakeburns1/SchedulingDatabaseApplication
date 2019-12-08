@@ -2,7 +2,7 @@ FIELD SPECIFICATIONS
 
 GENERAL ELEMENTS
 
-Field Name:           _ courseNumber
+Field Name:           _ course_code
 
 Specification Type:
   Unique:  _ 
