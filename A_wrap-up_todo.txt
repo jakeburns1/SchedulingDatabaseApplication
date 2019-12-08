@@ -11,7 +11,7 @@ schedules           DONE
 students            DONE
 students_courses    DONE
 students_tests
-testCenters
+testCenters         DONE
 days                DONE
 tests
 
