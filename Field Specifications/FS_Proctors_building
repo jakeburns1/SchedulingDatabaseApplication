@@ -2,13 +2,13 @@ FIELD SPECIFICATIONS
 
 GENERAL ELEMENTS
 
-Field Name:           _ testing location
+Field Name:           _ building
 
 Specification Type:
-  Unique:  _ 
+  Unique:  _ X
   Generic: _ 
-  Replica: _ X
-Parent Table:         _ TestCenters
+  Replica: _ 
+Parent Table:         _ Proctors
 Label:                _ 
 Source Specification: _ 
 Shared By:            _ 
@@ -32,13 +32,13 @@ Character Support:
 
 LOGICAL ELEMENTS
 
-Key Type:      Non:        _ 
+Key Type:      Non:        _ X
                Primary:    _ 
-               Foreign:    _ X
+               Foreign:    _ 
                Alternate:  _ 
 
-Key Structure: Simple:     _ 
-               Composite:  _ X
+Key Structure: Simple:     _ X
+               Composite:  _ 
 
 Uniqueness:    Non-unique: _ X
                Unique:     _ 
@@ -54,7 +54,7 @@ Required Value:    No:     _
 
 Default Value:     _ 
 
-Range of Values:   _ 000000-999999
+Range of Values:   _ 
 
 Edit Rule:
   Enter now, edits allowed:       _ X
@@ -99,16 +99,16 @@ Operations Allowed:
                 *    _ 
                 /    _ 
 
-  Other Fields: _ 
+  Other Fields: _ X
                 ALL  _ 
-                +    _ 
+                +    _ X
                 -    _ 
                 *    _ 
                 /    _ 
 
-  Value Expr.:  _ 
+  Value Expr.:  _ X
                 ALL  _ 
-                +    _ 
+                +    _ X
                 -    _ 
                 *    _ 
                 /    _ 
