@@ -11,7 +11,7 @@ Specification Type:
 Parent Table:         _ Proctors
 Label:                _ 
 Source Specification: _ 
-Shared By:            _ 
+Shared By:            _ TestCenters
 Aliases:              _ 
 Description:          _ The location of the proctoring center a given proctor needs to report to.
 
@@ -32,13 +32,13 @@ Character Support:
 
 LOGICAL ELEMENTS
 
-Key Type:      Non:        _ X
+Key Type:      Non:        _ 
                Primary:    _ 
-               Foreign:    _ 
+               Foreign:    _ X
                Alternate:  _ 
 
-Key Structure: Simple:     _ X
-               Composite:  _ 
+Key Structure: Simple:     _ 
+               Composite:  _ X
 
 Uniqueness:    Non-unique: _ X
                Unique:     _ 
