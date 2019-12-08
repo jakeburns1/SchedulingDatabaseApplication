@@ -2,7 +2,7 @@ FIELD SPECIFICATIONS
 
 GENERAL ELEMENTS
 
-Field Name:           _ timeClosed
+Field Name:           _ time_close
 
 Specification Type:
   Unique:  _ X
