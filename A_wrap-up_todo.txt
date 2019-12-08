@@ -5,7 +5,7 @@ IMIDIATLEY AFTER YOU FINISH IT.
 Field_specification forms still needing updating for tables:
 
 courses             DONE
-proctors
+proctors            DONE
 professors          DONE
 schedules
 students            DONE
