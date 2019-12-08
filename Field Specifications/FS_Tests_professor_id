@@ -2,7 +2,7 @@ FIELD SPECIFICATIONS
 
 GENERAL ELEMENTS
 
-Field Name:           _ professorID
+Field Name:           _ professor_id
 
 Specification Type:
   Unique:  _ 
