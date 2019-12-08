@@ -19,10 +19,10 @@ Description:          _ Days of the week for validating the proctors' schedules.
 PHYSICAL ELEMENTS
 
 Data Type:            _ AlphaNumeric
-Length:               _ 9
+Length:               _ 10
 Decimal Places:       _ 0
 Input Mask:           _ N/A
-Display Format:       _ aaaaaaaaa
+Display Format:       _ aaaaaaaaaa
 Character Support:
   Letters (A-Z):      _ X
   Numbers (0-9):      _
