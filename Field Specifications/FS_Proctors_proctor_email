@@ -2,7 +2,7 @@ FIELD SPECIFICATIONS
 
 GENERAL ELEMENTS
 
-Field Name:           _ email
+Field Name:           _ proctor_email
 
 Specification Type:
   Unique:  _ X
@@ -11,7 +11,7 @@ Specification Type:
 Parent Table:         _ Proctors
 Label:                _ 
 Source Specification: _ 
-Shared By:            _ 
+Shared By:            _ ProctorsSchedule
 Aliases:              _ 
 Description:          _ The email address of each proctor.
 
@@ -64,9 +64,9 @@ Edit Rule:
   Not determined at this time:    _ 
 
 Comparisons Allowed:
-  Same Field:   _ 
+  Same Field:   _ X
                 ALL  _ 
-                =    _ 
+                =    _ X
                 >    _ 
                 >=   _ 
                 !=   _ 
@@ -99,7 +99,7 @@ Operations Allowed:
                 *    _ 
                 /    _ 
 
-  Other Fields: _ 
+  Other Fields: _
                 ALL  _ 
                 +    _ 
                 -    _ 
