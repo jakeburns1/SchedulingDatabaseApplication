@@ -2,7 +2,7 @@ FIELD SPECIFICATIONS
 
 GENERAL ELEMENTS
 
-Field Name:           _ testID
+Field Name:           _ test_id
 
 Specification Type:
   Unique:  _ X
