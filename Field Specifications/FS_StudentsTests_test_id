@@ -2,7 +2,7 @@ FIELD SPECIFICATIONS
 
 GENERAL ELEMENTS
 
-Field Name:           _ test ID
+Field Name:           _ test_id
 
 Specification Type:
   Unique:  _ 
@@ -11,7 +11,7 @@ Specification Type:
 Parent Table:         _ StudentsTests
 Label:                _ 
 Source Specification: _ testID from Tests
-Shared By:            _ 
+Shared By:            _ Tests
 Aliases:              _ 
 Description:          _ Identifies which test a student is schedueled to take. 
 
