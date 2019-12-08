@@ -11,7 +11,7 @@ Specification Type:
 Parent Table:         _ Proctors
 Label:                _ 
 Source Specification: _ The name of the university from the TESTCENTERS table.
-Shared By:            _ 
+Shared By:            _ TestCenters
 Aliases:              _ 
 Description:          _ The name of the university that a given proctor needs to report to.
 
